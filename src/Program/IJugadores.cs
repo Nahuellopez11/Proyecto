@@ -4,11 +4,12 @@ public interface IJugadores
 {
     Dictionary<int, IPokemones> Pokemones { get; set; } 
     void ElegirPokemon(int unNum);
+    void CambiarPokemon(int unNum);
+    bool TieneVida();
+    bool TerminarJuego();
 
 
 
 
-
-
-    //faltan los metodos elegir pokemon, cambiar pokemon, tiene vida y terminar juego
+    
 }
