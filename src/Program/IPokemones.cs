@@ -9,6 +9,7 @@ public interface IPokemones
     List<HabilidadesPokemon> Habilidades { get; set; }
     void AgregarHabilidad(HabilidadesPokemon habilidad);
     void QuitarHabilidad(HabilidadesPokemon habilidad);
+    void Atacar(IPokemones defensor, HabilidadesPokemon habilidadUsada);
     
 
 

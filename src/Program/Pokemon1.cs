@@ -9,6 +9,7 @@ public class Pokemon1 : IPokemones
     public string Tipo { get; set; }
     
     private int vida;
+    private bool EstaActivo;
     public int Vida
     {
         get { return vida; }
@@ -27,7 +28,8 @@ public class Pokemon1 : IPokemones
         Nombre = nombre;
         Tipo = tipo;
         Vida = vidaInicial;
-        EstaVivo = vidaInicial > 0; 
+        EstaVivo = vida > 0;
+        EstaActivo = false;
     }
     
     //Metodos
@@ -111,5 +113,15 @@ public class Pokemon1 : IPokemones
         // Si son neutros
         return 0.5;
     }
-        
+    public void MarcarComoActivo()
+    {
+        EstaActivo = true; // Marca este Pokémon como activo
+    }
+
+    // Método para desmarcar este Pokémon
+    public void Desmarcar()
+    {
+        EstaActivo = false; // Desmarca este Pokémon
+    }
+   
 }
