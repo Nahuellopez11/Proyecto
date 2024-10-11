@@ -1,6 +1,15 @@
 namespace Program;
 
-public class Maquina
+public class Maquina : IJugadores
 {
-    //falta armar todos los metodos de maquina (no pusimos cuales son)
+    public Dictionary<int, IPokemones> Pokemones { get; set; } = new Dictionary<int, IPokemones>();
+    public List<IPokemones> ListaDePokemones { get; set; } = new List<IPokemones>();
+
+    public void ElegirPokemon(int unNum)
+    {
+        IPokemones pokemonElegido = Pokemones[unNum];
+        ListaDePokemones.Add(pokemonElegido);
+    }
 }
+
+// hace lo mismo que Jugador solo que sin escribir (sino te spamea mal)

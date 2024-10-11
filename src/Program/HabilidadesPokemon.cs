@@ -1,12 +1,12 @@
 namespace Program;
 
-public class HablilidadesPokemon
+public class HabilidadesPokemon
 {
     public int ValorAtaque { get; set; }
     public int ValorDefensa { get; set; }
     public string NombreHabilidad { get; set; }
 
-    public HablilidadesPokemon(int valorAtaque, int valorDefensa, string nombreHabilidad)
+    public HabilidadesPokemon(int valorAtaque, int valorDefensa, string nombreHabilidad)
     {
         this.ValorAtaque = valorAtaque;
         this.ValorDefensa = valorDefensa;

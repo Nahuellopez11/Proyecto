@@ -1,8 +1,14 @@
 namespace Program;
 
-public class IJugadores
+public interface IJugadores
 {
-    public Dictionary<object> Pokemones { get; set; }
-    
+    Dictionary<int, IPokemones> Pokemones { get; set; } 
+    void ElegirPokemon(int unNum);
+
+
+
+
+
+
     //faltan los metodos elegir pokemon, cambiar pokemon, tiene vida y terminar juego
 }

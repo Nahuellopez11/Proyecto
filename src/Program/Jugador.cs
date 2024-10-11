@@ -1,6 +1,16 @@
 namespace Program;
 
-public class Jugador
+public class Jugador : IJugadores
 {
-    //falta armar todos los metodos de jugador (no pusimos cuales son)
+    public Dictionary<int, IPokemones> Pokemones { get; set; } = new Dictionary<int, IPokemones>();
+    public List<IPokemones> ListaDePokemones { get; set; } = new List<IPokemones>();
+
+    public void ElegirPokemon(int unNum)
+    {
+        IPokemones pokemonElegido = Pokemones[unNum];
+        ListaDePokemones.Add(pokemonElegido);
+        Console.WriteLine($"Has elegido a {pokemonElegido.Nombre}");
+    }
 }
+
+//falta metodo cambiar pokemones en la seleccion (importa?)
