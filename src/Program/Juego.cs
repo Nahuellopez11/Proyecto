@@ -82,15 +82,17 @@ public class Juego
 
     private void AtacarJugador()
     {
-        Jugador atacante = esTurnoJugador1 ? jugador1 : maquina; 
-        Jugador defensor = esTurnoJugador1 ? maquina : jugador1;
+        var atacante = esTurnoJugador1 ? jugador1.pokemonActivo : maquina.pokemonActivo;
+        var defensor = esTurnoJugador1 ? maquina.pokemonActivo : jugador1.pokemonActivo;
 
-        Console.WriteLine($"{atacante.NombrePokemonActivo}, elige una habilidad para atacar:");
-        
+        Console.WriteLine($"{atacante.Nombre} va a atacar.");
+        var habilidadUsada = atacante.Habilidades[0]; // Ejemplo: usando la primera habilidad disponible
+        atacante.Atacar(defensor, habilidadUsada);
 
-        HabilidadesPokemon habilidadUsada = atacante.Pokemones[atacante.pokemonActivo].Habilidades[0];
-
-        atacante.Pokemones[atacante.pokemonActivo].Atacar(defensor.Pokemones[defensor.pokemonActivo], habilidadUsada);
+        if (!defensor.EstaVivo)
+        {
+            Console.WriteLine($"{defensor.Nombre} ha sido derrotado.");
+        }
     }
 
     private void CambiarPokemonJugador()

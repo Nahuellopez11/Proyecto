@@ -49,17 +49,18 @@ public class Pokemon1 : IPokemones
         {
             return vida;
         }
-    }
-    public void Atacar(Pokemon1 defensor, HabilidadesPokemon habilidadUsada)
-    {
 
+        return 0;
+    }
+    public void Atacar(IPokemones defensor, HabilidadesPokemon habilidadUsada)
+    {
         int dañoBase = habilidadUsada.ValorAtaque;
         string tipoAtaque = this.Tipo; 
         string tipoDefensor = defensor.Tipo;
         double modificador = DañoSegunTipo(tipoAtaque, tipoDefensor);
         int dañoTotal = (int)(dañoBase * modificador);
         defensor.Vida -= dañoTotal;
-        if (defensor.Vida < 0) 
+        if (defensor.Vida < 0)
         {
             defensor.Vida = 0;
         }
@@ -68,6 +69,7 @@ public class Pokemon1 : IPokemones
         Console.WriteLine($"{Nombre} atacó a {defensor.Nombre} con {habilidadUsada.NombreHabilidad}, causando {dañoTotal} puntos de daño.");
         Console.WriteLine($"{defensor.Nombre} ahora tiene {defensor.Vida} puntos de vida.");
     }
+
     public void RecibirDaño(int cantidad)
     {
         if (!EstaVivo)

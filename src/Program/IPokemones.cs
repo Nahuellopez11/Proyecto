@@ -11,6 +11,7 @@ public interface IPokemones
     void QuitarHabilidad(HabilidadesPokemon habilidad);
     void Atacar(IPokemones defensor, HabilidadesPokemon habilidadUsada);
     
+    
 
 
 }

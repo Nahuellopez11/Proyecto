@@ -45,20 +45,20 @@ public class Jugador : IJugadores
         {
             Console.WriteLine("No puedes cambiar a ese Pokémon.");
         }
+    }
 
     public string NombrePokemonActivo
+    {
+        get
+        {
+            if (pokemonActivo != null) 
             {
-                 get
-            {
-            if (Pokemones.ContainsKey(pokemonActivo))
-            {
-                return Pokemones[pokemonActivo].Nombre; // Devuelve el nombre del Pokémon activo
+                return pokemonActivo.Nombre; 
             }
-            return "No hay Pokémon activo"; // Mensaje en caso de que no haya un Pokémon activo
-            }
+            return "No hay Pokémon activo"; 
+        }
     }
-        
-    }
+            
     
     
     
