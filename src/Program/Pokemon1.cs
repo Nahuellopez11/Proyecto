@@ -2,8 +2,37 @@ using System.Security.Cryptography;
 
 namespace Program;
 
-public class Pokemon1 : IPokemones
+public class Pokemon1: IPokemones
 {
+    public string Nombre { get; private set; }
+    public string Tipo { get; private set; }
+    public int Vida { get; private set; }
+
+    public Pokemon1(string nombre, int vida, string tipo)
+    {
+        Nombre = nombre;
+        Vida = vida;
+        Tipo = tipo;
+    }
+
+    public void Accept(IVisitor visitor)
+    {
+        visitor.VisitPokemon(this);
+    }
+}
+    /* bool EstaVivo { get; set; }
+     List<HabilidadesPokemon> Habilidades { get; set; }
+     public HabilidadesPokemon AgregarHabilidad(HabilidadesPokemon habilidad);
+     public HabilidadesPokemon QuitarHabilidad(HabilidadesPokemon habilidad);
+     public Atacar Atacar(IPokemones defensor, HabilidadesPokemon habilidadUsada);
+     */
+
+
+
+
+
+
+/*
     //Atributos
     public string Nombre { get; set; }
     public string Tipo { get; set; }
@@ -125,5 +154,4 @@ public class Pokemon1 : IPokemones
     {
         EstaActivo = false; // Desmarca este Pokémon
     }
-   
-}
+   */
