@@ -1,25 +1,128 @@
 using System.Security.Cryptography;
 
-namespace Program;
+using System;
 
-public class Pokemon1: IPokemones
+namespace Program
 {
-    public string Nombre { get; private set; }
-    public string Tipo { get; private set; }
-    public int Vida { get; private set; }
-
-    public Pokemon1(string nombre, int vida, string tipo)
+    public class Pokemon1 : IPokemones
     {
-        Nombre = nombre;
-        Vida = vida;
-        Tipo = tipo;
-    }
+        public string Nombre { get; private set; }
+        public string Tipo { get; private set; }
+        public int Vida { get; private set; }
 
-    public void Accept(IVisitor visitor)
-    {
-        visitor.VisitPokemon(this);
+        // Variables para estados especiales
+        private bool estaDormido;
+        private bool estaParalizado;
+        private bool estaEnvenenado;
+        private bool estaQuemado;
+        private int turnosDormido;
+
+        private static Random random = new Random();
+
+        public Pokemon1(string nombre, int vida, string tipo)
+        {
+            Nombre = nombre;
+            Vida = vida;
+            Tipo = tipo;
+        }
+
+        // Método necesario para la visita del visitante
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitPokemon(this);
+        }
+
+        // Método para recibir daño
+        public void RecibirDaño(int cantidad)
+        {
+            if (Vida <= 0)
+            {
+                Console.WriteLine($"{Nombre} ya está fuera de combate.");
+                return;
+            }
+
+            Vida -= cantidad;
+            if (Vida < 0) Vida = 0;
+
+            Console.WriteLine($"{Nombre} recibió {cantidad} puntos de daño.");
+
+            if (Vida <= 0)
+            {
+                Console.WriteLine($"{Nombre} ha sido derrotado.");
+            }
+        }
+
+        // Métodos para aplicar estados especiales
+        public void AplicarEstadoDormido()
+        {
+            estaDormido = true;
+            turnosDormido = random.Next(1, 5); // Dormido entre 1 y 4 turnos
+            Console.WriteLine($"{Nombre} está dormido por {turnosDormido} turnos.");
+        }
+
+        public void AplicarEstadoParalizado()
+        {
+            estaParalizado = true;
+            Console.WriteLine($"{Nombre} está paralizado.");
+        }
+
+        public void AplicarEstadoEnvenenado()
+        {
+            estaEnvenenado = true;
+            Console.WriteLine($"{Nombre} está envenenado.");
+        }
+
+        public void AplicarEstadoQuemado()
+        {
+            estaQuemado = true;
+            Console.WriteLine($"{Nombre} está quemado.");
+        }
+
+        // Método para verificar si ya tiene un estado especial
+        public bool TieneEstadoEspecial()
+        {
+            return estaDormido || estaParalizado || estaEnvenenado || estaQuemado;
+        }
+
+        // Método para actualizar el estado en cada turno
+        public void ActualizarEstado()
+        {
+            if (estaDormido)
+            {
+                turnosDormido--;
+                if (turnosDormido <= 0)
+                {
+                    estaDormido = false;
+                    Console.WriteLine($"{Nombre} se ha despertado.");
+                }
+                else
+                {
+                    Console.WriteLine($"{Nombre} sigue dormido. Turnos restantes: {turnosDormido}");
+                }
+            }
+
+            if (estaParalizado && random.Next(0, 2) == 0) // 50% de probabilidad de no poder atacar
+            {
+                Console.WriteLine($"{Nombre} está paralizado y no puede moverse este turno.");
+            }
+
+            if (estaEnvenenado)
+            {
+                int dañoVeneno = (int)(Vida * 0.05);
+                RecibirDaño(dañoVeneno);
+                Console.WriteLine($"{Nombre} pierde {dañoVeneno} puntos de vida por envenenamiento.");
+            }
+
+            if (estaQuemado)
+            {
+                int dañoQuemadura = (int)(Vida * 0.10);
+                RecibirDaño(dañoQuemadura);
+                Console.WriteLine($"{Nombre} pierde {dañoQuemadura} puntos de vida por quemadura.");
+            }
+        }
     }
 }
+
     /* bool EstaVivo { get; set; }
      List<HabilidadesPokemon> Habilidades { get; set; }
      public HabilidadesPokemon AgregarHabilidad(HabilidadesPokemon habilidad);
