@@ -1,36 +1,47 @@
-namespace Program;
-
-public class SeleccionPokesVisitor : IVisitor
+namespace Program
 {
-    private const int EquipoMax = 6;
-    public bool FueElegido { get; private set; }
-    public List<IPokemones> Equipo { get; private set; }
-
-    public SeleccionPokesVisitor()
+    public class SeleccionPokesVisitor : IVisitor
     {
-        Equipo = new List<IPokemones>();
-        FueElegido = false;
-    }
+        public bool FueElegido { get; private set; }
+        public List<IPokemones> Equipo { get; private set; }
 
-    public void VisitPokemon(Pokemon1 pokemon)
-    {
-        if (Equipo.Count >= EquipoMax)
+        public SeleccionPokesVisitor()
         {
-            Console.WriteLine("¡El equipo ya está completo!");
+            Equipo = new List<IPokemones>();
             FueElegido = false;
-            return;
         }
 
-        if (!Equipo.Contains(pokemon))
+        // Implementación del método VisitPokemon
+        public void VisitPokemon(Pokemon1 pokemon)
         {
-            Equipo.Add(pokemon);
-            FueElegido = true;
-            Console.WriteLine($"{pokemon.Nombre} ha sido añadido al equipo. ({Equipo.Count}/6)");
+            Console.WriteLine($"Visitando Pokémon: {pokemon.Nombre}");  // Esto debería verse en la consola
+            Console.WriteLine($"Equipo actual tiene {Equipo.Count} Pokémon(s).");
+
+            if (Equipo.Count >= 6)
+            {
+                Console.WriteLine("¡El equipo ya está completo!");
+                FueElegido = false;
+                return;
+            }
+
+            if (!Equipo.Any(p => p.Nombre == pokemon.Nombre))
+            {
+                Console.WriteLine($"{pokemon.Nombre} no está en el equipo, añadiéndolo...");
+                Equipo.Add(pokemon);
+                FueElegido = true;
+                Console.WriteLine($"{pokemon.Nombre} ha sido añadido al equipo. ({Equipo.Count}/6)");
+            }
+            else
+            {
+                Console.WriteLine($"{pokemon.Nombre} ya está en tu equipo.");
+                FueElegido = false;
+            }
         }
-        else
+
+        // Si necesitas un método genérico para otros tipos de Pokémon
+        public void Visit(IPokemones pokemon)
         {
-            Console.WriteLine($"{pokemon.Nombre} ya está en tu equipo.");
-            FueElegido = false;
+            // Aquí podrías implementar un comportamiento genérico para cualquier IPokemones
         }
     }
 }

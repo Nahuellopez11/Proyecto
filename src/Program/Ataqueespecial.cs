@@ -1,4 +1,5 @@
-namespace Program
+namespace Program;
+/*
 {
     public class AtaqueEspecial
     {
@@ -92,4 +93,4 @@ namespace Program
         }
     }
 }
-
+*/

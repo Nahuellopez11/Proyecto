@@ -1,25 +1,41 @@
 using System.Security.Cryptography;
 
-namespace Program;
-
-public class Pokemon1: IPokemones
+namespace Program
 {
-    public string Nombre { get; private set; }
-    public string Tipo { get; private set; }
-    public int Vida { get; private set; }
-
-    public Pokemon1(string nombre, int vida, string tipo)
+    public class Pokemon1 : IPokemones
     {
-        Nombre = nombre;
-        Vida = vida;
-        Tipo = tipo;
-    }
+        public string Nombre { get; private set; }
+        public string Tipo { get; private set; }
+        public int Vida { get; private set; }
 
-    public void Accept(IVisitor visitor)
-    {
-        visitor.VisitPokemon(this);
+        public Pokemon1(string nombre, int vida, string tipo)
+        {
+            Nombre = nombre;
+            Vida = vida;
+            Tipo = tipo;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Pokemon1 other)
+            {
+                return this.Nombre == other.Nombre && this.Tipo == other.Tipo;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Nombre, Tipo);
+        }
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitPokemon(this);  // Llamamos a VisitPokemon directamente
+        }
     }
 }
+
     /* bool EstaVivo { get; set; }
      List<HabilidadesPokemon> Habilidades { get; set; }
      public HabilidadesPokemon AgregarHabilidad(HabilidadesPokemon habilidad);
