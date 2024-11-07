@@ -5,7 +5,7 @@ public interface IPokemones
     string Nombre { get; }
     string Tipo { get; }
     int Vida { get; }
-    void Accept(IVisitor visitor);
+    void Accept(IVisitor visitor){}
     
 }
 

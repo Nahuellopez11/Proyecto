@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 namespace Program;
 /*
+
 public class Juego
 {
     private Jugador jugador1;
