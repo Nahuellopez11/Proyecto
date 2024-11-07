@@ -1,11 +1,11 @@
 namespace Program;
 
-public class IVisitor
+public interface IVisitor
 {
-   public void VisitPokemon(IPokemones pokemon){}
-   public bool IsSelected { get; }
+   public void VisitPokemon(Pokemon1 pokemon){}
+
    public List<IPokemones> Equipo { get; } void Visit(IPokemones pokemon){}
    public bool FueElegido { get; }
-   public List<IPokemones> EquipoElegido { get; }
+
  
 }
