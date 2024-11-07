@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 namespace Program;
-
+/*
 public class Juego
 {
     private Jugador jugador1;
@@ -146,3 +146,4 @@ public class Juego
         esTurnoJugador1 = !esTurnoJugador1;
     }
 }
+*/
