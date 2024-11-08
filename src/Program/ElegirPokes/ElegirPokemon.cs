@@ -24,8 +24,7 @@ public class ElegirPokemon
             {
                 Console.WriteLine("Por favor, ingresa un número válido.");
             }
-
-            // Depuración para ver cuántos Pokémon se han añadido
+            
             Console.WriteLine($"Actualmente tienes {CatalogoPokemones.ObtenerEquipoActual().Count} Pokémon en tu equipo.");
         }
 
@@ -38,7 +37,7 @@ public class ElegirPokemon
     {
         Console.WriteLine("\nTu equipo final es:");
         var equipo = CatalogoPokemones.ObtenerEquipoActual();
-        Console.WriteLine($"Tienes {equipo.Count} Pokémon en tu equipo."); // Verifica cuántos Pokémon están en el equipo
+        Console.WriteLine($"Tienes {equipo.Count} Pokémon en tu equipo."); // verificar pokemones en equipo
 
         for (int i = 0; i < equipo.Count; i++)
         {

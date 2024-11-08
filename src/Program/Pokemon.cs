@@ -23,11 +23,7 @@ namespace Program
             }
             return false;
         }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Nombre, Tipo);
-        }
+        
 
         public void Accept(IVisitorPoke visitorPoke)
         {

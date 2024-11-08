@@ -44,12 +44,11 @@ public static class CatalogoPokemones
         }
 
         var pokemon = CatalogoPoke[indice];
-        Console.WriteLine($"Seleccionando Pokémon: {pokemon.Nombre}"); // Depuración
+        Console.WriteLine($"Seleccionando Pokémon: {pokemon.Nombre}"); 
 
         pokemon.Accept(SelectionVisitorPoke);
 
-        // Verifica si se pasó correctamente por VisitPokemon
-        Console.WriteLine($"Después de la selección, FueElegido = {SelectionVisitorPoke.FueElegido}");
+
         return SelectionVisitorPoke.FueElegido;
     }
 

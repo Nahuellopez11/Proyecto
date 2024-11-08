@@ -14,7 +14,6 @@ namespace Program
         // Implementación del método VisitPokemon
         public void VisitPokemon(Pokemon pokemon)
         {
-            Console.WriteLine($"Visitando Pokémon: {pokemon.Nombre}");  // Esto debería verse en la consola
             Console.WriteLine($"Equipo actual tiene {Equipo.Count} Pokémon(s).");
 
             if (Equipo.Count >= 6)
@@ -38,10 +37,9 @@ namespace Program
             }
         }
 
-        // Si necesitas un método genérico para otros tipos de Pokémon
+
         public void Visit(IPokemones pokemon)
         {
-            // Aquí podrías implementar un comportamiento genérico para cualquier IPokemones
         }
     }
 }

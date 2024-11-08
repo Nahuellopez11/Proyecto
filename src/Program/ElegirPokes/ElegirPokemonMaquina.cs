@@ -9,14 +9,14 @@ public class ElegirPokemonMaquina
         {
             while (CatalogoPokemones.ObtenerEquipoActual().Count < 6)
             {
-                // Generar un número aleatorio entre 1 y 16
+                // un número aleatorio entre 1 y 16
                 int seleccion = random.Next(1, 17);
 
-                // Obtener el Pokémon correspondiente al índice generado
+                // pokemon correspondiente al índice generado
                 IPokemones pokemonSeleccionado;
                 if (CatalogoPokemones.CatalogoPoke.TryGetValue(seleccion, out pokemonSeleccionado))
                 {
-                    // Verificar si el Pokémon ya está en el equipo
+                    // verifica si el pokemon ya esta en el equipo
                     if (!CatalogoPokemones.ObtenerEquipoActual().Contains(pokemonSeleccionado))
                     {
                         CatalogoPokemones.SeleccionarPokemon(seleccion); // Agregar el Pokémon al equipo
