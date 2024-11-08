@@ -4,8 +4,8 @@ public interface IPokemones
 {
     string Nombre { get; }
     string Tipo { get; }
-    int Vida { get; }
-    void Accept(IVisitor visitor){}
+    double Vida { get; set; }
+    void Accept(IVisitorPoke visitorPoke){}
     
 }
 

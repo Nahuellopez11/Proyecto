@@ -2,18 +2,20 @@ namespace Program;
 
 public class Jugador : IJugadores
 {
-    
-    public Dictionary<int, IPokemones> Pokemones { get; set; } = new Dictionary<int, IPokemones>();
     public List<IPokemones> ListaDePokemones { get; set; } = new List<IPokemones>();
-    public IPokemones pokemonActivo { get; set; }
+
+    public List<IItem> Items { get; set; } = new List<IItem>
+    {
+        new SuperPocion(),
+        new Revivir(),
+        //aqui se agrega el otro item
+
+    };
 
     public Jugador(List<IPokemones> listaDePokemones)
     {
-        this.ListaDePokemones = ListaDePokemones;
+        this.ListaDePokemones = listaDePokemones;
     }
-
 }
-    
-
 
 

@@ -7,8 +7,8 @@ public class IncializacionBatalla
 {
     public static List<IPokemones> pokemonesJugador = ElegirPokemon.DevolverLista();
     public static List<IPokemones> pokemonesMaquina = ElegirPokemonMaquina.DevolverLista();
-    Jugador jugador1 = new Jugador(pokemonesJugador);
-    Maquina maquina = new Maquina(pokemonesMaquina);
+    public static Jugador jugador1 = new Jugador(pokemonesJugador);
+    public static Maquina maquina = new Maquina(pokemonesMaquina);
 
     // pokemon activo siempre es el primero
     public static IPokemones pokemonActivoJugador = pokemonesJugador[0];
@@ -46,22 +46,21 @@ public class IncializacionBatalla
                     // Lógica de ataque del jugador (por ejemplo, restar vida al Pokémon de la máquina)
                     // Realiza el ataque aquí
                 }
-                else if (opcion == 2)
+                if (opcion == 2)
                 {
                     Console.WriteLine("El jugador cambia de Pokémon.");
                     // Lógica para cambiar Pokémon (seleccionar otro Pokémon de la lista)
                     // Cambiar el Pokémon aquí
                 }
-                else if (opcion == 3)
+                if (opcion == 3)
                 {
-                    Console.WriteLine("El jugador usa un ítem.");
-                    // Lógica de usar ítem
-                    // Usar el ítem aquí
+                    turno = UtilizacionItem.UsarItem(jugador1, turno); // al principio hice la logica aca
+                                                                       // pero no siguiria SRP estaria muy lleno de cosas
                 }
                 else
                 {
                     Console.WriteLine("Opción Inválida.");
-                    continue; // Si la opción es inválida, vuelve a preguntar por la opción
+                    continue; // sigue si metes cualquier cosa
                 }
 
                 // Verificar si la batalla terminó después de la acción del jugador
@@ -100,14 +99,12 @@ public class IncializacionBatalla
 
     public static bool VerificarFinBatalla(List<IPokemones> listaPokemones)
     {
-        // Calcular la vida total de todos los Pokémon de la lista
-        int vidaTotal = 0;
+        double vidaTotal = 0;
         foreach (var pokemon in listaPokemones)
         {
             vidaTotal += pokemon.Vida;
         }
-
-        // Si la vida total es 0 o menos, la batalla termina
+        
         return vidaTotal <= 0;
     }
 }

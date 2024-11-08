@@ -1,18 +1,18 @@
 namespace Program
 {
-    public class SeleccionPokesVisitor : IVisitor
+    public class SeleccionPokesVisitorPoke : IVisitorPoke
     {
         public bool FueElegido { get; private set; }
         public List<IPokemones> Equipo { get; private set; }
 
-        public SeleccionPokesVisitor()
+        public SeleccionPokesVisitorPoke()
         {
             Equipo = new List<IPokemones>();
             FueElegido = false;
         }
 
         // Implementación del método VisitPokemon
-        public void VisitPokemon(Pokemon1 pokemon)
+        public void VisitPokemon(Pokemon pokemon)
         {
             Console.WriteLine($"Visitando Pokémon: {pokemon.Nombre}");  // Esto debería verse en la consola
             Console.WriteLine($"Equipo actual tiene {Equipo.Count} Pokémon(s).");

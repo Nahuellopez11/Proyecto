@@ -1,8 +1,8 @@
 namespace Program;
 
-public interface IVisitor
+public interface IVisitorPoke
 {
-   public void VisitPokemon(Pokemon1 pokemon){}
+   public void VisitPokemon(Pokemon pokemon){}
 
    public List<IPokemones> Equipo { get; } void Visit(IPokemones pokemon){}
    public bool FueElegido { get; }

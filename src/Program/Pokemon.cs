@@ -1,14 +1,14 @@
 using System.Security.Cryptography;
-
+// ya no es "pokemon1" yippeeee !
 namespace Program
 {
-    public class Pokemon1 : IPokemones
+    public class Pokemon : IPokemones
     {
         public string Nombre { get; private set; }
         public string Tipo { get; private set; }
-        public int Vida { get; private set; }
+        public double Vida { get; set; }
 
-        public Pokemon1(string nombre, int vida, string tipo)
+        public Pokemon(string nombre, int vida, string tipo)
         {
             Nombre = nombre;
             Vida = vida;
@@ -17,7 +17,7 @@ namespace Program
 
         public override bool Equals(object obj)
         {
-            if (obj is Pokemon1 other)
+            if (obj is Pokemon other)
             {
                 return this.Nombre == other.Nombre && this.Tipo == other.Tipo;
             }
@@ -29,9 +29,9 @@ namespace Program
             return HashCode.Combine(Nombre, Tipo);
         }
 
-        public void Accept(IVisitor visitor)
+        public void Accept(IVisitorPoke visitorPoke)
         {
-            visitor.VisitPokemon(this);  // Llamamos a VisitPokemon directamente
+            visitorPoke.VisitPokemon(this);  // Llamamos a VisitPokemon directamente
         }
     }
 }
