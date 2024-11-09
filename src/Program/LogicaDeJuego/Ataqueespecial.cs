@@ -2,6 +2,7 @@ namespace Program
 {
     public class AtaqueEspecial : Ataque
     {
+        // Propiedad que indica el estado especial que el ataque puede causar 
         public EstadoEspecial EfectoEstado { get; private set; }
 
         public AtaqueEspecial(string nombre, TipoPokemon tipo, int dañoBase, double precision, EstadoEspecial efecto)
@@ -16,7 +17,7 @@ namespace Program
 
             if (daño > 0 || DañoBase == 0) // Si el ataque conectó o es un ataque sin daño
             {
-                objetivo.AplicarEfectoEstado(EfectoEstado);
+                objetivo.AplicarEfectoEstado(EfectoEstado); // Aplica el efecto de estado al objetivo (Ej. envenenamiento, parálisis)
             }
 
             return daño;

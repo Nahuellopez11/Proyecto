@@ -2,12 +2,13 @@ namespace Program;
 
 public class ElegirPokemonMaquina
 {
-    
+    // La clase tiene una única responsabilidad: seleccionar un equipo de Pokémon aleatorios para la máquina
     private static Random random = new Random();
     private static List<IPokemones> equipoMaquina = new List<IPokemones>();
 
     public static void SeleccionarEquipo()
-    {
+    {// La clase depende de CatalogoPokemones y de la interfaz IPokemones, lo que permite que esta clase
+        // sea flexible y reutilizable. No tiene acoplamientos innecesarios con otras clases.
         equipoMaquina.Clear();
 
         while (equipoMaquina.Count < 6)
@@ -34,39 +35,18 @@ public class ElegirPokemonMaquina
 
    
     
+/*
+        Principio de OCP (Open/Closed Principle):
+        La clase está abierta a la extensión, ya que si quisieras cambiar cómo se seleccionan los Pokémon
+        (por ejemplo, no aleatoriamente, sino basados en ciertas características), podrías extender la clase o
+        modificar su comportamiento sin alterar su estructura principal.
 
+        Principio de DIP (Dependency Inversion Principle):
+        La clase depende de abstracciones (IPokemones), lo que permite que cualquier clase que implemente
+        la interfaz IPokemones pueda ser utilizada. Esto facilita la extensión y el mantenimiento del código,
+        ya que las dependencias están basadas en interfaces y no en implementaciones concretas.
+        */
     
 
   
 }
-/*
- public static void SeleccionarEquipo()
-        {
-        private static Random random = new Random();
-            while (CatalogoPokemones.ObtenerEquipoActual().Count < 6)
-            {
-                // un número aleatorio entre 1 y 16
-                int seleccion = random.Next(1, 17);
-
-                // pokemon correspondiente al índice generado
-                IPokemones pokemonSeleccionado;
-                if (CatalogoPokemones.CatalogoPoke.TryGetValue(seleccion, out pokemonSeleccionado))
-                {
-                    // verifica si el pokemon ya esta en el equipo
-                    if (!CatalogoPokemones.ObtenerEquipoActual().Contains(pokemonSeleccionado))
-                    {
-                        CatalogoPokemones.SeleccionarPokemon(seleccion); // Agregar el Pokémon al equipo
-                    }
-                }
-
-            }
-            
-        }
-        
-          public static List<IPokemones> DevolverLista()
-    {
-        var equipo = CatalogoPokemones.ObtenerEquipoActual();
-        return equipo;
-    }
-
-        */

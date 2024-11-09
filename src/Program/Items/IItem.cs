@@ -1,5 +1,5 @@
 namespace Program;
-
+// representa un ítem en el juego que puede ser usado por un Pokémon
 public interface IItem
 {
     string Nombre { get; }
