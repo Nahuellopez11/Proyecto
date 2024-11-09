@@ -4,7 +4,7 @@ public class Maquina : IJugadores
 {
 
     public string Nombre { get; private set; }
-    public List<IPokemones> ListaDePokemones { get; private set; }
+    public List<IPokemones> ListaDePokemones { get;  set; }
 
     public Maquina(string nombre, List<IPokemones> listaDePokemones)
     {
