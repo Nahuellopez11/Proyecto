@@ -9,10 +9,10 @@ namespace Program
         public double Vida { get; set; }
         public int VidaInicial { get; set; }
         private string Estado { get; set; }
-        private int TurnosEstado { get; set; }
         private static Random random = new Random();
-        private bool PuedoAtacar { get; set; }
         public List<Ataque> AtaquesDisponibles { get; private set; }
+        public EstadoEspecial EstadoActual { get; set; }
+        private int TurnosDormido { get; set; }
         
 
         public Pokemon(string nombre, int vida, TipoPokemon tipo)
@@ -22,7 +22,7 @@ namespace Program
             Tipo = tipo;
             VidaInicial = vida;
             Estado = "Normal";
-            TurnosEstado = 0;
+
             
             AtaquesDisponibles = HabilidadesPorTipo.ObtenerAtaquesPorTipo(tipo)
                 .Cast<Ataque>()  // Convertir a Ataque
@@ -34,99 +34,90 @@ namespace Program
             Vida = Math.Max(0, Vida - daño);
         }
         
-        public void TieneEstadoEspecial()
-        {
-            if (Estado == "Paralizado")
-            {
-                ProcesarParalisis();
-            }
-            else if (Estado == "Dormido")
-            {
-                ProcesarDormido();
-            }
-            else if (Estado == "Envenenado")
-            {
-                ProcesarEnvenenado();
-            }
-            else if (Estado == "Quemado")
-            {
-                ProcesarQuemado();
-            }
+       //------------------Efectos-------------------------------//
+       public bool PuedeAtacar()
+       {
+           if (TurnosDormido > 0)
+           {
+               TurnosDormido -= 1;
+               Console.WriteLine($"{Nombre} está dormido y no puede atacar!");
+               if (TurnosDormido == 0)
+               {
+                   EstadoActual = EstadoEspecial.Normal;
+                   Console.WriteLine($"{Nombre} se ha despertado!");
+               }
+
+               return false;
+           }
+
+           if (EstadoActual == EstadoEspecial.Paralizado)
+           {
+               bool puedeAtacar = random.Next(2) == 0; // 50% de probabilidad
+               if (!puedeAtacar)
+               {
+                   Console.WriteLine($"{Nombre} está paralizado y no puede atacar!");
+               }
+               return puedeAtacar;
+           }
+
+           return true;
+       }
+
+       public void AplicarEfectoEstado(EstadoEspecial nuevoEstado)
+       {
+           if (EstadoActual != EstadoEspecial.Normal)
+           {
+               Console.WriteLine(
+                   $"{Nombre} ya está afectado por {EstadoActual} y no puede ser afectado por {nuevoEstado}");
+               return;
+           }
+
+           EstadoActual = nuevoEstado;
+           if (nuevoEstado == EstadoEspecial.Dormido)
+           {
+               TurnosDormido = random.Next(1, 5); // 1-4 turnos
+               Console.WriteLine($"{Nombre} se ha dormido por {TurnosDormido} turnos!");
+           }
+           else if (nuevoEstado == EstadoEspecial.Paralizado)
+           {
+               Console.WriteLine($"{Nombre} ha sido paralizado!");
+           }
+           else if (nuevoEstado == EstadoEspecial.Envenenado)
+           {
+               Console.WriteLine($"{Nombre} ha sido envenenado!");
+           }
+           else if (nuevoEstado == EstadoEspecial.Quemado)
+           {
+               Console.WriteLine($"{Nombre} ha sido quemado!"); 
+           }
+
+
         }
+       public void AplicarEfectosFinTurno()
+       {
+           switch (EstadoActual)
+           {
+               case EstadoEspecial.Envenenado:
+                   double dañoVeneno = VidaInicial * 0.05; // 5% del HP total
+                   RecibirDaño((int)dañoVeneno);
+                   Console.WriteLine($"{Nombre} pierde {dañoVeneno} HP por envenenamiento!");
+                   break;
+               case EstadoEspecial.Quemado:
+                   double dañoQuemadura = VidaInicial * 0.10; // 10% del HP total
+                   RecibirDaño((int)dañoQuemadura);
+                   Console.WriteLine($"{Nombre} pierde {dañoQuemadura} HP por quemadura!");
+                   break;
+           }
+       }
 
-        public void AplicarEstadoParalizado()
-        {
-            Estado = "Paralizado";
-            TurnosEstado = 3;
-            while (TurnosEstado>0)
-            {
-                ProcesarParalisis();
+       public void CurarEstados()
+       {
+           EstadoActual = EstadoEspecial.Normal;
+           TurnosDormido = 0;
+           Console.WriteLine($"{Nombre} ha sido curado de todos los estados!");
+       }
 
-            }
-        }   
-       /* public void AplicarEstadoDormido()
-        {
-            Estado = "Dormido";
-            TurnosEstado = random.Next(1, 5); // Entre 1 y 4 turnos
-            if (turno == TurnosEstado)
-            {
-                ProcesarDormido();
-            }
-
-        }
-*/
-        public void AplicarEstadoEnvenenado()
-        {
-            Estado = "Envenenado";
-            TurnosEstado = 3;
-            while (TurnosEstado>0)
-            {
-                ProcesarQuemado();
-            }
-            
-        }
-
-        public void AplicarEstadoQuemado()
-        {
-            Estado = "Quemado";
-            TurnosEstado = 3;
-            ProcesarQuemado();
-        }
-
-        
-
-        public void ProcesarParalisis()
-        {
-            if (random.NextDouble() <= 0.25)
-            {
-                PuedoAtacar = false;
-            }
-            else
-            {
-                PuedoAtacar = true;
-            }
-        }
-
-        public void ProcesarDormido()
-        {
-            
-            PuedoAtacar = false;
-        }
-
-        public void ProcesarQuemado()
-        {
-            int dañoVeneno = (int)(VidaInicial * 0.05); // 5% de la vida máxima
-            RecibirDaño(dañoVeneno);
-            Console.WriteLine($"{Nombre} sufre {dañoVeneno} de daño por envenenamiento.");
-        }
-
-        public void ProcesarEnvenenado()
-        {
-            int dañoQuemadura = (int)(VidaInicial * 0.10); // 10% de la vida máxima
-            RecibirDaño(dañoQuemadura);
-            Console.WriteLine($"{Nombre} sufre {dañoQuemadura} de daño por quemadura.");
-        }
-        public override bool Equals(object obj)
+       public override bool Equals(object obj)
         {
             if (obj is Pokemon other)
             {
@@ -135,7 +126,7 @@ namespace Program
             return false;
         }
         
-
+        //---------Visitor-----------//
         public override int GetHashCode()
         {
             return HashCode.Combine(Nombre, Tipo);
@@ -145,7 +136,7 @@ namespace Program
         {
             visitorPoke.VisitPokemon(this);  // Llamamos a VisitPokemon directamente
         }
-        
+        //----------Ataques----------------//
         public void AprenderAtaque(Ataque ataque)
         {
             if (AtaquesDisponibles.Count < 4)
@@ -160,6 +151,11 @@ namespace Program
 
         public void RealizarAtaque(int indiceAtaque, Pokemon objetivo)
         {
+            if (!PuedeAtacar())
+            {
+                return;
+            }
+
             if (indiceAtaque >= 0 && indiceAtaque < AtaquesDisponibles.Count)
             {
                 var ataque = AtaquesDisponibles[indiceAtaque];
@@ -168,7 +164,6 @@ namespace Program
                 if (daño > 0)
                 {
                     objetivo.RecibirDaño(daño);
-                    Console.WriteLine($"{Nombre} usó {ataque.NombreHabilidad} y causó {daño} de daño a {objetivo.Nombre}!");
                     Console.WriteLine($"Vida restante de {objetivo.Nombre}: {objetivo.Vida}");
                 }
             }

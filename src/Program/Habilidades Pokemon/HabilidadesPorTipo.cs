@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Program
 {
@@ -22,8 +22,8 @@ namespace Program
                 {
                     new Ataque("Ascuas", TipoPokemon.Fuego, 10, 1.0),
                     new Ataque("Lanzallamas", TipoPokemon.Fuego, 15, 0.85),
-                    new Ataque("Giro Fuego", TipoPokemon.Fuego, 5, 0.85),
-                    new Ataque("Llamarada", TipoPokemon.Fuego, 20, 0.85)
+                    new AtaqueEspecial("Giro Fuego", TipoPokemon.Fuego, 5, 0.85, EstadoEspecial.Quemado),
+                    new AtaqueEspecial("Llamarada", TipoPokemon.Fuego, 20, 0.85, EstadoEspecial.Quemado)
                 }
             },
             {
@@ -48,9 +48,9 @@ namespace Program
                 TipoPokemon.Electrico, new List<Ataque>
                 {
                     new Ataque("Impactrueno", TipoPokemon.Electrico, 5, 1.0),
-                    new Ataque("Onda Trueno", TipoPokemon.Electrico, 15, 0.9),
+                    new AtaqueEspecial("Onda Trueno", TipoPokemon.Electrico, 15, 0.9, EstadoEspecial.Paralizado),
                     new Ataque("Rayo", TipoPokemon.Electrico, 20, 0.85),
-                    new Ataque("Trueno", TipoPokemon.Electrico, 10, 0.7)
+                    new AtaqueEspecial("Trueno", TipoPokemon.Electrico, 10, 0.7, EstadoEspecial.Paralizado)
                 }
             },
             {
@@ -75,8 +75,8 @@ namespace Program
                 TipoPokemon.Veneno, new List<Ataque>
                 {
                     new Ataque("Picotazo", TipoPokemon.Veneno, 10, 1.0),
-                    new Ataque("Ácido", TipoPokemon.Veneno, 5, 1.0),
-                    new Ataque("Bomba Lodo", TipoPokemon.Veneno, 20, 0.85),
+                    new AtaqueEspecial("Ácido", TipoPokemon.Veneno, 5, 1.0, EstadoEspecial.Envenenado),
+                    new AtaqueEspecial("Bomba Lodo", TipoPokemon.Veneno, 20, 0.85, EstadoEspecial.Envenenado),
                     new Ataque("Residuos", TipoPokemon.Veneno, 15, 0.95)
                 }
             },
@@ -101,9 +101,9 @@ namespace Program
             {
                 TipoPokemon.Psiquico, new List<Ataque>
                 {
-                    new Ataque("Confusión", TipoPokemon.Psiquico, 10, 1.0),
+                    new AtaqueEspecial("Confusión", TipoPokemon.Psiquico, 10, 1.0, EstadoEspecial.Dormido),
                     new Ataque("Psicorrayo", TipoPokemon.Psiquico, 15, 0.95),
-                    new Ataque("Psíquico", TipoPokemon.Psiquico, 5, 0.85),
+                    new AtaqueEspecial("Psíquico", TipoPokemon.Psiquico, 5, 0.85, EstadoEspecial.Dormido),
                     new Ataque("Premonición", TipoPokemon.Psiquico, 10, 0.85)
                 }
             },
@@ -142,23 +142,17 @@ namespace Program
                     new Ataque("Pulso Dragón", TipoPokemon.Dragon, 10, 0.9),
                     new Ataque("Cometa Draco", TipoPokemon.Dragon, 15, 0.85)
                 }
-            },
-        
+            }
         };
 
         public static List<IHabilidadesPokemon> ObtenerAtaquesPorTipo(TipoPokemon tipo)
         {
             if (AtaquesPorTipo.TryGetValue(tipo, out var ataques))
             {
-                // La lista de Ataques se convierte explícitamente a IHabilidadesPokemon
                 return ataques.Cast<IHabilidadesPokemon>().ToList();
             }
 
-            return new List<IHabilidadesPokemon>();  // En caso de no encontrar ataques para el tipo
+            return new List<IHabilidadesPokemon>();
         }
-
     }
 }
-
-    
-
