@@ -16,22 +16,22 @@ public static class CatalogoPokemones
     {
         var armador = new Armar();
         
-        CatalogoPoke.Add(1, armador.CrearPokemon("Charizard", 100, "Fuego"));
-        CatalogoPoke.Add(2, armador.CrearPokemon("Blastoise", 100, "Agua"));
-        CatalogoPoke.Add(3, armador.CrearPokemon("Venusaur", 100, "Planta"));
-        CatalogoPoke.Add(4, armador.CrearPokemon("Pikachu", 100, "Eléctrico"));
-        CatalogoPoke.Add(5, armador.CrearPokemon("Gengar", 100, "Fantasma"));
-        CatalogoPoke.Add(6, armador.CrearPokemon("Machamp", 100, "Lucha"));
-        CatalogoPoke.Add(7, armador.CrearPokemon("Pidgeot", 100, "Volador"));
-        CatalogoPoke.Add(8, armador.CrearPokemon("Sandslash", 100, "Tierra"));
-        CatalogoPoke.Add(9, armador.CrearPokemon("Rhydon", 100, "Roca"));
-        CatalogoPoke.Add(10, armador.CrearPokemon("Butterfree", 100, "Bicho"));
-        CatalogoPoke.Add(11, armador.CrearPokemon("Arbok", 100, "Veneno"));
-        CatalogoPoke.Add(12, armador.CrearPokemon("Alakazam", 100, "Psíquico"));
-        CatalogoPoke.Add(13, armador.CrearPokemon("Jynx", 100, "Hielo"));
-        CatalogoPoke.Add(14, armador.CrearPokemon("Dragonite", 100, "Dragón"));
-        CatalogoPoke.Add(15, armador.CrearPokemon("Mawile", 100, "Acero"));
-        CatalogoPoke.Add(16, armador.CrearPokemon("Umbreon", 100, "Siniestro"));
+        CatalogoPoke.Add(1, armador.CrearPokemon("Charizard", 100, TipoPokemon.Fuego,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Fuego)));
+        CatalogoPoke.Add(2, armador.CrearPokemon("Blastoise", 100, TipoPokemon.Agua,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Agua)));
+        CatalogoPoke.Add(3, armador.CrearPokemon("Venusaur", 100, TipoPokemon.Planta,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Planta)));
+        CatalogoPoke.Add(4, armador.CrearPokemon("Pikachu", 90, TipoPokemon.Electrico,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Electrico)));
+        CatalogoPoke.Add(5, armador.CrearPokemon("Gengar", 85, TipoPokemon.Fantasma,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Fantasma)));
+        CatalogoPoke.Add(6, armador.CrearPokemon("Machamp", 95, TipoPokemon.Lucha,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Lucha)));
+        CatalogoPoke.Add(7, armador.CrearPokemon("Pidgeot", 85, TipoPokemon.Volador,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Volador)));
+        CatalogoPoke.Add(8, armador.CrearPokemon("Sandslash", 90, TipoPokemon.Tierra,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Tierra)));
+        CatalogoPoke.Add(9, armador.CrearPokemon("Rhydon", 105, TipoPokemon.Roca,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Roca)));
+        CatalogoPoke.Add(10, armador.CrearPokemon("Butterfree", 80, TipoPokemon.Bicho,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Bicho)));
+        CatalogoPoke.Add(11, armador.CrearPokemon("Arbok", 85, TipoPokemon.Veneno,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Veneno)));
+        CatalogoPoke.Add(12, armador.CrearPokemon("Alakazam", 90, TipoPokemon.Psiquico,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Psiquico)));
+        CatalogoPoke.Add(13, armador.CrearPokemon("Jynx", 85, TipoPokemon.Hielo,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Hielo)));
+        CatalogoPoke.Add(14, armador.CrearPokemon("Dragonite", 100, TipoPokemon.Dragon,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Dragon)));
+        CatalogoPoke.Add(15, armador.CrearPokemon("Mawile", 85, TipoPokemon.Acero,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Acero)));
+        CatalogoPoke.Add(16, armador.CrearPokemon("Umbreon", 90, TipoPokemon.Siniestro,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Siniestro)));
         
     }
 

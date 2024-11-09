@@ -15,8 +15,7 @@ public class IncializacionBatalla
     public static IPokemones pokemonActivoJugador = pokemonesJugador[0];
 
     public static IPokemones pokemonActivoMaquina = pokemonesMaquina[0];
-
-
+    
     public static void LogicaJuego()
     {
         Random random = new Random();
@@ -56,8 +55,7 @@ public class IncializacionBatalla
                 if (opcion == 1)
                 {
                     Console.WriteLine("El jugador ataca.");
-                    // Lógica de ataque del jugador (por ejemplo, restar vida al Pokémon de la máquina)
-                    // Realiza el ataque aquí
+                    SistemaCombate.RealizarAtaqueJugador(pokemonActivoJugador, pokemonActivoMaquina);
                 }
                 if (opcion == 2)
                 {
@@ -105,8 +103,12 @@ public class IncializacionBatalla
 
                 // Lógica de ataque de la máquina (por ejemplo, atacar al jugador)
                 Console.WriteLine("La máquina ataca.");
+
                 // Realiza el ataque de la máquina aquí
                 
+
+
+                SistemaCombate.RealizarAtaqueMaquina(pokemonActivoMaquina, pokemonActivoJugador);
 
 
                 // Verificar si la batalla terminó después de la acción de la máquina
