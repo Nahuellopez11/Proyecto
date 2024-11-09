@@ -19,19 +19,19 @@ public static class CatalogoPokemones
         CatalogoPoke.Add(1, armador.CrearPokemon("Charizard", 100, "Fuego"));
         CatalogoPoke.Add(2, armador.CrearPokemon("Blastoise", 100, "Agua"));
         CatalogoPoke.Add(3, armador.CrearPokemon("Venusaur", 100, "Planta"));
-        CatalogoPoke.Add(4, armador.CrearPokemon("Pikachu", 90, "Eléctrico"));
-        CatalogoPoke.Add(5, armador.CrearPokemon("Gengar", 85, "Fantasma"));
-        CatalogoPoke.Add(6, armador.CrearPokemon("Machamp", 95, "Lucha"));
-        CatalogoPoke.Add(7, armador.CrearPokemon("Pidgeot", 85, "Volador"));
-        CatalogoPoke.Add(8, armador.CrearPokemon("Sandslash", 90, "Tierra"));
-        CatalogoPoke.Add(9, armador.CrearPokemon("Rhydon", 105, "Roca"));
-        CatalogoPoke.Add(10, armador.CrearPokemon("Butterfree", 80, "Bicho"));
-        CatalogoPoke.Add(11, armador.CrearPokemon("Arbok", 85, "Veneno"));
-        CatalogoPoke.Add(12, armador.CrearPokemon("Alakazam", 90, "Psíquico"));
-        CatalogoPoke.Add(13, armador.CrearPokemon("Jynx", 85, "Hielo"));
+        CatalogoPoke.Add(4, armador.CrearPokemon("Pikachu", 100, "Eléctrico"));
+        CatalogoPoke.Add(5, armador.CrearPokemon("Gengar", 100, "Fantasma"));
+        CatalogoPoke.Add(6, armador.CrearPokemon("Machamp", 100, "Lucha"));
+        CatalogoPoke.Add(7, armador.CrearPokemon("Pidgeot", 100, "Volador"));
+        CatalogoPoke.Add(8, armador.CrearPokemon("Sandslash", 100, "Tierra"));
+        CatalogoPoke.Add(9, armador.CrearPokemon("Rhydon", 100, "Roca"));
+        CatalogoPoke.Add(10, armador.CrearPokemon("Butterfree", 100, "Bicho"));
+        CatalogoPoke.Add(11, armador.CrearPokemon("Arbok", 100, "Veneno"));
+        CatalogoPoke.Add(12, armador.CrearPokemon("Alakazam", 100, "Psíquico"));
+        CatalogoPoke.Add(13, armador.CrearPokemon("Jynx", 100, "Hielo"));
         CatalogoPoke.Add(14, armador.CrearPokemon("Dragonite", 100, "Dragón"));
-        CatalogoPoke.Add(15, armador.CrearPokemon("Mawile", 85, "Acero"));
-        CatalogoPoke.Add(16, armador.CrearPokemon("Umbreon", 90, "Siniestro"));
+        CatalogoPoke.Add(15, armador.CrearPokemon("Mawile", 100, "Acero"));
+        CatalogoPoke.Add(16, armador.CrearPokemon("Umbreon", 100, "Siniestro"));
         
     }
 
