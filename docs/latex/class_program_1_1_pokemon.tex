@@ -1,0 +1,116 @@
+\doxysection{Program.\+Pokemon Class Reference}
+\hypertarget{class_program_1_1_pokemon}{}\label{class_program_1_1_pokemon}\index{Program.Pokemon@{Program.Pokemon}}
+
+
+Inheritance diagram for Program.\+Pokemon\+:
+% FIG 0
+
+
+Collaboration diagram for Program.\+Pokemon\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2}\label{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2} 
+{\bfseries Pokemon} (string nombre, int vida, Tipo\+Pokemon tipo)
+\item 
+\Hypertarget{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540}\label{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540} 
+void {\bfseries Recibir\+Daño} (int daño)
+\item 
+\Hypertarget{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d}\label{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d} 
+bool {\bfseries Puede\+Atacar} ()
+\item 
+\Hypertarget{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c}\label{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c} 
+void {\bfseries Aplicar\+Efecto\+Estado} (Estado\+Especial nuevo\+Estado)
+\item 
+\Hypertarget{class_program_1_1_pokemon_acd9e6121406b62e49b66b0bf2086a714}\label{class_program_1_1_pokemon_acd9e6121406b62e49b66b0bf2086a714} 
+void {\bfseries Aplicar\+Efectos\+Fin\+Turno} ()
+\item 
+\Hypertarget{class_program_1_1_pokemon_a032a2e43f395333f969dcafaae8e83d3}\label{class_program_1_1_pokemon_a032a2e43f395333f969dcafaae8e83d3} 
+void {\bfseries Curar\+Estados} ()
+\item 
+\Hypertarget{class_program_1_1_pokemon_a5541fb9df3ecf86cd7f71e7d99e316da}\label{class_program_1_1_pokemon_a5541fb9df3ecf86cd7f71e7d99e316da} 
+override bool {\bfseries Equals} (object obj)
+\item 
+\Hypertarget{class_program_1_1_pokemon_aae0f8e049ba37b7b78eef20383548627}\label{class_program_1_1_pokemon_aae0f8e049ba37b7b78eef20383548627} 
+override int {\bfseries Get\+Hash\+Code} ()
+\item 
+void \mbox{\hyperlink{class_program_1_1_pokemon_abd489405b1e43394247cd4a73f19ceed}{Accept}} (\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}} visitor\+Poke)
+\item 
+\Hypertarget{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e}\label{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e} 
+void {\bfseries Aprender\+Ataque} (\mbox{\hyperlink{class_program_1_1_ataque}{Ataque}} ataque)
+\item 
+\Hypertarget{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db}\label{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db} 
+void {\bfseries Realizar\+Ataque} (int indice\+Ataque, \mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} objetivo)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_program_1_1_pokemon_ad7a4b713bb74344d9554d7f2ba1030d7}{Nombre}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Tipo\+Pokemon \mbox{\hyperlink{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b}{Tipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+double \mbox{\hyperlink{class_program_1_1_pokemon_ab3e9253a2ccae2850ed72691a9c0742a}{Vida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_program_1_1_pokemon_a06ff32dbfad6b43e9ff14ae0133b5f32}\label{class_program_1_1_pokemon_a06ff32dbfad6b43e9ff14ae0133b5f32} 
+int {\bfseries Vida\+Inicial}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_program_1_1_pokemon_a17cb1b460975e21fc9b7070704d5c0d6}\label{class_program_1_1_pokemon_a17cb1b460975e21fc9b7070704d5c0d6} 
+List$<$ \mbox{\hyperlink{class_program_1_1_ataque}{Ataque}} $>$ {\bfseries Ataques\+Disponibles}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_program_1_1_pokemon_a5ecff14ea3079bab0068bbdb35b1576f}\label{class_program_1_1_pokemon_a5ecff14ea3079bab0068bbdb35b1576f} 
+Estado\+Especial {\bfseries Estado\+Actual}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_pokemon_abd489405b1e43394247cd4a73f19ceed}\index{Program.Pokemon@{Program.Pokemon}!Accept@{Accept}}
+\index{Accept@{Accept}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{Accept()}{Accept()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_abd489405b1e43394247cd4a73f19ceed} 
+void Program.\+Pokemon.\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}}}]{visitor\+Poke}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_program_1_1_pokemon_ad7a4b713bb74344d9554d7f2ba1030d7}\index{Program.Pokemon@{Program.Pokemon}!Nombre@{Nombre}}
+\index{Nombre@{Nombre}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{Nombre}{Nombre}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_ad7a4b713bb74344d9554d7f2ba1030d7} 
+string Program.\+Pokemon.\+Nombre\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+
+\Hypertarget{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b}\index{Program.Pokemon@{Program.Pokemon}!Tipo@{Tipo}}
+\index{Tipo@{Tipo}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{Tipo}{Tipo}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b} 
+Tipo\+Pokemon Program.\+Pokemon.\+Tipo\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+
+\Hypertarget{class_program_1_1_pokemon_ab3e9253a2ccae2850ed72691a9c0742a}\index{Program.Pokemon@{Program.Pokemon}!Vida@{Vida}}
+\index{Vida@{Vida}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{Vida}{Vida}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_ab3e9253a2ccae2850ed72691a9c0742a} 
+double Program.\+Pokemon.\+Vida\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Pokemon.\+cs\end{DoxyCompactItemize}
