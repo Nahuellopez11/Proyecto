@@ -1,10 +1,10 @@
-namespace Program;
-
 using System;
 using System.Collections.Generic;
 
-public class IncializacionBatalla
+namespace Program
 {
+    public class IncializacionBatalla
+    {
     // inicializamos los jugadores con sus pokemones
     public static List<IPokemones> pokemonesJugador = ElegirPokemon.DevolverLista(); 
     public static List<IPokemones> pokemonesMaquina = ElegirPokemonMaquina.DevolverLista();
@@ -56,6 +56,7 @@ public class IncializacionBatalla
                 {
                     Console.WriteLine("El jugador ataca.");
                     SistemaCombate.RealizarAtaqueJugador(pokemonActivoJugador, pokemonActivoMaquina);
+                    
                 }
                 if (opcion == 2)
                 {
@@ -87,39 +88,35 @@ public class IncializacionBatalla
 
                 turno = 1; // Cambiar turno a la máquina
             }
-            else
+        else
+        {
+            //turno maquina
+            Console.WriteLine("¡Es el turno de la máquina!");
+            Console.WriteLine($"Los pokemones de la maquina son:{pokemonesMaquina}");
+            if (pokemonActivoMaquina.Vida <= 0) // logica para cambiar de pokemon automatico de la maquina si muere
             {
-                //turno maquina
-                Console.WriteLine("¡Es el turno de la máquina!");
-                if (pokemonActivoMaquina.Vida <= 0) // logica para cambiar de pokemon automatico de la maquina si muere
-                {
-                    pokemonActivoMaquina = CambiarPokemonMaquina.Cambiar(maquina, pokemonActivoMaquina);
-                    turno = 0;
-                }
-
-                // Mostrar información del Pokémon activo de la máquina
-                Console.WriteLine($"El Pokémon de la máquina es: {pokemonActivoMaquina.Nombre}");
-                Console.WriteLine($"Vida actual: {pokemonActivoMaquina.Vida}");
-
-                // Lógica de ataque de la máquina (por ejemplo, atacar al jugador)
-                Console.WriteLine("La máquina ataca.");
-
-                // Realiza el ataque de la máquina aquí
-                
-
-
-                SistemaCombate.RealizarAtaqueMaquina(pokemonActivoMaquina, pokemonActivoJugador);
-
-
-                // Verificar si la batalla terminó después de la acción de la máquina
-                if (VerificarFinBatalla(pokemonesMaquina))
-                {
-                    Console.WriteLine("¡La batalla ha terminado! El jugador ha ganado.");
-                    break; // Termina el juego
-                }
-
-                turno = 0; // Cambiar turno al jugador
+                pokemonActivoMaquina = CambiarPokemonMaquina.Cambiar(maquina, pokemonActivoMaquina);
+                turno = 0;
             }
+
+            // Mostrar información del Pokémon activo de la máquina
+            Console.WriteLine($"El Pokémon de la máquina es: {pokemonActivoMaquina.Nombre}");
+            Console.WriteLine($"Vida actual: {pokemonActivoMaquina.Vida}");
+
+            // Lógica de ataque de la máquina (por ejemplo, atacar al jugador)
+            Console.WriteLine("La máquina ataca.");
+
+            SistemaCombate.RealizarAtaqueMaquina(pokemonActivoMaquina, pokemonActivoJugador);
+            
+            // Verificar si la batalla terminó después de la acción de la máquina
+            if (VerificarFinBatalla(pokemonesMaquina))
+            {
+                Console.WriteLine("¡La batalla ha terminado! El jugador ha ganado.");
+                break; // Termina el juego
+            }
+
+            turno = 0; // Cambiar turno al jugador
+        }
         }
     }
 
@@ -133,5 +130,8 @@ public class IncializacionBatalla
         
         return vidaTotal <= 0;
     }
+}
+
+
 }
 
