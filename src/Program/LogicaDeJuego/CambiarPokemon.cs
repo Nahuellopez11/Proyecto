@@ -20,10 +20,10 @@ public class CambiarPokemon
             Console.WriteLine("0. Volver al menú anterior");
             int seleccion = Convert.ToInt32(Console.ReadLine()) - 1;
 
-            if (seleccion == -1) // Si se selecciona 0, vuelve al menú principal sin cambiar de Pokémon
+            if (seleccion == -1) // si se selecciona 0, vuelve al menú principal sin cambiar de Pokémon
             {
                 Console.WriteLine("Volviendo al menú de acciones...");
-                return pokemonActivo; // Retorna el Pokémon actual sin cambiar
+                return pokemonActivo; // retorna el Pokémon actual sin cambiar
             }
 
             if (seleccion >= 0 && seleccion < jugador.ListaDePokemones.Count)
