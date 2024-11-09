@@ -2,14 +2,25 @@ namespace Program;
 
 public class Maquina : IJugadores
 {
-    public Dictionary<int, IPokemones> Pokemones { get; set; } = new Dictionary<int, IPokemones>();
-    public List<IPokemones> ListaDePokemones { get; set; } = new List<IPokemones>();
-    public IPokemones pokemonActivo { get; set; }
-    
-    public Maquina(List<IPokemones> listaDePokemones)
+
+    public string Nombre { get; private set; }
+    public List<IPokemones> ListaDePokemones { get; private set; }
+
+    public Maquina(string nombre, List<IPokemones> listaDePokemones)
     {
-        this.ListaDePokemones = ListaDePokemones;
+        Nombre = nombre;
+        ListaDePokemones = listaDePokemones;
     }
+    
+    public List<IItem> Items { get; set; } = new List<IItem>
+    {
+        new SuperPocion(),
+        new Revivir(),
+        //aqui se agrega el otro item
+
+    };
+    
+
 
     
 
