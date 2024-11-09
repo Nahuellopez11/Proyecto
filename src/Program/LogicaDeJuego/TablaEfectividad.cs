@@ -2,6 +2,7 @@ namespace Program;
 
 public class TablaEfectividad
 {
+    // Diccionario que guarda la efectividad de los ataques entre tipos de Pokémon
     private static readonly Dictionary<(TipoPokemon, TipoPokemon), double> efectividades = new()
     {
         // Normal
@@ -118,7 +119,7 @@ public class TablaEfectividad
 
 
     };
-
+// Método para obtener la efectividad entre dos tipos de Pokémon
     public static double ObtenerEfectividad(TipoPokemon tipoAtaque, TipoPokemon tipoDefensa)
     {
         if (efectividades.TryGetValue((tipoAtaque, tipoDefensa), out double efectividad))

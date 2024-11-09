@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace Program
 {
+    // Clase responsable de manejar y obtener ataques por tipo de Pokémon
+    // Esta clase usa un diccionario para guardar los ataques disponibles según el tipo de Pokémon
     public static class HabilidadesPorTipo
     {
         private static readonly Dictionary<TipoPokemon, List<Ataque>> AtaquesPorTipo = new()
@@ -144,7 +146,8 @@ namespace Program
                 }
             }
         };
-
+        // Método que devuelve una lista de ataques disponibles para un tipo de Pokémon específico
+        // Si el tipo no tiene ataques registrados, se devuelve una lista vacía
         public static List<IHabilidadesPokemon> ObtenerAtaquesPorTipo(TipoPokemon tipo)
         {
             if (AtaquesPorTipo.TryGetValue(tipo, out var ataques))

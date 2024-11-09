@@ -32,7 +32,7 @@ public class ElegirPokemon
         MostrarEquipoFinal();
     }
 
-
+    // Muestra los Pokémon en el equipo junto con su tipo y vida
     public static void MostrarEquipoFinal()
     {
         Console.WriteLine("\nTu equipo final es:");
@@ -45,7 +45,7 @@ public class ElegirPokemon
         }
     }
 
-
+// Método DevolverLista: devuelve la lista de Pokémon del equipo actual del jugador
     public static List<IPokemones> DevolverLista()
     {
         var equipo = CatalogoPokemones.ObtenerEquipoActual();

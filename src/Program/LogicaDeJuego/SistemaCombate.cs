@@ -66,6 +66,7 @@ namespace Program
 
 
             Console.WriteLine("\nElige un ataque (número):");
+            // Permite al jugador seleccionar un ataque
             if (int.TryParse(Console.ReadLine(), out int ataqueElegido) &&
                 ataqueElegido >= 1 &&
                 ataqueElegido <= pokemonJugador.AtaquesDisponibles.Count)
@@ -89,7 +90,7 @@ namespace Program
                 Console.WriteLine("Ataque inválido. Perdiste tu turno.");
             }
         }
-
+        // Muestra el estado del Pokémon después de cada ataque
         private static void MostrarEstadoPokemon(Pokemon pokemon, string propietario)
         {
             Console.WriteLine($"{propietario} Pokémon: {pokemon.Nombre}");

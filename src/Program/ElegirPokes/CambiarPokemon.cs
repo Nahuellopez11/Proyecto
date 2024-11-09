@@ -2,12 +2,13 @@
 namespace Program;
 
 public class CambiarPokemon
+//lógica para permitir que el jugador cambie su Pokémon activo.
 {
     public static IPokemones Cambiar(Jugador jugador, IPokemones pokemonActivo)
     {
         bool cambioExitoso = false;
         IPokemones nuevoPokemon = pokemonActivo;
-
+        // Ciclo que continúa hasta que el jugador seleccione un Pokémon válido o decida no realizar el cambio.
         while (!cambioExitoso)
         {
             Console.WriteLine("Selecciona un Pokémon para cambiar:");
@@ -25,7 +26,7 @@ public class CambiarPokemon
                 Console.WriteLine("Volviendo al menú de acciones...");
                 return pokemonActivo; // Retorna el Pokémon actual sin cambiar
             }
-
+            // Valida la selección del jugador y verifica que el Pokémon tenga vida
             if (seleccion >= 0 && seleccion < jugador.ListaDePokemones.Count)
             {
                 nuevoPokemon = jugador.ListaDePokemones[seleccion];
