@@ -17,6 +17,4 @@ public enum TipoPokemon
     Roca,
     Fantasma,
     Dragon,
-    Acero,
-    Siniestro
 }
