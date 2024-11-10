@@ -54,6 +54,7 @@ namespace Program
                     Console.WriteLine("1. Ataque");
                     Console.WriteLine("2. Cambiar Pokémon");
                     Console.WriteLine("3. Items");
+                    Console.WriteLine("4. terminar juego");
 
                     int opcion =
                         Convert.ToInt32(Console.ReadLine()); // eleccion del jugador sobre que quiere hacer (1, 2 o 3)
@@ -80,6 +81,11 @@ namespace Program
                     {
                         turno = UtilizacionItem.UsarItem(jugador1, turno); // al principio hice la logica aca
                         // pero no siguiria SRP estaria muy lleno de cosas
+                    }
+                    if (opcion == 4)
+                    {
+                        Console.WriteLine("Terminando el juego...");
+                        Environment.Exit(0);
                     }
                     else
                     {
