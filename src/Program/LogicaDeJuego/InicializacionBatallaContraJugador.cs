@@ -3,10 +3,10 @@ namespace Program
     public class InicializacionBatallaContraJugador
     {
         public static Jugador jugador1 = new Jugador(ClonandoListaJugador1.ClonarJugador1());
-        public static List<IPokemones> pokemonesJugador2 = ElegirPokemon.DevolverListajugador2();
+        public static List<IPokemon> pokemonesJugador2 = ElegirPokemon.DevolverListajugador2();
         public static Jugador jugador2 = new Jugador(pokemonesJugador2);
-        public static IPokemones pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
-        public static IPokemones pokemonActivoJugador2 = pokemonesJugador2[0];
+        public static IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
+        public static IPokemon pokemonActivoJugador2 = pokemonesJugador2[0];
 
         public static void LogicaJuego()
         {
@@ -173,7 +173,7 @@ namespace Program
         }
     
 
-    public static bool VerificarFinBatalla(List<IPokemones> listaPokemones)
+    public static bool VerificarFinBatalla(List<IPokemon> listaPokemones)
         {
             double vidaTotal = 0;
             foreach (var pokemon in listaPokemones)

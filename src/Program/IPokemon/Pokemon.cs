@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 // ya no es "pokemon1" yippeeee !
 namespace Program
 { 
-    public class Pokemon : IPokemones
+    public class Pokemon : IPokemon
     {
         public string Nombre { get; private set; }
         public TipoPokemon Tipo { get; private set; }

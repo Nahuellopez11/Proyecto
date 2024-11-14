@@ -3,7 +3,7 @@ namespace Program;
 public static class ListaTestMaquina
 {
     // Lista estática de Pokémon seleccionados para la máquina
-    public static List<IPokemones> ListaPokeMaquina { get; private set; } = new List<IPokemones>();
+    public static List<IPokemon> ListaPokeMaquina { get; private set; } = new List<IPokemon>();
 
     // Constructor estático para inicializar la lista
     static ListaTestMaquina()
@@ -15,8 +15,8 @@ public static class ListaTestMaquina
     public static void GenerarEquipoMaquina()
     {
         // Utilizar la lógica de ElegirPokemonMaquina para seleccionar el equipo
-        ElegirPokemonMaquina.SeleccionarEquipo();
-        ListaPokeMaquina = ElegirPokemonMaquina.DevolverLista();
+        ElegirPokemon.SeleccionarEquipoMaquina();
+        ListaPokeMaquina = ElegirPokemon.DevolverListaMaquina();
     }
 
     // Método para mostrar la lista de Pokémon de la máquina

@@ -4,7 +4,7 @@ namespace Program
     {
         private static Random random = new Random(); // Movido a nivel de clase
 
-        public static void RealizarAtaqueMaquina(IPokemones pokemonActivoMaquina, IPokemones pokemonActivoJugador)
+        public static void RealizarAtaqueMaquina(IPokemon pokemonActivoMaquina, IPokemon pokemonActivoJugador)
         {
             Pokemon pokemonMaquina = pokemonActivoMaquina as Pokemon;
             Pokemon pokemonJugador = pokemonActivoJugador as Pokemon;
@@ -38,7 +38,7 @@ namespace Program
             MostrarEstadoPokemon(pokemonJugador, "Tu");
         }
 
-        public static void RealizarAtaqueJugador(IPokemones pokemonActivoJugador, IPokemones pokemonActivoMaquina)
+        public static void RealizarAtaqueJugador(IPokemon pokemonActivoJugador, IPokemon pokemonActivoMaquina)
         {
             Pokemon pokemonJugador = pokemonActivoJugador as Pokemon;
             Pokemon pokemonEnemigo = pokemonActivoMaquina as Pokemon;

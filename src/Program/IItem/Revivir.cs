@@ -8,7 +8,7 @@ public class Revivir : IItem
     public int UsosRestantes { get; set; } = 1;
 
     // Revive al Pokémon si está debilitado (vida = 0) y tiene usos restantes
-    public void Usar(IPokemones pokemon)
+    public void Usar(IPokemon pokemon)
     {
         if (UsosRestantes > 0 && pokemon.Vida == 0)
         {

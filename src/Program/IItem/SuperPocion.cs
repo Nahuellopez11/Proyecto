@@ -7,7 +7,7 @@ public class SuperPocion : IItem
     public int UsosRestantes { get; set; } = 4;
 
     // La Súper poción cura 70 puntos de vida del Pokémon sin exceder el máximo de 100 de vida
-    public void Usar(IPokemones pokemon)
+    public void Usar(IPokemon pokemon)
     {
         if (UsosRestantes > 0)
         {

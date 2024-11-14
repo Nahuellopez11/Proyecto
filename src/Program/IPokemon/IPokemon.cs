@@ -1,6 +1,6 @@
 namespace Program;
 
-public interface IPokemones
+public interface IPokemon
 {
     string Nombre { get; }
     TipoPokemon Tipo { get; }

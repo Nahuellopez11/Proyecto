@@ -2,6 +2,8 @@ namespace Program;
 
 public class ElegirPokemon
 {
+    private static Random random = new Random();
+    private static List<IPokemon> equipoMaquina = new List<IPokemon>();
     public static void SeleccionarEquipo()
     {
         Console.WriteLine("¡Bienvenido al Selector de Equipo Pokémon!");
@@ -48,21 +50,39 @@ public class ElegirPokemon
     }
 
 // Método DevolverLista: devuelve la lista de Pokémon del equipo actual del jugador
-    public static List<IPokemones> DevolverListajugador1()
+    public static List<IPokemon> DevolverListajugador1()
     {
-        List<IPokemones> jugador1lista ;
+        List<IPokemon> jugador1lista ;
         var equipo = CatalogoPokemones.ObtenerEquipoActual();
         jugador1lista = equipo;
         return jugador1lista;
     }
-    
-    public static List<IPokemones> DevolverListajugador2()
-    {
-        List<IPokemones> jugador2lista ;
-        var equipo = CatalogoPokemones.ObtenerEquipoActual();
-        jugador2lista = equipo;
-        return jugador2lista;
+    // SELECCIONAR EQUIPO PARA MÁQUINA
+    public static void SeleccionarEquipoMaquina()
+    {// La clase depende de CatalogoPokemones y de la interfaz IPokemones, lo que permite que esta clase
+        // sea flexible y reutilizable. No tiene acoplamientos innecesarios con otras clases.
+        equipoMaquina.Clear();
+
+        while (equipoMaquina.Count < 6)
+        {
+            // Generar un número aleatorio entre 1 y 16
+            int seleccion = random.Next(1, 17);
+
+            // Obtener el pokemon correspondiente al índice generado
+            if (CatalogoPokemones.CatalogoPoke.TryGetValue(seleccion, out IPokemon pokemonSeleccionado))
+            {
+                // Verificar si el pokemon ya está en el equipo de la máquina
+                if (!equipoMaquina.Any(p => p.Nombre == pokemonSeleccionado.Nombre))
+                {
+                    equipoMaquina.Add(pokemonSeleccionado);
+                }
+            }
+        }
     }
 
+    public static List<IPokemon> DevolverListaMaquina()
+    {
+        return equipoMaquina;
+    }
 
 }

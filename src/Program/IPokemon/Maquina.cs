@@ -1,12 +1,12 @@
 namespace Program;
 
-public class Maquina : IJugadores
+public class Maquina : IJugador
 {
 
     public string Nombre { get; private set; }
-    public List<IPokemones> ListaDePokemones { get;  set; }
+    public List<IPokemon> ListaDePokemones { get;  set; }
 
-    public Maquina(string nombre, List<IPokemones> listaDePokemones)
+    public Maquina(string nombre, List<IPokemon> listaDePokemones)
     {
         Nombre = nombre;
         ListaDePokemones = listaDePokemones;

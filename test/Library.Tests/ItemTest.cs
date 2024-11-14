@@ -5,7 +5,7 @@ namespace Library.Tests
 {
     public class ItemTests
     {
-        private IPokemones pokemon;
+        private IPokemon pokemon;
         private Revivir revivir;
         private SuperPocion superPocion;
 

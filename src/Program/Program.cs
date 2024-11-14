@@ -15,7 +15,7 @@ class Program
         if (opcion == 1)
         {
             ElegirPokemon.SeleccionarEquipo();
-            ElegirPokemonMaquina.SeleccionarEquipo();
+            ElegirPokemon.SeleccionarEquipoMaquina();
             IncializacionBatallaContraMaquina.LogicaJuego();
 
         }
@@ -23,7 +23,6 @@ class Program
         {
             Console.WriteLine("El Jugador1 elige equipo"); ;
             ElegirPokemon.SeleccionarEquipo();
-            ClonandoListaJugador1.ClonarJugador1();
             Console.WriteLine("El Jugador2 elige equipo");
             ElegirPokemon.SeleccionarEquipo();
             InicializacionBatallaContraJugador.LogicaJuego();

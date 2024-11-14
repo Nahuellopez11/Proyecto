@@ -3,11 +3,11 @@ namespace Program
     public class SeleccionPokesVisitorPoke : IVisitorPoke
     {
         public bool FueElegido { get; private set; }
-        public List<IPokemones> Equipo { get; private set; }
+        public List<IPokemon> Equipo { get; private set; }
 
         public SeleccionPokesVisitorPoke()
         {
-            Equipo = new List<IPokemones>();
+            Equipo = new List<IPokemon>();
             FueElegido = false;
         }
 
@@ -38,7 +38,7 @@ namespace Program
         }
 
 
-        public void Visit(IPokemones pokemon)
+        public void Visit(IPokemon pokemon)
         {
         }
     }

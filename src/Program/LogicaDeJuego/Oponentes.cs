@@ -7,9 +7,9 @@ public static class Oponentes
     {
         return new List<Maquina>
         {
-            new Maquina("Red", ElegirPokemonMaquina.DevolverLista()),
-            new Maquina("Gary", ElegirPokemonMaquina.DevolverLista()),
-            new Maquina("Hilbert", ElegirPokemonMaquina.DevolverLista())
+            new Maquina("Red", ElegirPokemon.DevolverListaMaquina()),
+            new Maquina("Gary", ElegirPokemon.DevolverListaMaquina()),
+            new Maquina("Hilbert", ElegirPokemon.DevolverListaMaquina())
         };
     }
 

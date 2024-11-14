@@ -1,8 +1,8 @@
 namespace Program;
 
-public class Jugador : IJugadores
+public class Jugador : IJugador
 {
-    public List<IPokemones> ListaDePokemones { get; set; } = new List<IPokemones>();
+    public List<IPokemon> ListaDePokemones { get; set; } = new List<IPokemon>();
 
     public List<IItem> Items { get; set; } = new List<IItem>
     {
@@ -12,7 +12,7 @@ public class Jugador : IJugadores
 
     };
 
-    public Jugador(List<IPokemones> listaDePokemones)
+    public Jugador(List<IPokemon> listaDePokemones)
     {
         this.ListaDePokemones = listaDePokemones;
     }
