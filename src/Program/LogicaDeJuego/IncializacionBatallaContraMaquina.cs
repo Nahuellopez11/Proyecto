@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace Program
 {
-    public class IncializacionBatalla
+    public static class IncializacionBatallaContraMaquina
     {
         // inicializamos los jugadores con sus pokemones
-        public static List<IPokemones> pokemonesJugador = ElegirPokemon.DevolverLista();
+        public static List<IPokemones> pokemonesJugador = ElegirPokemon.DevolverListajugador1();
         public static Jugador jugador1 = new Jugador(pokemonesJugador);
 
         // Declaramos la máquina seleccionada
@@ -107,8 +107,7 @@ namespace Program
                     //turno maquina
                     Console.WriteLine("¡Es el turno de la máquina!");
                     Console.WriteLine($"Los pokemones de la maquina son:{pokemonesMaquina}");
-                    if (pokemonActivoMaquina.Vida <=
-                        0) // logica para cambiar de pokemon automatico de la maquina si muere
+                    if (pokemonActivoMaquina.Vida <= 0) // logica para cambiar de pokemon automatico de la maquina si muere
                     {
                         pokemonActivoMaquina = CambiarPokemonMaquina.Cambiar(maquinaSeleccionada, pokemonActivoMaquina);
                         turno = 0;
