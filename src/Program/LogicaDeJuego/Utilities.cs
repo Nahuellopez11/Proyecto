@@ -49,7 +49,9 @@ public static class Utilities
 
         return nuevoPokemon;
     }
-
+    
+    
+    // CAMBIAR POKEMON MAQUINA
     public static IPokemon CambiarPokemonMaquina(Maquina maquina, IPokemon pokemonActivoMaquina)
     {
         // Recorre la lista de Pokemones de la máquina

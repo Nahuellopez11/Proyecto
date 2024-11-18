@@ -19,7 +19,7 @@ namespace Program
             Console.WriteLine($"\nLa máquina ataca con {pokemonMaquina.Nombre}");
             Console.WriteLine($"Ataques disponibles: {pokemonMaquina.AtaquesDisponibles.Count}");
 
-            int ataqueElegido = random.Next(0, pokemonMaquina.AtaquesDisponibles.Count);
+            int ataqueElegido = random.Next(0, pokemonMaquina.AtaquesDisponibles.Count -1);
             Ataque ataqueSeleccionado = pokemonMaquina.AtaquesDisponibles[ataqueElegido];
 
             // Debug: Imprimir información del ataque seleccionado

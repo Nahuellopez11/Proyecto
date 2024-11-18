@@ -1,9 +1,10 @@
+/*
 namespace Program
 {
     public class InicializacionBatallaContraJugador
     {
         public static Jugador jugador1 = new Jugador(ClonandoListaJugador1.ClonarJugador1());
-        public static List<IPokemon> pokemonesJugador2 = ElegirPokemon.DevolverListajugador2();
+        public static List<IPokemon> pokemonesJugador2 = ElegirPokemon.DevolverListajugador1();
         public static Jugador jugador2 = new Jugador(pokemonesJugador2);
         public static IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
         public static IPokemon pokemonActivoJugador2 = pokemonesJugador2[0];
@@ -186,3 +187,4 @@ namespace Program
     }
 }
 
+*/

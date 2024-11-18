@@ -25,7 +25,7 @@ class Program
             ElegirPokemon.SeleccionarEquipo();
             Console.WriteLine("El Jugador2 elige equipo");
             ElegirPokemon.SeleccionarEquipo();
-            InicializacionBatallaContraJugador.LogicaJuego();
+
         }
         
         
