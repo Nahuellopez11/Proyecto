@@ -1,4 +1,3 @@
-/*
 namespace Program
 {
     public class InicializacionBatallaContraJugador
@@ -22,7 +21,7 @@ namespace Program
                     {
                         Console.WriteLine($"{pokemonActivoJugador1.Nombre} ha muerto.");
                         {
-                            var nuevoPokemon = CambiarPokemon.Cambiar(jugador1, pokemonActivoJugador1);
+                            var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador1, pokemonActivoJugador1);
 
                             if (nuevoPokemon != pokemonActivoJugador1) // cambia de turno solo si el pokemon cambio
                             {
@@ -57,7 +56,7 @@ namespace Program
 
                     if (opcion == 2)
                     {
-                        var nuevoPokemon = CambiarPokemon.Cambiar(jugador1, pokemonActivoJugador1);
+                        var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador1, pokemonActivoJugador1);
 
                         if (nuevoPokemon != pokemonActivoJugador1) // cambia de turno solo si el pokemon cambio
                         {
@@ -68,7 +67,7 @@ namespace Program
 
                     if (opcion == 3)
                     {
-                        turno = UtilizacionItem.UsarItem(jugador1, turno); // al principio hice la logica aca
+                        turno = Utilities.UsarItem(jugador1, turno); // al principio hice la logica aca
                         // pero no siguiria SRP estaria muy lleno de cosas
                     }
 
@@ -84,7 +83,7 @@ namespace Program
                     }
 
                     // Verificar si la batalla terminó después de la acción del jugador
-                    if (VerificarFinBatalla(jugador1.ListaDePokemones))
+                    if (Utilities.VerificarFinBatalla(jugador1.ListaDePokemones))
                     {
                         Console.WriteLine("¡La batalla ha terminado! El jugador2 ha ganado.");
                         break; // Termina el juego
@@ -100,7 +99,7 @@ namespace Program
                     {
                         Console.WriteLine($"{pokemonActivoJugador2.Nombre} ha muerto.");
                         {
-                            var nuevoPokemon = CambiarPokemon.Cambiar(jugador2, pokemonActivoJugador2);
+                            var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador2, pokemonActivoJugador2);
 
                             if (nuevoPokemon != pokemonActivoJugador2) // cambia de turno solo si el pokemon cambio
                             {
@@ -135,7 +134,7 @@ namespace Program
 
                     if (opcion == 2)
                     {
-                        var nuevoPokemon = CambiarPokemon.Cambiar(jugador2, pokemonActivoJugador2);
+                        var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador2, pokemonActivoJugador2);
 
                         if (nuevoPokemon != pokemonActivoJugador2) // cambia de turno solo si el pokemon cambio
                         {
@@ -146,7 +145,7 @@ namespace Program
 
                     if (opcion == 3)
                     {
-                        turno = UtilizacionItem.UsarItem(jugador2, turno); // al principio hice la logica aca
+                        turno = Utilities.UsarItem(jugador2, turno); // al principio hice la logica aca
                         // pero no siguiria SRP estaria muy lleno de cosas
                     }
 
@@ -162,7 +161,7 @@ namespace Program
                     }
 
                     // Verificar si la batalla terminó después de la acción del jugador
-                    if (VerificarFinBatalla(pokemonesJugador2))
+                    if (Utilities.VerificarFinBatalla(pokemonesJugador2))
                     {
                         Console.WriteLine("¡La batalla ha terminado! el jugador1 ha ganado.");
                         break; // Termina el juego
@@ -172,19 +171,8 @@ namespace Program
             }
 
         }
-    
-
-    public static bool VerificarFinBatalla(List<IPokemon> listaPokemones)
-        {
-            double vidaTotal = 0;
-            foreach (var pokemon in listaPokemones)
-            {
-                vidaTotal += pokemon.Vida;
-            }
-
-            return vidaTotal <= 0;
-        }
+        
     }
+    
 }
 
-*/
