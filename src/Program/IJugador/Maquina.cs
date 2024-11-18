@@ -2,9 +2,9 @@ namespace Program;
 
 public class Maquina : IJugador
 {
-
     public string Nombre { get; private set; }
     public List<IPokemon> ListaDePokemones { get;  set; }
+    public int Id { get; set; }
 
     public Maquina(string nombre, List<IPokemon> listaDePokemones)
     {
