@@ -6,7 +6,7 @@ using Ucu.Poo.DiscordBot.Services;
 
 namespace Program;
 
-class Program
+class BotOn
 {
     static void Main()
     {
@@ -31,7 +31,7 @@ class Program
             Console.WriteLine("El Jugador2 elige equipo");
             ElegirPokemon.SeleccionarEquipo();
 
-        }*/
+        } git */
         
         
  ;
@@ -43,11 +43,11 @@ class Program
     }
     private static void DemoFacade()
     {
-        Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("player"));
-        Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("opponent"));
-        Console.WriteLine(Facade.Instance.GetAllTrainersWaiting());
-        Console.WriteLine(Facade.Instance.StartBattle("player", "opponent"));
-        Console.WriteLine(Facade.Instance.GetAllTrainersWaiting());
+        Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("player"));
+        Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("opponent"));
+        Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
+        Console.WriteLine(ConectorDeClases.Instance.StartBattle("player", "opponent"));
+        Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
     }
 
     private static void DemoBot()
