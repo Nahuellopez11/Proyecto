@@ -6,8 +6,7 @@ using Ucu.Poo.DiscordBot.Services;
 
 namespace Program;
 
-class Program
-
+class BotOn
 {
     
     public ElegirPokemon elegirPokemon = new ElegirPokemon();
@@ -25,15 +24,23 @@ class Program
         inicializarJugador.LogicaJuego();
     }
 
-    
-
+        }*/
+        
+        
+ ;
+        // FALTA LOGICA ATAQUE (CON ATAQUES ESPECIALES Y TIPOS), ITEMS, CAMBIAR_POKEMON
+        
+        
+        
+        
+    }
     private static void DemoFacade()
     {
-        Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("player"));
-        Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("opponent"));
-        Console.WriteLine(Facade.Instance.GetAllTrainersWaiting());
-        Console.WriteLine(Facade.Instance.StartBattle("player", "opponent"));
-        Console.WriteLine(Facade.Instance.GetAllTrainersWaiting());
+        Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("player"));
+        Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("opponent"));
+        Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
+        Console.WriteLine(ConectorDeClases.Instance.StartBattle("player", "opponent"));
+        Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
     }
 
     private static void DemoBot()

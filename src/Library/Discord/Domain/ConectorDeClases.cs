@@ -6,13 +6,13 @@ namespace Ucu.Poo.DiscordBot.Domain;
 /// usan esta <see cref="Facade"/> pero no conocen el resto de las clases del
 /// dominio. Esta clase es un singleton.
 /// </summary>
-public class Facade
+public class ConectorDeClases
 {
-    private static Facade? _instance;
+    private static ConectorDeClases? _instance;
 
     // Este constructor privado impide que otras clases puedan crear instancias
     // de esta.
-    private Facade()
+    private ConectorDeClases()
     {
         this.WaitingList = new WaitingList();
         this.BattlesList = new BattlesList();
@@ -21,13 +21,13 @@ public class Facade
     /// <summary>
     /// Obtiene la única instancia de la clase <see cref="Facade"/>.
     /// </summary>
-    public static Facade Instance
+    public static ConectorDeClases Instance
     {
         get
         {
             if (_instance == null)
             {
-                _instance = new Facade();
+                _instance = new ConectorDeClases();
             }
 
             return _instance;
