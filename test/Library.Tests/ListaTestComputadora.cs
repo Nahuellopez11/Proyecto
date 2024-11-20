@@ -1,3 +1,4 @@
+/*
 namespace Program;
 
 public static class ListaTestMaquina
@@ -29,3 +30,4 @@ public static class ListaTestMaquina
         }
     }
 }
+*/

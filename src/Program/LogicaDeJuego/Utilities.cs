@@ -51,24 +51,6 @@ public static class Utilities
     }
     
     
-    // CAMBIAR POKEMON MAQUINA
-    public static IPokemon CambiarPokemonMaquina(Maquina maquina, IPokemon pokemonActivoMaquina)
-    {
-        // Recorre la lista de Pokemones de la máquina
-        foreach (var pokemon in maquina.ListaDePokemones)
-        {
-
-            if (pokemon.Vida > 0) // busca los pokemones con vida en la lista de pokemones maquina
-            {
-                Console.WriteLine($"La máquina ha cambiado a {pokemon.Nombre}.");
-                return pokemon; // retorna el primer pokemon que tenga vida
-            }
-        }
-
-        return pokemonActivoMaquina;
-    }
-
-
 
 
 
@@ -136,20 +118,7 @@ public static class Utilities
         return turno; // devuelve el turno
     }
 
-    public static bool UsarItemMaquina(Maquina maquina, IPokemon pokemonActivoMaquina)
-    {
-        foreach (var item in maquina.Items)
-        {
-            if (item.Nombre == "Súper Poción" && item.UsosRestantes > 0)
-            {
-                item.Usar(pokemonActivoMaquina);
-                Console.WriteLine("La máquina usó una Súper Poción.");
-                return true;
-            }
-        }
 
-        return false;
-    }
     
     // VERIFICACION FIN DE BATALLA
     public static bool VerificarFinBatalla(List<IPokemon> listaPokemones)

@@ -2,22 +2,23 @@ namespace Program;
 
 public class ElegirPokemon
 {
-    private static Random random = new Random();
-    private static List<IPokemon> equipoMaquina = new List<IPokemon>();
-    public static void SeleccionarEquipo()
+    public CatalogoPokemones catalogo = new CatalogoPokemones();
+    public   Random random = new Random();
+
+    public void SeleccionarEquipo()
     {
         Console.WriteLine("¡Bienvenido al Selector de Equipo Pokémon!");
         Console.WriteLine("Selecciona 6 Pokémon para formar tu equipo.");
 
-        while (CatalogoPokemones.ObtenerEquipoActual().Count < 6)
+        while (catalogo.ObtenerEquipoActual().Count < 6)
         {
-            CatalogoPokemones.MostrarCatalogo();
+            catalogo.MostrarCatalogo();
             Console.WriteLine(
-                $"\nSelecciona el número del pokémon que deseas añadir a tu equipo ({CatalogoPokemones.ObtenerEquipoActual().Count}/6):");
+                $"\nSelecciona el número del pokémon que deseas añadir a tu equipo ({catalogo.ObtenerEquipoActual().Count}/6):");
 
             if (int.TryParse(Console.ReadLine(), out int seleccion))
             {
-                bool seleccionado = CatalogoPokemones.SeleccionarPokemon(seleccion);
+                bool seleccionado = catalogo.SeleccionarPokemon(seleccion);
                 if (!seleccionado)
                 {
                     Console.WriteLine("Pokémon no seleccionado. Intenta de nuevo.");
@@ -29,18 +30,50 @@ public class ElegirPokemon
             }
 
             Console.WriteLine(
-                $"Actualmente tienes {CatalogoPokemones.ObtenerEquipoActual().Count} Pokémon en tu equipo.");
+                $"Actualmente tienes {catalogo.ObtenerEquipoActual().Count} Pokémon en tu equipo.");
         }
 
         Console.WriteLine("\n¡Tu equipo está completo!");
         MostrarEquipoFinal();
     }
 
+    public  void SeleccionarEquipo2()
+    {
+        Console.WriteLine("¡Bienvenido al Selector de Equipo Pokémon!");
+        Console.WriteLine("Selecciona 6 Pokémon para formar tu equipo.");
+
+        while (catalogo.ObtenerEquipoActual2().Count < 6)
+        {
+            catalogo.MostrarCatalogo();
+            Console.WriteLine(
+                $"\nSelecciona el número del pokémon que deseas añadir a tu equipo ({catalogo.ObtenerEquipoActual2().Count}/6):");
+
+            if (int.TryParse(Console.ReadLine(), out int seleccion))
+            {
+                bool seleccionado = catalogo.SeleccionarPokemon2(seleccion);
+                if (!seleccionado)
+                {
+                    Console.WriteLine("Pokémon no seleccionado. Intenta de nuevo.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Por favor, ingresa un número válido.");
+            }
+
+            Console.WriteLine(
+                $"Actualmente tienes {catalogo.ObtenerEquipoActual2().Count} Pokémon en tu equipo.");
+        }
+
+        Console.WriteLine("\n¡Tu equipo está completo!");
+        MostrarEquipoFinal2();
+    }
+    
     // Muestra los Pokémon en el equipo junto con su tipo y vida
-    public static void MostrarEquipoFinal()
+    public  void MostrarEquipoFinal()
     {
         Console.WriteLine("\nTu equipo final es:");
-        var equipo = CatalogoPokemones.ObtenerEquipoActual();
+        var equipo = catalogo.ObtenerEquipoActual();
         Console.WriteLine($"Tienes {equipo.Count} Pokémon en tu equipo."); // verificar pokemones en equipo
 
         for (int i = 0; i < equipo.Count; i++)
@@ -48,41 +81,36 @@ public class ElegirPokemon
             Console.WriteLine($"{i + 1}. {equipo[i].Nombre} - Tipo: {equipo[i].Tipo} - Vida: {equipo[i].Vida}");
         }
     }
-
-// Método DevolverLista: devuelve la lista de Pokémon del equipo actual del jugador
-    public static List<IPokemon> DevolverListajugador1()
+    
+    public  void MostrarEquipoFinal2()
     {
-        List<IPokemon> jugador1lista ;
-        var equipo = CatalogoPokemones.ObtenerEquipoActual();
-        jugador1lista = equipo;
-        return jugador1lista;
-    }
-    // SELECCIONAR EQUIPO PARA MÁQUINA
-    public static void SeleccionarEquipoMaquina()
-    {// La clase depende de CatalogoPokemones y de la interfaz IPokemones, lo que permite que esta clase
-        // sea flexible y reutilizable. No tiene acoplamientos innecesarios con otras clases.
-        equipoMaquina.Clear();
+        Console.WriteLine("\nTu equipo final es:");
+        var equipo2 = catalogo.ObtenerEquipoActual2();
+        Console.WriteLine($"Tienes {equipo2.Count} Pokémon en tu equipo."); // verificar pokemones en equipo
 
-        while (equipoMaquina.Count < 6)
+        for (int i = 0; i < equipo2.Count; i++)
         {
-            // Generar un número aleatorio entre 1 y 16
-            int seleccion = random.Next(1, 17);
-
-            // Obtener el pokemon correspondiente al índice generado
-            if (CatalogoPokemones.CatalogoPoke.TryGetValue(seleccion, out IPokemon pokemonSeleccionado))
-            {
-                // Verificar si el pokemon ya está en el equipo de la máquina
-                if (!equipoMaquina.Any(p => p.Nombre == pokemonSeleccionado.Nombre))
-                {
-                    equipoMaquina.Add(pokemonSeleccionado);
-                }
-            }
+            Console.WriteLine($"{i + 1}. {equipo2[i].Nombre} - Tipo: {equipo2[i].Tipo} - Vida: {equipo2[i].Vida}");
         }
     }
 
-    public static List<IPokemon> DevolverListaMaquina()
+// Método DevolverLista: devuelve la lista de Pokémon del equipo actual del jugador
+    public  List<IPokemon> DevolverListajugador1()
     {
-        return equipoMaquina;
+
+        var equipo = catalogo.ObtenerEquipoActual();
+
+        return equipo;
     }
+    public  List<IPokemon> DevolverListajugador2()
+    {
+
+        var equipo2 = catalogo.ObtenerEquipoActual2();
+
+        return equipo2;
+    }
+    // SELECCIONAR EQUIPO PARA MÁQUINA
+
+
 
 }

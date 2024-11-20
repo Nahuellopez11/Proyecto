@@ -3,36 +3,27 @@ using System.Collections.Generic;
 
 namespace Program;
 
+using System;
+
+using System;
+
 class Program
 {
-    static void Main()
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Escoge una opción");
-        Console.WriteLine("1 - Jugar contra máquina");
-        Console.WriteLine("2 - Jugar contra jugador");
-        int opcion=Convert.ToInt32(Console.ReadLine());
+        // Crear la instancia para elegir los Pokémon
+        ElegirPokemon elegirPokemon = new ElegirPokemon();
 
-        if (opcion == 1)
-        {
-            ElegirPokemon.SeleccionarEquipo();
-            ElegirPokemon.SeleccionarEquipoMaquina();
-            IncializacionBatallaContraMaquina.LogicaJuego();
+        Console.WriteLine("Jugador 1, selecciona tu equipo:");
+        elegirPokemon.SeleccionarEquipo();
+        Console.WriteLine("Jugador 2, selecciona tu equipo:");
+        elegirPokemon.SeleccionarEquipo2();
 
-        }
-        else
-        {
-            Console.WriteLine("El Jugador1 elige equipo"); ;
-            ElegirPokemon.SeleccionarEquipo();
-            Console.WriteLine("El Jugador2 elige equipo");
-            ElegirPokemon.SeleccionarEquipo();
-
-        }
-        
-        
- ;
-        // FALTA LOGICA ATAQUE (CON ATAQUES ESPECIALES Y TIPOS), ITEMS, CAMBIAR_POKEMON
-        
-        
+        // Lógica de la batalla entre jugadores
+        InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador(elegirPokemon);
+        inicializarJugador.LogicaJuego();
     }
 }
+
+
 
