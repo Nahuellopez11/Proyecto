@@ -1,15 +1,47 @@
+using Program;
 namespace Program
 {
   /*  public class InicializacionBatallaContraJugador
     {
-        public static Jugador jugador1 = new Jugador(ClonandoListaJugador1.ClonarJugador1());
-        public static List<IPokemon> pokemonesJugador2 = ElegirPokemon.DevolverListajugador1();
-        public static Jugador jugador2 = new Jugador(pokemonesJugador2);
-        public static IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
-        public static IPokemon pokemonActivoJugador2 = pokemonesJugador2[0];
-
-        public static void LogicaJuego()
+        private Jugador jugador1;
+        private Jugador jugador2;
+    
+        public InicializacionBatallaContraJugador(ElegirPokemon elegirPokemon)
         {
+            if (elegirPokemon == null)
+            {
+                throw new ArgumentNullException(nameof(elegirPokemon), "El objeto ElegirPokemon no puede ser null.");
+            }
+
+            // Crear los jugadores
+            jugador1 = new Jugador(elegirPokemon.DevolverListajugador1());
+            jugador2 = new Jugador(elegirPokemon.DevolverListajugador2());
+
+            // Asignar los equipos
+            jugador1.ListaDePokemones = elegirPokemon.DevolverListajugador1();
+            jugador2.ListaDePokemones = elegirPokemon.DevolverListajugador2();
+
+            // Verificar que los equipos estén completos
+            if (jugador1.ListaDePokemones == null || jugador1.ListaDePokemones.Count == 0)
+            {
+                throw new InvalidOperationException("El equipo del Jugador 1 está vacío.");
+            }
+
+            if (jugador2.ListaDePokemones == null || jugador2.ListaDePokemones.Count == 0)
+            {
+                throw new InvalidOperationException("El equipo del Jugador 2 está vacío.");
+            }
+
+            // Elegir los primeros Pokémon activos de ambos jugadores
+
+
+        }
+        
+
+        public  void LogicaJuego()
+        {
+            IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
+            IPokemon pokemonActivoJugador2 = jugador2.ListaDePokemones[0];
             Random random = new Random();
             int turno = random.Next(0, 2); // random int entre 0 y 1; 0 = jugador, 1 = jugador
 
@@ -161,7 +193,7 @@ namespace Program
                     }
 
                     // Verificar si la batalla terminó después de la acción del jugador
-                    if (Utilities.VerificarFinBatalla(pokemonesJugador2))
+                    if (Utilities.VerificarFinBatalla(jugador2.ListaDePokemones))
                     {
                         Console.WriteLine("¡La batalla ha terminado! el jugador1 ha ganado.");
                         break; // Termina el juego

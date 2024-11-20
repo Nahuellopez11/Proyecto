@@ -17,6 +17,13 @@ public class Jugador : IJugador
     {
         this.ListaDePokemones = listaDePokemones;
     }
+
+    public IPokemon ElegirPrimerPokemon()
+    {
+
+        return ListaDePokemones[0];
+    }
+
 }
 
 
