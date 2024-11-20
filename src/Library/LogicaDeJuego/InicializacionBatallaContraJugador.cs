@@ -1,7 +1,7 @@
 using Program;
 namespace Program
 {
-  /*  public class InicializacionBatallaContraJugador
+    public class InicializacionBatallaContraJugador
     {
         private Jugador jugador1;
         private Jugador jugador2;
@@ -205,6 +205,6 @@ namespace Program
         }
         
     }
-    */
+    
 }
 

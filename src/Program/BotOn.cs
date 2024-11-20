@@ -8,30 +8,23 @@ namespace Program;
 
 class BotOn
 {
-    static void Main()
+    
+    public ElegirPokemon elegirPokemon = new ElegirPokemon();
+
+    public static void Main(string[] args)
     {
         DemoBot();
-        /*Console.WriteLine("Escoge una opción");
-        Console.WriteLine("1 - Jugar contra máquina");
-        Console.WriteLine("2 - Jugar contra jugador");
-        int opcion=Convert.ToInt32(Console.ReadLine());
-        
+        ElegirPokemon elegirPokemon = new ElegirPokemon();
+        Console.WriteLine("Jugador 1, selecciona tu equipo:");
+        elegirPokemon.SeleccionarEquipo();
+        Console.WriteLine("Jugador 2, selecciona tu equipo:");
+        elegirPokemon.SeleccionarEquipo2();
+        // Lógica de la batalla entre jugadores
+        InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador(elegirPokemon);
+        inicializarJugador.LogicaJuego();
+    }
 
-        if (opcion == 1)
-        {
-            ElegirPokemon.SeleccionarEquipo();
-            ElegirPokemon.SeleccionarEquipoMaquina();
-            IncializacionBatallaContraMaquina.LogicaJuego();
-
-        }
-        else
-        {
-            Console.WriteLine("El Jugador1 elige equipo"); ;
-            ElegirPokemon.SeleccionarEquipo();
-            Console.WriteLine("El Jugador2 elige equipo");
-            ElegirPokemon.SeleccionarEquipo();
-
-        } git */
+        }*/
         
         
  ;
