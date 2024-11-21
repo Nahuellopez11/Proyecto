@@ -1,13 +1,13 @@
 using Program;
 namespace Program;
 
-public static class ListaTestUsuario
+public static class ListaTestJugador1
 {
     // Lista estática de prueba de Pokémon
     public static List<IPokemon> ListaPokeTest { get; private set; } = new List<IPokemon>();
 
     // Constructor estático para inicializar la lista
-    static ListaTestUsuario()
+    static ListaTestJugador1()
     {
         AgregarPokemonesAListaTest();
     }
