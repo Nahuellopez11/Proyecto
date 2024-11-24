@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using Ucu.Poo.DiscordBot.Domain;
 using Ucu.Poo.DiscordBot.Services;
 
-
 namespace Program;
 
-class BotOn
+using System;
+
+class Program
 {
-    
-    public ElegirPokemon elegirPokemon = new ElegirPokemon();
+    static void Main()
+    {
+        Console.WriteLine("¡Hola, mundo!");
+    }
+}
+
+/*
+public ElegirPokemon elegirPokemon = new ElegirPokemon();
 
     public static void Main(string[] args)
     {
@@ -24,7 +31,7 @@ class BotOn
         inicializarJugador.LogicaJuego();
     }
 
-        }*/
+        }
         
         
  ;
@@ -49,3 +56,4 @@ class BotOn
     }
 
 
+*/

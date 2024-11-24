@@ -13,7 +13,7 @@ public static class Utilities
     /// <returns>El nuevo Pokémon activo seleccionado por el jugador, o el mismo si no realiza un cambio.</returns>
 
     public static IPokemon CambiarPokemonJugador(Jugador jugador, IPokemon pokemonActivo)
-    {
+    {   
         bool cambioExitoso = false;
         IPokemon nuevoPokemon = pokemonActivo;
         // Ciclo que continúa hasta que el jugador seleccione un Pokémon válido o decida no realizar el cambio.
