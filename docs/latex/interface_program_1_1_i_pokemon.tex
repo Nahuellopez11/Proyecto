@@ -1,0 +1,102 @@
+\doxysection{Program.\+IPokemon Interface Reference}
+\hypertarget{interface_program_1_1_i_pokemon}{}\label{interface_program_1_1_i_pokemon}\index{Program.IPokemon@{Program.IPokemon}}
+
+
+Representa un Pokémon en el juego, con atributos como nombre, tipo y vida.  
+
+
+Inheritance diagram for Program.\+IPokemon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_program_1_1_i_pokemon}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_program_1_1_i_pokemon_a75ecef174fe49cafb2061a75313be1fe}{Accept}} (\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}} visitor\+Poke)
+\begin{DoxyCompactList}\small\item\em Acepta un visitante que implementa la interfaz \doxylink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke} para aplicar una operación al Pokémon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_program_1_1_i_pokemon_a411f5dd18658ba06ff28a9ebdcc93421}{Nombre}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene el nombre del Pokémon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} \mbox{\hyperlink{interface_program_1_1_i_pokemon_a115048d2b4c464128ddfd1914ee1ad70}{Tipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo del Pokémon. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{interface_program_1_1_i_pokemon_a0769d065a7abd72e91de84a1ef673b0d}{Vida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece la cantidad de vida del Pokémon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa un Pokémon en el juego, con atributos como nombre, tipo y vida. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_program_1_1_i_pokemon_a75ecef174fe49cafb2061a75313be1fe}\index{Program.IPokemon@{Program.IPokemon}!Accept@{Accept}}
+\index{Accept@{Accept}!Program.IPokemon@{Program.IPokemon}}
+\doxysubsubsection{\texorpdfstring{Accept()}{Accept()}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_pokemon_a75ecef174fe49cafb2061a75313be1fe} 
+void Program.\+IPokemon.\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}}}]{visitor\+Poke}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Acepta un visitante que implementa la interfaz \doxylink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke} para aplicar una operación al Pokémon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor\+Poke} & El visitante que realizará una operación sobre el Pokémon.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_program_1_1_pokemon_abd489405b1e43394247cd4a73f19ceed}{Program.\+Pokemon}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_program_1_1_i_pokemon_a411f5dd18658ba06ff28a9ebdcc93421}\index{Program.IPokemon@{Program.IPokemon}!Nombre@{Nombre}}
+\index{Nombre@{Nombre}!Program.IPokemon@{Program.IPokemon}}
+\doxysubsubsection{\texorpdfstring{Nombre}{Nombre}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_pokemon_a411f5dd18658ba06ff28a9ebdcc93421} 
+string Program.\+IPokemon.\+Nombre\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Obtiene el nombre del Pokémon. 
+
+
+
+Implemented in \mbox{\hyperlink{class_program_1_1_pokemon_ad7a4b713bb74344d9554d7f2ba1030d7}{Program.\+Pokemon}}.
+
+\Hypertarget{interface_program_1_1_i_pokemon_a115048d2b4c464128ddfd1914ee1ad70}\index{Program.IPokemon@{Program.IPokemon}!Tipo@{Tipo}}
+\index{Tipo@{Tipo}!Program.IPokemon@{Program.IPokemon}}
+\doxysubsubsection{\texorpdfstring{Tipo}{Tipo}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_pokemon_a115048d2b4c464128ddfd1914ee1ad70} 
+\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} Program.\+IPokemon.\+Tipo\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Obtiene el tipo del Pokémon. 
+
+Los tipos están definidos en el enumerador \doxylink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}. 
+
+Implemented in \mbox{\hyperlink{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b}{Program.\+Pokemon}}.
+
+\Hypertarget{interface_program_1_1_i_pokemon_a0769d065a7abd72e91de84a1ef673b0d}\index{Program.IPokemon@{Program.IPokemon}!Vida@{Vida}}
+\index{Vida@{Vida}!Program.IPokemon@{Program.IPokemon}}
+\doxysubsubsection{\texorpdfstring{Vida}{Vida}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_pokemon_a0769d065a7abd72e91de84a1ef673b0d} 
+double Program.\+IPokemon.\+Vida\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece la cantidad de vida del Pokémon. 
+
+La vida del Pokémon puede variar de 0 (debilitado) al máximo permitido en el juego (por defecto, 100). 
+
+Implemented in \mbox{\hyperlink{class_program_1_1_pokemon_ab3e9253a2ccae2850ed72691a9c0742a}{Program.\+Pokemon}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/\+IPokemon/IPokemon.\+cs\end{DoxyCompactItemize}

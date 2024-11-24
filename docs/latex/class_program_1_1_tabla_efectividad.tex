@@ -1,0 +1,49 @@
+\doxysection{Program.\+Tabla\+Efectividad Class Reference}
+\hypertarget{class_program_1_1_tabla_efectividad}{}\label{class_program_1_1_tabla_efectividad}\index{Program.TablaEfectividad@{Program.TablaEfectividad}}
+
+
+Clase que gestiona la tabla de efectividad entre los diferentes tipos de Pokémon. Permite calcular el multiplicador de daño basado en los tipos del atacante y el defensor.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_program_1_1_tabla_efectividad_a5bf1e57bbd28b1b6387d22ec788ee7fe}{Obtener\+Efectividad}} (\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} tipo\+Ataque, \mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} tipo\+Defensa)
+\begin{DoxyCompactList}\small\item\em Obtiene el multiplicador de efectividad entre un tipo de ataque y un tipo de defensa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que gestiona la tabla de efectividad entre los diferentes tipos de Pokémon. Permite calcular el multiplicador de daño basado en los tipos del atacante y el defensor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_tabla_efectividad_a5bf1e57bbd28b1b6387d22ec788ee7fe}\index{Program.TablaEfectividad@{Program.TablaEfectividad}!ObtenerEfectividad@{ObtenerEfectividad}}
+\index{ObtenerEfectividad@{ObtenerEfectividad}!Program.TablaEfectividad@{Program.TablaEfectividad}}
+\doxysubsubsection{\texorpdfstring{ObtenerEfectividad()}{ObtenerEfectividad()}}
+{\footnotesize\ttfamily \label{class_program_1_1_tabla_efectividad_a5bf1e57bbd28b1b6387d22ec788ee7fe} 
+static double Program.\+Tabla\+Efectividad.\+Obtener\+Efectividad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}}}]{tipo\+Ataque}{, }\item[{\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}}}]{tipo\+Defensa}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtiene el multiplicador de efectividad entre un tipo de ataque y un tipo de defensa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tipo\+Ataque} & El tipo de Pokémon que realiza el ataque.\\
+\hline
+{\em tipo\+Defensa} & El tipo de Pokémon que recibe el ataque.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El multiplicador de daño\+:
+\begin{DoxyItemize}
+\item 2.\+0 para daño súper efectivo.
+\item 0.\+1 para daño no muy efectivo.
+\item 0 para daño sin efecto.
+\item 1.\+0 para daño normal si la relación no está definida. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/\+Logica\+De\+Juego/Tabla\+Efectividad.\+cs\end{DoxyCompactItemize}

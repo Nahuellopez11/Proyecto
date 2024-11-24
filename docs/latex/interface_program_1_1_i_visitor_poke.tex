@@ -1,0 +1,98 @@
+\doxysection{Program.\+IVisitor\+Poke Interface Reference}
+\hypertarget{interface_program_1_1_i_visitor_poke}{}\label{interface_program_1_1_i_visitor_poke}\index{Program.IVisitorPoke@{Program.IVisitorPoke}}
+
+
+Interfaz que define el patrón Visitor para interactuar con objetos de tipo \doxylink{interface_program_1_1_i_pokemon}{IPokemon}.  
+
+
+Inheritance diagram for Program.\+IVisitor\+Poke\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_program_1_1_i_visitor_poke}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_aad29be0daab18bdf25b0b1842b9892e7}{Visit\+Pokemon}} (\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} pokemon)
+\begin{DoxyCompactList}\small\item\em Método que define la lógica de visita para un Pokémon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_a727a5fc84282953f83be1095cbd6eca4}{Visit}} (\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_af6cc6db95449e6dc5a4a608839a54143}{Equipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Lista de Pokémon que conforman un equipo asociado al visitante. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_ab5d62067359547fe19212e07976ea77b}{Fue\+Elegido}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Propiedad para verificar si un Pokémon fue seleccionado en algún contexto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaz que define el patrón Visitor para interactuar con objetos de tipo \doxylink{interface_program_1_1_i_pokemon}{IPokemon}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_program_1_1_i_visitor_poke_a727a5fc84282953f83be1095cbd6eca4}\index{Program.IVisitorPoke@{Program.IVisitorPoke}!Visit@{Visit}}
+\index{Visit@{Visit}!Program.IVisitorPoke@{Program.IVisitorPoke}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_visitor_poke_a727a5fc84282953f83be1095cbd6eca4} 
+void Program.\+IVisitor\+Poke.\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}}]{pokemon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a88e46606a72246475a05b299446194c1}{Program.\+Seleccion\+Pokes\+Visitor\+Poke}}.
+
+\Hypertarget{interface_program_1_1_i_visitor_poke_aad29be0daab18bdf25b0b1842b9892e7}\index{Program.IVisitorPoke@{Program.IVisitorPoke}!VisitPokemon@{VisitPokemon}}
+\index{VisitPokemon@{VisitPokemon}!Program.IVisitorPoke@{Program.IVisitorPoke}}
+\doxysubsubsection{\texorpdfstring{VisitPokemon()}{VisitPokemon()}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_visitor_poke_aad29be0daab18bdf25b0b1842b9892e7} 
+void Program.\+IVisitor\+Poke.\+Visit\+Pokemon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}}]{pokemon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método que define la lógica de visita para un Pokémon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pokemon} & El Pokémon visitado.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a95c601ad38d73505948b66f75aefe916}{Program.\+Seleccion\+Pokes\+Visitor\+Poke}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_program_1_1_i_visitor_poke_af6cc6db95449e6dc5a4a608839a54143}\index{Program.IVisitorPoke@{Program.IVisitorPoke}!Equipo@{Equipo}}
+\index{Equipo@{Equipo}!Program.IVisitorPoke@{Program.IVisitorPoke}}
+\doxysubsubsection{\texorpdfstring{Equipo}{Equipo}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_visitor_poke_af6cc6db95449e6dc5a4a608839a54143} 
+List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}$>$ Program.\+IVisitor\+Poke.\+Equipo\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Lista de Pokémon que conforman un equipo asociado al visitante. 
+
+
+
+Implemented in \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a1601b2fb1069635ed2b13d729602d6df}{Program.\+Seleccion\+Pokes\+Visitor\+Poke}}.
+
+\Hypertarget{interface_program_1_1_i_visitor_poke_ab5d62067359547fe19212e07976ea77b}\index{Program.IVisitorPoke@{Program.IVisitorPoke}!FueElegido@{FueElegido}}
+\index{FueElegido@{FueElegido}!Program.IVisitorPoke@{Program.IVisitorPoke}}
+\doxysubsubsection{\texorpdfstring{FueElegido}{FueElegido}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_visitor_poke_ab5d62067359547fe19212e07976ea77b} 
+bool Program.\+IVisitor\+Poke.\+Fue\+Elegido\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Propiedad para verificar si un Pokémon fue seleccionado en algún contexto. 
+
+
+
+Implemented in \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a4bef44467e5b9a57d55180c1ebbe7c4e}{Program.\+Seleccion\+Pokes\+Visitor\+Poke}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/IVisitor\+Poke.\+cs\end{DoxyCompactItemize}

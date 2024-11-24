@@ -1,0 +1,130 @@
+\doxysection{Ucu.\+Poo.\+Discord\+Bot.\+Domain.\+Conector\+De\+Clases Class Reference}
+\hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases}{}\label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases}\index{Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}}
+
+
+Esta clase recibe las acciones y devuelve los resultados que permiten implementar las historias de usuario. Otras clases que implementan el bot usan esta Facade pero no conocen el resto de las clases del dominio. Esta clase es un singleton.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_afb2235c61eb7690cf4af02614c6f8db0}{Add\+Trainer\+To\+Waiting\+List}} (string display\+Name)
+\begin{DoxyCompactList}\small\item\em Agrega un jugador a la lista de espera. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a980e28c199e74f94d1ff0c19178c1b06}{Remove\+Trainer\+From\+Waiting\+List}} (string display\+Name)
+\begin{DoxyCompactList}\small\item\em Remueve un jugador de la lista de espera. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_adf24437e78fb39b4103364233737c270}{Get\+All\+Trainers\+Waiting}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de jugadores esperando. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_aec18a636abc365834d666ec7ccf15ee0}{Trainer\+Is\+Waiting}} (string display\+Name)
+\begin{DoxyCompactList}\small\item\em Determina si un jugador está esperando para jugar. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a1dfbc8996b1dbe08d51824cdfeb0b3bd}{Start\+Battle}} (string player\+Display\+Name, string? opponent\+Display\+Name)
+\begin{DoxyCompactList}\small\item\em Crea una batalla entre dos jugadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a25953efd72c393dd6508c52a10188651}\label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a25953efd72c393dd6508c52a10188651} 
+static void {\bfseries Reset} ()
+\begin{DoxyCompactList}\small\item\em Inicializa este singleton. Es necesario solo en los tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a29291e76687a1618e9f1770c91893346}\label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a29291e76687a1618e9f1770c91893346} 
+static \mbox{\hyperlink{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases}{Conector\+De\+Clases}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene la única instancia de la clase Facade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Esta clase recibe las acciones y devuelve los resultados que permiten implementar las historias de usuario. Otras clases que implementan el bot usan esta Facade pero no conocen el resto de las clases del dominio. Esta clase es un singleton. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_afb2235c61eb7690cf4af02614c6f8db0}\index{Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}!AddTrainerToWaitingList@{AddTrainerToWaitingList}}
+\index{AddTrainerToWaitingList@{AddTrainerToWaitingList}!Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}}
+\doxysubsubsection{\texorpdfstring{AddTrainerToWaitingList()}{AddTrainerToWaitingList()}}
+{\footnotesize\ttfamily \label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_afb2235c61eb7690cf4af02614c6f8db0} 
+string Ucu.\+Poo.\+Discord\+Bot.\+Domain.\+Conector\+De\+Clases.\+Add\+Trainer\+To\+Waiting\+List (\begin{DoxyParamCaption}\item[{string}]{display\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un jugador a la lista de espera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display\+Name} & El nombre del jugador.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un mensaje con el resultado.
+\end{DoxyReturn}
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_adf24437e78fb39b4103364233737c270}\index{Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}!GetAllTrainersWaiting@{GetAllTrainersWaiting}}
+\index{GetAllTrainersWaiting@{GetAllTrainersWaiting}!Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}}
+\doxysubsubsection{\texorpdfstring{GetAllTrainersWaiting()}{GetAllTrainersWaiting()}}
+{\footnotesize\ttfamily \label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_adf24437e78fb39b4103364233737c270} 
+string Ucu.\+Poo.\+Discord\+Bot.\+Domain.\+Conector\+De\+Clases.\+Get\+All\+Trainers\+Waiting (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de jugadores esperando. 
+
+\begin{DoxyReturn}{Returns}
+Un mensaje con el resultado.
+\end{DoxyReturn}
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a980e28c199e74f94d1ff0c19178c1b06}\index{Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}!RemoveTrainerFromWaitingList@{RemoveTrainerFromWaitingList}}
+\index{RemoveTrainerFromWaitingList@{RemoveTrainerFromWaitingList}!Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}}
+\doxysubsubsection{\texorpdfstring{RemoveTrainerFromWaitingList()}{RemoveTrainerFromWaitingList()}}
+{\footnotesize\ttfamily \label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a980e28c199e74f94d1ff0c19178c1b06} 
+string Ucu.\+Poo.\+Discord\+Bot.\+Domain.\+Conector\+De\+Clases.\+Remove\+Trainer\+From\+Waiting\+List (\begin{DoxyParamCaption}\item[{string}]{display\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remueve un jugador de la lista de espera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display\+Name} & El jugador a remover.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un mensaje con el resultado.
+\end{DoxyReturn}
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a1dfbc8996b1dbe08d51824cdfeb0b3bd}\index{Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}!StartBattle@{StartBattle}}
+\index{StartBattle@{StartBattle}!Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}}
+\doxysubsubsection{\texorpdfstring{StartBattle()}{StartBattle()}}
+{\footnotesize\ttfamily \label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_a1dfbc8996b1dbe08d51824cdfeb0b3bd} 
+string Ucu.\+Poo.\+Discord\+Bot.\+Domain.\+Conector\+De\+Clases.\+Start\+Battle (\begin{DoxyParamCaption}\item[{string}]{player\+Display\+Name}{, }\item[{string?}]{opponent\+Display\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Crea una batalla entre dos jugadores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Display\+Name} & El primer jugador.\\
+\hline
+{\em opponent\+Display\+Name} & El oponente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un mensaje con el resultado.
+\end{DoxyReturn}
+\Hypertarget{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_aec18a636abc365834d666ec7ccf15ee0}\index{Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}!TrainerIsWaiting@{TrainerIsWaiting}}
+\index{TrainerIsWaiting@{TrainerIsWaiting}!Ucu.Poo.DiscordBot.Domain.ConectorDeClases@{Ucu.Poo.DiscordBot.Domain.ConectorDeClases}}
+\doxysubsubsection{\texorpdfstring{TrainerIsWaiting()}{TrainerIsWaiting()}}
+{\footnotesize\ttfamily \label{class_ucu_1_1_poo_1_1_discord_bot_1_1_domain_1_1_conector_de_clases_aec18a636abc365834d666ec7ccf15ee0} 
+string Ucu.\+Poo.\+Discord\+Bot.\+Domain.\+Conector\+De\+Clases.\+Trainer\+Is\+Waiting (\begin{DoxyParamCaption}\item[{string}]{display\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina si un jugador está esperando para jugar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display\+Name} & El jugador.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un mensaje con el resultado.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/\+Discord/\+Domain/Conector\+De\+Clases.\+cs\end{DoxyCompactItemize}

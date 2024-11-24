@@ -1,0 +1,135 @@
+\doxysection{Program.\+Catalogo\+Pokemones Class Reference}
+\hypertarget{class_program_1_1_catalogo_pokemones}{}\label{class_program_1_1_catalogo_pokemones}\index{Program.CatalogoPokemones@{Program.CatalogoPokemones}}
+
+
+Clase que actúa como catálogo y fábrica de Pokémon. Gestiona la creación y almacenamiento de Pokémon disponibles en el juego.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_program_1_1_catalogo_pokemones_a7d7016c2d0737ffa1245715fc2266b71}\label{class_program_1_1_catalogo_pokemones_a7d7016c2d0737ffa1245715fc2266b71} 
+{\bfseries Catalogo\+Pokemones} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. Inicializa el catálogo de Pokémon llamando a Agregar\+Pokemones\+Catalogo. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_catalogo_pokemones_af92a2a5c18b9f699dde9029ab2f6a464}\label{class_program_1_1_catalogo_pokemones_af92a2a5c18b9f699dde9029ab2f6a464} 
+void {\bfseries Agregar\+Pokemones\+Catalogo} ()
+\begin{DoxyCompactList}\small\item\em Agrega todos los Pokémon predefinidos al catálogo. Inicializa el diccionario Catalogo\+Poke con diferentes especies de Pokémon. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_program_1_1_catalogo_pokemones_a1b365fda2cea9dcecd17a8b677adea2f}{Seleccionar\+Pokemon}} (int indice)
+\begin{DoxyCompactList}\small\item\em Permite al primer jugador seleccionar un Pokémon del catálogo por su índice. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_program_1_1_catalogo_pokemones_ae8b7eb1ec9541ba2b3964c0ad0511b01}{Seleccionar\+Pokemon2}} (int indice)
+\begin{DoxyCompactList}\small\item\em Permite al segundo jugador seleccionar un Pokémon del catálogo por su índice. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{class_program_1_1_catalogo_pokemones_a417e1ff5a431b48afa0b68bdd9ed88ff}{Obtener\+Equipo\+Actual}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de Pokémon seleccionados por el primer jugador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{class_program_1_1_catalogo_pokemones_ae196eb71e9999a17704db717cb6d2157}{Obtener\+Equipo\+Actual2}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de Pokémon seleccionados por el segundo jugador. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_catalogo_pokemones_a0f910a5a8486c4c621311a4aef6468bc}\label{class_program_1_1_catalogo_pokemones_a0f910a5a8486c4c621311a4aef6468bc} 
+void {\bfseries Mostrar\+Catalogo} ()
+\begin{DoxyCompactList}\small\item\em Muestra en consola todos los Pokémon disponibles en el catálogo. Lista cada Pokémon con su índice y nombre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} \mbox{\hyperlink{class_program_1_1_catalogo_pokemones_a854c5e231d665575c6dbc4fac9bb18c9}{Crear\+Pokemon}} (string nombre, int vida, \mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} tipo, List$<$ \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon}{IHabilidades\+Pokemon}} $>$ habilidades\+Pokemons)
+\begin{DoxyCompactList}\small\item\em Crea una nueva instancia de Pokémon con los parámetros especificados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_program_1_1_catalogo_pokemones_a098b6a3a1e21f3e0b7f17e47d3e6d390}\label{class_program_1_1_catalogo_pokemones_a098b6a3a1e21f3e0b7f17e47d3e6d390} 
+Dictionary$<$ int, \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ {\bfseries Catalogo\+Poke} = new Dictionary$<$int, \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Diccionario que almacena todos los Pokémon disponibles en el catálogo. La clave es un identificador único del Pokémon y el valor es la instancia del Pokémon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que actúa como catálogo y fábrica de Pokémon. Gestiona la creación y almacenamiento de Pokémon disponibles en el juego. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_catalogo_pokemones_a854c5e231d665575c6dbc4fac9bb18c9}\index{Program.CatalogoPokemones@{Program.CatalogoPokemones}!CrearPokemon@{CrearPokemon}}
+\index{CrearPokemon@{CrearPokemon}!Program.CatalogoPokemones@{Program.CatalogoPokemones}}
+\doxysubsubsection{\texorpdfstring{CrearPokemon()}{CrearPokemon()}}
+{\footnotesize\ttfamily \label{class_program_1_1_catalogo_pokemones_a854c5e231d665575c6dbc4fac9bb18c9} 
+static \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} Program.\+Catalogo\+Pokemones.\+Crear\+Pokemon (\begin{DoxyParamCaption}\item[{string}]{nombre}{, }\item[{int}]{vida}{, }\item[{\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}}}]{tipo}{, }\item[{List$<$ \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon}{IHabilidades\+Pokemon}} $>$}]{habilidades\+Pokemons}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Crea una nueva instancia de Pokémon con los parámetros especificados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Nombre del Pokémon.\\
+\hline
+{\em vida} & Puntos de vida del Pokémon.\\
+\hline
+{\em tipo} & Tipo elemental del Pokémon.\\
+\hline
+{\em habilidades\+Pokemons} & Lista de habilidades del Pokémon.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una nueva instancia de \doxylink{interface_program_1_1_i_pokemon}{IPokemon}.
+\end{DoxyReturn}
+\Hypertarget{class_program_1_1_catalogo_pokemones_a417e1ff5a431b48afa0b68bdd9ed88ff}\index{Program.CatalogoPokemones@{Program.CatalogoPokemones}!ObtenerEquipoActual@{ObtenerEquipoActual}}
+\index{ObtenerEquipoActual@{ObtenerEquipoActual}!Program.CatalogoPokemones@{Program.CatalogoPokemones}}
+\doxysubsubsection{\texorpdfstring{ObtenerEquipoActual()}{ObtenerEquipoActual()}}
+{\footnotesize\ttfamily \label{class_program_1_1_catalogo_pokemones_a417e1ff5a431b48afa0b68bdd9ed88ff} 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ Program.\+Catalogo\+Pokemones.\+Obtener\+Equipo\+Actual (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de Pokémon seleccionados por el primer jugador. 
+
+\begin{DoxyReturn}{Returns}
+Lista de Pokémon en el equipo del primer jugador.
+\end{DoxyReturn}
+\Hypertarget{class_program_1_1_catalogo_pokemones_ae196eb71e9999a17704db717cb6d2157}\index{Program.CatalogoPokemones@{Program.CatalogoPokemones}!ObtenerEquipoActual2@{ObtenerEquipoActual2}}
+\index{ObtenerEquipoActual2@{ObtenerEquipoActual2}!Program.CatalogoPokemones@{Program.CatalogoPokemones}}
+\doxysubsubsection{\texorpdfstring{ObtenerEquipoActual2()}{ObtenerEquipoActual2()}}
+{\footnotesize\ttfamily \label{class_program_1_1_catalogo_pokemones_ae196eb71e9999a17704db717cb6d2157} 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ Program.\+Catalogo\+Pokemones.\+Obtener\+Equipo\+Actual2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de Pokémon seleccionados por el segundo jugador. 
+
+\begin{DoxyReturn}{Returns}
+Lista de Pokémon en el equipo del segundo jugador.
+\end{DoxyReturn}
+\Hypertarget{class_program_1_1_catalogo_pokemones_a1b365fda2cea9dcecd17a8b677adea2f}\index{Program.CatalogoPokemones@{Program.CatalogoPokemones}!SeleccionarPokemon@{SeleccionarPokemon}}
+\index{SeleccionarPokemon@{SeleccionarPokemon}!Program.CatalogoPokemones@{Program.CatalogoPokemones}}
+\doxysubsubsection{\texorpdfstring{SeleccionarPokemon()}{SeleccionarPokemon()}}
+{\footnotesize\ttfamily \label{class_program_1_1_catalogo_pokemones_a1b365fda2cea9dcecd17a8b677adea2f} 
+bool Program.\+Catalogo\+Pokemones.\+Seleccionar\+Pokemon (\begin{DoxyParamCaption}\item[{int}]{indice}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Permite al primer jugador seleccionar un Pokémon del catálogo por su índice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & Índice del Pokémon en el catálogo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la selección fue exitosa, false en caso contrario.
+\end{DoxyReturn}
+\Hypertarget{class_program_1_1_catalogo_pokemones_ae8b7eb1ec9541ba2b3964c0ad0511b01}\index{Program.CatalogoPokemones@{Program.CatalogoPokemones}!SeleccionarPokemon2@{SeleccionarPokemon2}}
+\index{SeleccionarPokemon2@{SeleccionarPokemon2}!Program.CatalogoPokemones@{Program.CatalogoPokemones}}
+\doxysubsubsection{\texorpdfstring{SeleccionarPokemon2()}{SeleccionarPokemon2()}}
+{\footnotesize\ttfamily \label{class_program_1_1_catalogo_pokemones_ae8b7eb1ec9541ba2b3964c0ad0511b01} 
+bool Program.\+Catalogo\+Pokemones.\+Seleccionar\+Pokemon2 (\begin{DoxyParamCaption}\item[{int}]{indice}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Permite al segundo jugador seleccionar un Pokémon del catálogo por su índice. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & Índice del Pokémon en el catálogo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la selección fue exitosa, false en caso contrario.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/\+Elegir\+Pokemon/Catalogo\+Pokemon.\+cs\end{DoxyCompactItemize}
