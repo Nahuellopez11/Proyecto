@@ -2,19 +2,30 @@
 using System.Collections.Generic;
 using Ucu.Poo.DiscordBot.Domain;
 using Ucu.Poo.DiscordBot.Services;
+using System;
+using System.Threading.Tasks;
 
-
-namespace Program;
-
-class Program
-
+namespace Program
 {
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            // Iniciar el bot
+            await BotLoader.LoadAsync();
+        }
+    }
+}
+
+
+
     
-    public ElegirPokemon elegirPokemon = new ElegirPokemon();
+ /*   
+    public ElegirPokemon elegirPokemon = new ElegirPokemon("Jugador1","Ju");
 
     public static void Main(string[] args)
     {
-        DemoBot();
+        //DemoBot();
         ElegirPokemon elegirPokemon = new ElegirPokemon();
         Console.WriteLine("Jugador 1, selecciona tu equipo:");
         elegirPokemon.SeleccionarEquipo();
@@ -24,9 +35,9 @@ class Program
         InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador(elegirPokemon);
         inicializarJugador.LogicaJuego();
     }
-
+}
     
-
+/*
     private static void DemoFacade()
     {
         Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("player"));
@@ -40,5 +51,6 @@ class Program
     {
         BotLoader.LoadAsync().GetAwaiter().GetResult();
     }
-}
+*/
+
 

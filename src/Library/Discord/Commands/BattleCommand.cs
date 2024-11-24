@@ -25,7 +25,6 @@ public class BattleCommand : ModuleBase<SocketCommandContext>
         como parámetro, si lo hubiera, en una batalla; si no se recibe un
         oponente, lo une con cualquiera que esté esperando para jugar.
         """)]
-    // ReSharper disable once UnusedMember.Global
     public async Task ExecuteAsync(
         [Remainder]
         [Summary("Display name del oponente, opcional")]
@@ -33,21 +32,39 @@ public class BattleCommand : ModuleBase<SocketCommandContext>
     {
         string displayName = CommandHelper.GetDisplayName(Context);
         
-        SocketGuildUser? opponentUser = CommandHelper.GetUser(
-            Context, opponentDisplayName);
+        // Obtener al oponente por el nombre mostrado (si se proporciona)
+        SocketGuildUser? opponentUser = CommandHelper.GetUser(Context, opponentDisplayName);
 
         string result;
+
+        // Verifica si hay un oponente disponible
         if (opponentUser != null)
         {
-            result = Facade.Instance.StartBattle(displayName, opponentUser.DisplayName);
+            // Crear la instancia de ElegirPokemon con los jugadores
+            ElegirPokemon elegirPokemon = new ElegirPokemon(displayName, opponentUser.DisplayName);
+
+            // Esperar a que ambos jugadores elijan sus Pokémon
+            await elegirPokemon.SeleccionarEquipo();  // Jugador 1 elige su equipo
+            await elegirPokemon.SeleccionarEquipo2(); // Jugador 2 elige su equipo
+
+            // Crear la batalla utilizando la lógica adaptada con los equipos elegidos
+            BatallaDiscord batallaDiscord = new BatallaDiscord(elegirPokemon);
+
+            // Mostrar mensaje inicial de la batalla
+            result = $"¡La batalla entre {displayName} y {opponentUser.DisplayName} ha comenzado!";
+            
             await Context.Message.Author.SendMessageAsync(result);
             await opponentUser.SendMessageAsync(result);
+
+            // Iniciar el primer turno de la batalla
+            await batallaDiscord.EjecutarTurno(Context, 0);  // 0 sería el primer turno para el jugador1
         }
         else
         {
-            result = $"No hay un usuario {opponentDisplayName}";
+            result = $"No se ha encontrado un oponente con el nombre {opponentDisplayName}.";
+            await ReplyAsync(result);
         }
-
-        await ReplyAsync(result);
     }
-}
+};
+
+
