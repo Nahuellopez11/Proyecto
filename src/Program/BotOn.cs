@@ -47,5 +47,5 @@ class BotOn
     {
         BotLoader.LoadAsync().GetAwaiter().GetResult();
     }
-}
+
 

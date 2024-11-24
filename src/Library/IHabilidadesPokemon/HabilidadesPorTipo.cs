@@ -4,13 +4,26 @@ using System.Linq;
 
 namespace Program
 {
-    // Clase responsable de manejar y obtener ataques por tipo de Pokémon
-    // Esta clase usa un diccionario para guardar los ataques disponibles según el tipo de Pokémon
+    /// <summary>
+    /// Clase estática que gestiona y proporciona los ataques disponibles para cada tipo de Pokémon.
+    /// Implementa un sistema de catálogo de ataques organizados por tipo elemental.
+    /// </summary>
     public static class HabilidadesPorTipo
     {
+        /// <summary>
+        /// Diccionario que almacena todos los ataques disponibles para cada tipo de Pokémon.
+        /// La clave es el tipo de Pokémon y el valor es una lista de ataques disponibles para ese tipo.
+        /// </summary>
+        /// <remarks>
+        /// Cada tipo de Pokémon tiene una lista predefinida de 4 ataques que incluye:
+        /// - Ataques básicos con diferentes niveles de poder y precisión
+        /// - Ataques especiales que pueden causar estados alterados
+        /// - Una combinación balanceada de ataques para cada tipo
+        /// </remarks>
         private static readonly Dictionary<TipoPokemon, List<Ataque>> AtaquesPorTipo = new()
         {
             {
+                
                 TipoPokemon.Normal, new List<Ataque>
                 {
                     new Ataque("Placaje", TipoPokemon.Normal, 10, 1.0),
@@ -146,8 +159,18 @@ namespace Program
                 }
             }
         };
-        // Método que devuelve una lista de ataques disponibles para un tipo de Pokémon específico
-        // Si el tipo no tiene ataques registrados, se devuelve una lista vacía
+        /// <summary>
+        /// Obtiene la lista de ataques disponibles para un tipo específico de Pokémon.
+        /// </summary>
+        /// <param name="tipo">El tipo de Pokémon del cual se quieren obtener los ataques.</param>
+        /// <returns>
+        /// Una lista de IHabilidadesPokemon que contiene todos los ataques disponibles para el tipo especificado.
+        /// Si el tipo no tiene ataques registrados, devuelve una lista vacía.
+        /// </returns>
+        /// <remarks>
+        /// El método convierte la lista de Ataque a IHabilidadesPokemon para mantener la abstracción
+        /// y permitir la extensibilidad del sistema de habilidades.
+        /// </remarks>
         public static List<IHabilidadesPokemon> ObtenerAtaquesPorTipo(TipoPokemon tipo)
         {
             if (AtaquesPorTipo.TryGetValue(tipo, out var ataques))

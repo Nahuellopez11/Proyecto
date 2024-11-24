@@ -1,10 +1,24 @@
 namespace Program;
-
+/// <summary>
+/// Clase que gestiona la selección de equipos Pokémon para los jugadores.
+/// Permite a los jugadores seleccionar sus equipos de 6 Pokémon del catálogo disponible.
+/// </summary>
 public class ElegirPokemon
 {
+    /// <summary>
+    /// Instancia del catálogo de Pokémon que contiene todos los Pokémon disponibles para selección.
+    /// </summary>
     public CatalogoPokemones catalogo = new CatalogoPokemones();
+    
+    /// <summary>
+    /// Generador de números aleatorios utilizado para selecciones aleatorias.
+    /// </summary>
     public   Random random = new Random();
 
+    /// <summary>
+    /// Permite al primer jugador seleccionar interactivamente su equipo de 6 Pokémon.
+    /// Muestra el catálogo y permite la selección uno por uno hasta completar el equipo.
+    /// </summary>
     public void SeleccionarEquipo()
     {
         Console.WriteLine("¡Bienvenido al Selector de Equipo Pokémon!");
@@ -36,7 +50,11 @@ public class ElegirPokemon
         Console.WriteLine("\n¡Tu equipo está completo!");
         MostrarEquipoFinal();
     }
-
+    
+    /// <summary>
+    /// Permite al segundo jugador seleccionar interactivamente su equipo de 6 Pokémon.
+    /// Muestra el catálogo y permite la selección uno por uno hasta completar el equipo.
+    /// </summary>
     public  void SeleccionarEquipo2()
     {
         Console.WriteLine("¡Bienvenido al Selector de Equipo Pokémon!");
@@ -69,7 +87,11 @@ public class ElegirPokemon
         MostrarEquipoFinal2();
     }
     
-    // Muestra los Pokémon en el equipo junto con su tipo y vida
+    
+    /// <summary>
+    /// Muestra en consola el equipo final del primer jugador.
+    /// Lista cada Pokémon con su nombre, tipo y puntos de vida.
+    /// </summary>
     public  void MostrarEquipoFinal()
     {
         Console.WriteLine("\nTu equipo final es:");
@@ -82,6 +104,10 @@ public class ElegirPokemon
         }
     }
     
+    /// <summary>
+    /// Muestra en consola el equipo final del segundo jugador.
+    /// Lista cada Pokémon con su nombre, tipo y puntos de vida.
+    /// </summary>
     public  void MostrarEquipoFinal2()
     {
         Console.WriteLine("\nTu equipo final es:");
@@ -94,7 +120,10 @@ public class ElegirPokemon
         }
     }
 
-// Método DevolverLista: devuelve la lista de Pokémon del equipo actual del jugador
+    /// <summary>
+    /// Obtiene la lista de Pokémon seleccionados por el primer jugador.
+    /// </summary>
+    /// <returns>Lista de IPokemon que representa el equipo completo del primer jugador.</returns>
     public  List<IPokemon> DevolverListajugador1()
     {
 
@@ -102,6 +131,10 @@ public class ElegirPokemon
 
         return equipo;
     }
+    /// <summary>
+    /// Obtiene la lista de Pokémon seleccionados por el segundo jugador.
+    /// </summary>
+    /// <returns>Lista de IPokemon que representa el equipo completo del segundo jugador.</returns>
     public  List<IPokemon> DevolverListajugador2()
     {
 
@@ -109,7 +142,6 @@ public class ElegirPokemon
 
         return equipo2;
     }
-    // SELECCIONAR EQUIPO PARA MÁQUINA
 
 
 

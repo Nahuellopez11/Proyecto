@@ -1,9 +1,17 @@
 namespace Program;
-// EN UTILITIES HAY VARIOS METODOS ÚTILES QUE SIRVEN PARA TODO EL CÓDIGO
-// SIGUE PRINCIPIO OCP; ESTE CODIGO ESTA CERRADO A MODIFICACIÓN Y ABIERTO A EXTENSIÓN
+/// <summary>
+/// Clase estática que contiene métodos utilitarios para diferentes acciones
+/// dentro del sistema de combate Pokémon.
+/// </summary>
 public static class Utilities
 {
-    // UTILIDAD DE CAMBIARPOKEMON
+    /// <summary>
+    /// Permite al jugador cambiar su Pokémon activo por otro de su equipo.
+    /// </summary>
+    /// <param name="jugador">El jugador que realiza el cambio.</param>
+    /// <param name="pokemonActivo">El Pokémon actualmente activo.</param>
+    /// <returns>El nuevo Pokémon activo seleccionado por el jugador, o el mismo si no realiza un cambio.</returns>
+
     public static IPokemon CambiarPokemonJugador(Jugador jugador, IPokemon pokemonActivo)
     {
         bool cambioExitoso = false;
@@ -57,7 +65,12 @@ public static class Utilities
 
 
 
-    // UTILIDAD UTILIZARITEM
+    /// <summary>
+    /// Permite al jugador utilizar un ítem de su inventario en uno de sus Pokémon.
+    /// </summary>
+    /// <param name="jugador1">El jugador que usa el ítem.</param>
+    /// <param name="turno">El turno actual.</param>
+    /// <returns>El nuevo turno tras usar el ítem (cambia el turno).</returns>
     public static int UsarItem(Jugador jugador1, int turno)
     {
         bool opcionValida = true; // bandera para verificar la opcion
@@ -120,7 +133,12 @@ public static class Utilities
 
 
     
-    // VERIFICACION FIN DE BATALLA
+    /// <summary>
+    /// Verifica si todos los Pokémon en una lista están debilitados.
+    /// </summary>
+    /// <param name="listaPokemones">Lista de Pokémon a verificar.</param>
+    /// <returns>True si todos los Pokémon están debilitados (vida total = 0), de lo contrario False.</returns>
+
     public static bool VerificarFinBatalla(List<IPokemon> listaPokemones)
     {
         double vidaTotal = 0;
