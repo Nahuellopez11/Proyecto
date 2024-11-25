@@ -28,29 +28,24 @@ namespace Program
             await _channel.SendMessageAsync("¡Bienvenidos al Selector de Equipo Pokémon!");
             await _channel.SendMessageAsync($"{_jugador1.Username}, selecciona 6 Pokémon para tu equipo.");
 
-            // Mostrar catálogo de Pokémon con botones de selección
             var embed = CrearCatalogoEmbed();
             var mensajeCatalogo = await _channel.SendMessageAsync(embed: embed);
 
-            // Añadir botones de selección
-            var botones = CrearBotonesParaSeleccion();
-            await mensajeCatalogo.AddReactionsAsync(botones);
-
-            // Esperar selección de Pokémon de jugador 1
             var seleccionJugador1 = await EsperarSeleccionAsync(_jugador1);
             equipoJugador1 = seleccionJugador1;
 
             await _channel.SendMessageAsync($"{_jugador2.Username}, ahora es tu turno de seleccionar 6 Pokémon.");
             var mensajeCatalogo2 = await _channel.SendMessageAsync(embed: embed);
-            await mensajeCatalogo2.AddReactionsAsync(botones);
 
-            // Esperar selección de Pokémon de jugador 2
             var seleccionJugador2 = await EsperarSeleccionAsync(_jugador2);
             equipoJugador2 = seleccionJugador2;
 
-            // Mostrar equipos finales
-            MostrarEquipoFinalAsync();
+            await MostrarEquipoFinalAsync();
         }
+
+        // Propiedades públicas para acceder a los equipos
+        public List<IPokemon> EquipoJugador1 => equipoJugador1;
+        public List<IPokemon> EquipoJugador2 => equipoJugador2;
 
         private Embed CrearCatalogoEmbed()
         {
@@ -66,52 +61,55 @@ namespace Program
             return builder.Build();
         }
 
-        private List<IEmote> CrearBotonesParaSeleccion()
-        {
-            List<IEmote> botones = new List<IEmote>();
-
-            // Crear botones con los índices de los Pokémon (puedes usar emotes personalizados o números)
-            for (int i = 1; i <= catalogo.CatalogoPoke.Count; i++)
-            {
-                botones.Add(new Emoji(i.ToString())); // Asumimos que se usan números del 1 al N
-            }
-
-            return botones;
-        }
-
         private async Task<List<IPokemon>> EsperarSeleccionAsync(SocketUser jugador)
         {
             var seleccionados = new List<IPokemon>();
-            var filtro = new Func<IUserMessage, bool>(message =>
-                message.Author.Id == jugador.Id && message.Content.StartsWith("!seleccion")
-            );
 
-            // Esperar hasta que el jugador haya hecho una selección
-            await foreach (var mensaje in _channel.GetMessagesAsync())
+            while (seleccionados.Count < 6)
             {
-                var userMessage = mensaje.OfType<IUserMessage>().FirstOrDefault(m => filtro(m));
-                if (userMessage != null)
-                {
-                    var seleccion = ParsearSeleccion(userMessage.Content);
-                    foreach (var pokemon in seleccion)
-                    {
-                        seleccionados.Add(pokemon);
-                    }
-                    break;  // Si quieres solo el primer mensaje, de lo contrario omite esta línea.
-                }
-            }
+                var mensajes = await _channel.GetMessagesAsync(10).FlattenAsync();
+                var mensaje =
+                    mensajes.FirstOrDefault(m => m.Author.Id == jugador.Id && m.Content.StartsWith("!seleccion"));
 
+                if (mensaje != null)
+                {
+                    var pokemonesSeleccionados = ParsearSeleccion(mensaje.Content);
+                    if (pokemonesSeleccionados != null)
+                    {
+                        foreach (var pokemon in pokemonesSeleccionados)
+                        {
+                            if (seleccionados.Contains(pokemon))
+                            {
+                                await _channel.SendMessageAsync(
+                                    $"¡Ya has seleccionado a {pokemon.Nombre}! Elige otro.");
+                            }
+                            else
+                            {
+                                seleccionados.Add(pokemon);
+                                await _channel.SendMessageAsync($"¡{pokemon.Nombre} ha sido seleccionado!");
+                            }
+                        }
+                    }
+                }
+
+                await Task.Delay(1000);
+            }
 
             return seleccionados;
         }
 
         private List<IPokemon> ParsearSeleccion(string seleccion)
         {
-            // Parsear el mensaje y devolver la lista de Pokémon seleccionados
-            List<IPokemon> seleccionados = new List<IPokemon>();
+            var seleccionados = new List<IPokemon>();
+            var partes = seleccion.Split(' ');
 
-            // Aquí necesitarás la lógica para transformar la selección (números o texto)
-            // En una lista de Pokémon que se han elegido por el jugador
+            foreach (var parte in partes.Skip(1)) // Saltar el comando "!seleccion"
+            {
+                if (int.TryParse(parte, out int indice) && catalogo.CatalogoPoke.ContainsKey(indice))
+                {
+                    seleccionados.Add(catalogo.CatalogoPoke[indice]);
+                }
+            }
 
             return seleccionados;
         }
@@ -130,6 +128,6 @@ namespace Program
                 await _channel.SendMessageAsync($"- {pokemon.Nombre} (Vida: {pokemon.Vida}, Tipo: {pokemon.Tipo})");
             }
         }
-        
     }
+
 }

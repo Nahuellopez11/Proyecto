@@ -4,39 +4,6 @@ namespace Program
     {
         private static Random random = new Random(); // Movido a nivel de clase
 
-        public static void RealizarAtaqueMaquina(IPokemon pokemonActivoMaquina, IPokemon pokemonActivoJugador)
-        {
-            Pokemon pokemonMaquina = pokemonActivoMaquina as Pokemon;
-            Pokemon pokemonJugador = pokemonActivoJugador as Pokemon;
-
-            if (pokemonMaquina == null || pokemonJugador == null)
-            {
-                Console.WriteLine("Error: Los pokémon no son del tipo correcto.");
-                return;
-            }
-
-            // Debug: Imprimir información antes del ataque
-            Console.WriteLine($"\nLa máquina ataca con {pokemonMaquina.Nombre}");
-            Console.WriteLine($"Ataques disponibles: {pokemonMaquina.AtaquesDisponibles.Count}");
-
-            int ataqueElegido = random.Next(0, pokemonMaquina.AtaquesDisponibles.Count -1);
-            Ataque ataqueSeleccionado = pokemonMaquina.AtaquesDisponibles[ataqueElegido];
-
-            // Debug: Imprimir información del ataque seleccionado
-            Console.WriteLine($"Ataque seleccionado: {ataqueSeleccionado.NombreHabilidad}");
-
-            int daño = ataqueSeleccionado.CalcularDaño(pokemonMaquina, pokemonJugador);
-
-            // Debug: Imprimir información del daño calculado
-            Console.WriteLine($"Daño calculado: {daño}");
-
-            // Asegurarnos de que la vida no baje de 0
-            pokemonJugador.Vida = Math.Max(0, pokemonJugador.Vida - daño);
-
-            Console.WriteLine($"\n¡{pokemonMaquina.Nombre} usó {ataqueSeleccionado.NombreHabilidad}!");
-            Console.WriteLine($"Causó {daño} puntos de daño.");
-            MostrarEstadoPokemon(pokemonJugador, "Tu");
-        }
 
         public static void RealizarAtaqueJugador(IPokemon pokemonActivoJugador, IPokemon pokemonActivoMaquina)
         {

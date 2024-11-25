@@ -15,7 +15,7 @@ namespace Program
         }
 
         // Este método se podría modificar o adaptarse al bot de Discord si es necesario
-        public async Task SeleccionarEquipo()
+        public void SeleccionarEquipo()
         {
             Console.WriteLine("¡Bienvenido al Selector de Equipo Pokémon!");
             Console.WriteLine("Selecciona 6 Pokémon para formar tu equipo.");

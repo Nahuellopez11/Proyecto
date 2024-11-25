@@ -6,6 +6,7 @@ public interface IPokemon
     TipoPokemon Tipo { get; }
     double Vida { get; set; }
     void Accept(IVisitorPoke visitorPoke){}
+    List<Ataque> AtaquesDisponibles { get; set; }
     
 }
 

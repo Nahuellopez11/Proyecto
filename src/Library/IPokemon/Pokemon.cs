@@ -10,7 +10,7 @@ namespace Program
         public int VidaInicial { get; set; }
         private string Estado { get; set; }
         private static Random random = new Random();
-        public List<Ataque> AtaquesDisponibles { get; private set; }
+        public List<Ataque> AtaquesDisponibles { get;  set; }
         public EstadoEspecial EstadoActual { get; set; }
         private int TurnosDormido { get; set; }
         
