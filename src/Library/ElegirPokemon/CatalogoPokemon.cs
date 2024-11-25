@@ -1,29 +1,53 @@
 using System.Security.AccessControl;
 
 namespace Program;
-
-    //Funciona como una fábrica para crear instancias de Pokemon
-    // El método CrearPokemon crea y retorna una instancia de IPokemones (Pokemon)
-    // Este método sigue el principio de SRP, ya que se centra únicamente en la creación de un Pokémon.
-
-
+/// <summary>
+/// Clase que actúa como catálogo y fábrica de Pokémon.
+/// Gestiona la creación y almacenamiento de Pokémon disponibles en el juego.
+/// </summary>
 public  class CatalogoPokemones
-//catalogo estatico de pokemones
-{
+{ 
+    /// <summary>
+    /// Diccionario que almacena todos los Pokémon disponibles en el catálogo.
+    /// La clave es un identificador único del Pokémon y el valor es la instancia del Pokémon.
+    /// </summary>
     public  Dictionary<int, IPokemon> CatalogoPoke { get; private set; } = new Dictionary<int, IPokemon>();
-    // Visitor utilizado para gestionar la selección de Pokemones por el jugador
+    
+    /// <summary>
+    /// Visitor utilizado para gestionar la selección de Pokémon del primer jugador.
+    /// </summary>
     private  readonly SeleccionPokesVisitorPoke SelectionVisitorPoke = new SeleccionPokesVisitorPoke();
+   
+    /// <summary>
+    /// Visitor utilizado para gestionar la selección de Pokémon del segundo jugador.
+    /// </summary>
     private  readonly SeleccionPokesVisitorPoke SelectionVisitorPoke2 = new SeleccionPokesVisitorPoke();
+    
+    /// <summary>
+    /// Crea una nueva instancia de Pokémon con los parámetros especificados.
+    /// </summary>
+    /// <param name="nombre">Nombre del Pokémon.</param>
+    /// <param name="vida">Puntos de vida del Pokémon.</param>
+    /// <param name="tipo">Tipo elemental del Pokémon.</param>
+    /// <param name="habilidadesPokemons">Lista de habilidades del Pokémon.</param>
+    /// <returns>Una nueva instancia de IPokemon.</returns>
     public static IPokemon CrearPokemon(string nombre, int vida, TipoPokemon tipo, List<IHabilidadesPokemon> habilidadesPokemons)
     {
         return new Pokemon(nombre, vida, tipo);
     }
+    /// <summary>
+    /// Constructor de la clase. Inicializa el catálogo de Pokémon llamando a AgregarPokemonesCatalogo.
+    /// </summary>
     public CatalogoPokemones()
     
     {
         AgregarPokemonesCatalogo();
     }
-
+   
+    /// <summary>
+    /// Agrega todos los Pokémon predefinidos al catálogo.
+    /// Inicializa el diccionario CatalogoPoke con diferentes especies de Pokémon.
+    /// </summary>
     public  void AgregarPokemonesCatalogo()
     {
 
@@ -46,7 +70,11 @@ public  class CatalogoPokemones
         CatalogoPoke.Add(16, CrearPokemon("Bulbasaur", 100, TipoPokemon.Planta,HabilidadesPorTipo.ObtenerAtaquesPorTipo(TipoPokemon.Planta)));
 
     }
-
+    /// <summary>
+    /// Permite al primer jugador seleccionar un Pokémon del catálogo por su índice.
+    /// </summary>
+    /// <param name="indice">Índice del Pokémon en el catálogo.</param>
+    /// <returns>true si la selección fue exitosa, false en caso contrario.</returns>
     public  bool SeleccionarPokemon(int indice)
     {
         if (!CatalogoPoke.ContainsKey(indice))
@@ -57,14 +85,19 @@ public  class CatalogoPokemones
 
         var pokemon = CatalogoPoke[indice];
         Console.WriteLine($"Seleccionando Pokémon: {pokemon.Nombre}"); 
-// Usa el Visitor para añadir el Pokémon seleccionado al equipo del jugador
+    // Usa el Visitor para añadir el Pokémon seleccionado al equipo del jugador
 
         pokemon.Accept(SelectionVisitorPoke);
 
 
         return SelectionVisitorPoke.FueElegido;
     }
-
+    
+    /// <summary>
+    /// Permite al segundo jugador seleccionar un Pokémon del catálogo por su índice.
+    /// </summary>
+    /// <param name="indice">Índice del Pokémon en el catálogo.</param>
+    /// <returns>true si la selección fue exitosa, false en caso contrario.</returns>
     public  bool SeleccionarPokemon2(int indice)
     {
         if (!CatalogoPoke.ContainsKey(indice))
@@ -81,16 +114,28 @@ public  class CatalogoPokemones
 
         return SelectionVisitorPoke2.FueElegido;
     }
+    
 
-    // Utiliza el Visitor para obtener la lista actual del equipo
+    /// <summary>
+    /// Obtiene la lista de Pokémon seleccionados por el primer jugador.
+    /// </summary>
+    /// <returns>Lista de Pokémon en el equipo del primer jugador.</returns>
     public  List<IPokemon> ObtenerEquipoActual()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     {
         return SelectionVisitorPoke.Equipo;
     }
+    /// <summary>
+    /// Obtiene la lista de Pokémon seleccionados por el segundo jugador.
+    /// </summary>
+    /// <returns>Lista de Pokémon en el equipo del segundo jugador.</returns>
     public  List<IPokemon> ObtenerEquipoActual2()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     {
         return SelectionVisitorPoke2.Equipo;
     }
+    /// <summary>
+    /// Muestra en consola todos los Pokémon disponibles en el catálogo.
+    /// Lista cada Pokémon con su índice y nombre.
+    /// </summary>
     public  void MostrarCatalogo()
     {
         Console.WriteLine("\nCatálogo de Pokemones Disponibles:");

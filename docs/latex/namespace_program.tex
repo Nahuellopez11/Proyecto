@@ -3,63 +3,55 @@
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{class_program_1_1_armar}{Armar}}
-\item 
 class \mbox{\hyperlink{class_program_1_1_ataque}{Ataque}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representa un ataque que un Pokémon puede realizar, incluyendo sus propiedades y lógica de cálculo de daño. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_ataque_especial}{Ataque\+Especial}}
-\item 
-class \mbox{\hyperlink{class_program_1_1_cambiar_pokemon}{Cambiar\+Pokemon}}
-\item 
-class \mbox{\hyperlink{class_program_1_1_cambiar_pokemon_maquina}{Cambiar\+Pokemon\+Maquina}}
-\item 
-class {\bfseries Catalogo\+Pokemones}
-\item 
+\begin{DoxyCompactList}\small\item\em Representa un ataque especial que puede infligir daño y aplicar un estado especial al objetivo. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_program_1_1_catalogo_pokemones}{Catalogo\+Pokemones}}
+\begin{DoxyCompactList}\small\item\em Clase que actúa como catálogo y fábrica de Pokémon. Gestiona la creación y almacenamiento de Pokémon disponibles en el juego. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_elegir_pokemon}{Elegir\+Pokemon}}
-\item 
-class \mbox{\hyperlink{class_program_1_1_elegir_pokemon_maquina}{Elegir\+Pokemon\+Maquina}}
-\item 
+\begin{DoxyCompactList}\small\item\em Clase que gestiona la selección de equipos Pokémon para los jugadores. Permite a los jugadores seleccionar sus equipos de 6 Pokémon del catálogo disponible. \end{DoxyCompactList}\item 
 class {\bfseries Habilidades\+Por\+Tipo}
-\item 
+\begin{DoxyCompactList}\small\item\em Clase estática que gestiona y proporciona los ataques disponibles para cada tipo de Pokémon. Implementa un sistema de catálogo de ataques organizados por tipo elemental. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon}{IHabilidades\+Pokemon}}
-\item 
+\begin{DoxyCompactList}\small\item\em Define las propiedades básicas relacionadas con las habilidades de un Pokémon. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_program_1_1_i_item}{IItem}}
-\item 
-interface \mbox{\hyperlink{interface_program_1_1_i_jugadores}{IJugadores}}
-\item 
-class \mbox{\hyperlink{class_program_1_1_incializacion_batalla}{Incializacion\+Batalla}}
-\item 
-interface \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representa un ítem en el juego que puede ser usado por un Pokémon. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_program_1_1_i_jugador}{IJugador}}
+\begin{DoxyCompactList}\small\item\em Representa a un jugador en el juego, que tiene una lista de Pokémon y un identificador único. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_program_1_1_inicializacion_batalla_contra_jugador}{Inicializacion\+Batalla\+Contra\+Jugador}}
+\begin{DoxyCompactList}\small\item\em Clase encargada de inicializar y gestionar la lógica de la batalla entre dos jugadores. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}
+\begin{DoxyCompactList}\small\item\em Representa un Pokémon en el juego, con atributos como nombre, tipo y vida. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}}
-\item 
+\begin{DoxyCompactList}\small\item\em Interfaz que define el patrón Visitor para interactuar con objetos de tipo \doxylink{interface_program_1_1_i_pokemon}{IPokemon}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_jugador}{Jugador}}
+\begin{DoxyCompactList}\small\item\em Representa a un jugador en el juego, que tiene una lista de Pokémon y una colección de ítems. \end{DoxyCompactList}\item 
+class {\bfseries Lista\+Test\+Jugador1}
 \item 
-class \mbox{\hyperlink{class_program_1_1_maquina}{Maquina}}
+class {\bfseries Lista\+Test\+Usuario2}
 \item 
 class \mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representa un Pokémon en el juego, con atributos, estados y habilidades. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_program}{Program}}
 \item 
 class \mbox{\hyperlink{class_program_1_1_revivir}{Revivir}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representa el ítem "{}\+Revivir"{}, que permite revivir a un Pokémon debilitado. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke}{Seleccion\+Pokes\+Visitor\+Poke}}
-\item 
+\begin{DoxyCompactList}\small\item\em Implementa el patrón Visitor para gestionar la selección de Pokémon en un equipo. Controla la lógica de añadir Pokémon al equipo, verificando duplicados y límites. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_sistema_combate}{Sistema\+Combate}}
-\item 
+\begin{DoxyCompactList}\small\item\em Clase que contiene la lógica para realizar ataques en el sistema de combate. Permite gestionar tanto los ataques del jugador como los de la máquina. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_super_pocion}{Super\+Pocion}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representa el ítem "{}\+Súper poción"{}, que cura la vida de un Pokémon. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_program_1_1_tabla_efectividad}{Tabla\+Efectividad}}
-\item 
-class \mbox{\hyperlink{class_program_1_1_tipo}{Tipo}}
-\item 
-class \mbox{\hyperlink{class_program_1_1_utilizacion_item}{Utilizacion\+Item}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clase que gestiona la tabla de efectividad entre los diferentes tipos de Pokémon. Permite calcular el multiplicador de daño basado en los tipos del atacante y el defensor. \end{DoxyCompactList}\item 
+class {\bfseries Utilities}
+\begin{DoxyCompactList}\small\item\em Clase estática que contiene métodos utilitarios para diferentes acciones dentro del sistema de combate Pokémon. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}\label{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0} 
-enum {\bfseries Tipo\+Pokemon} \{ \newline
+enum \mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} \{ \newline
 {\bfseries Normal}
 , {\bfseries Fuego}
 , {\bfseries Agua}
@@ -79,7 +71,7 @@ enum {\bfseries Tipo\+Pokemon} \{ \newline
 , {\bfseries Fantasma}
 , {\bfseries Dragon}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Enumeración que define los tipos de Pokémon La enumeración permite que las clases y métodos que la usen puedan hacer referencia a los tipos de Pokémon de manera segura y entendible, sin necesidad de usar cadenas de texto. \end{DoxyCompactList}\item 
 \Hypertarget{namespace_program_a7056047fbb71333cc003626b0ce41d36}\label{namespace_program_a7056047fbb71333cc003626b0ce41d36} 
 enum {\bfseries Estado\+Especial} \{ \newline
 {\bfseries Normal}

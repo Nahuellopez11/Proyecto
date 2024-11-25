@@ -2,33 +2,32 @@
 \hypertarget{class_program_1_1_pokemon}{}\label{class_program_1_1_pokemon}\index{Program.Pokemon@{Program.Pokemon}}
 
 
-Inheritance diagram for Program.\+Pokemon\+:
-% FIG 0
+Representa un Pokémon en el juego, con atributos, estados y habilidades.  
 
 
-Collaboration diagram for Program.\+Pokemon\+:
-% FIG 1
+Inheritance diagram for Program.\+Pokemon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_program_1_1_pokemon}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2}\label{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2} 
-{\bfseries Pokemon} (string nombre, int vida, Tipo\+Pokemon tipo)
-\item 
-\Hypertarget{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540}\label{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540} 
-void {\bfseries Recibir\+Daño} (int daño)
-\item 
-\Hypertarget{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d}\label{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d} 
-bool {\bfseries Puede\+Atacar} ()
-\item 
-\Hypertarget{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c}\label{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c} 
-void {\bfseries Aplicar\+Efecto\+Estado} (Estado\+Especial nuevo\+Estado)
-\item 
+\mbox{\hyperlink{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2}{Pokemon}} (string nombre, int vida, \mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} tipo)
+\begin{DoxyCompactList}\small\item\em Inicializa una nueva instancia de la clase \doxylink{class_program_1_1_pokemon}{Pokemon} con los atributos básicos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540}{Recibir\+Daño}} (int daño)
+\begin{DoxyCompactList}\small\item\em Reduce la vida del Pokémon en una cantidad específica de daño. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d}{Puede\+Atacar}} ()
+\begin{DoxyCompactList}\small\item\em Determina si el Pokémon puede atacar dependiendo de su estado actual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c}{Aplicar\+Efecto\+Estado}} (Estado\+Especial nuevo\+Estado)
+\begin{DoxyCompactList}\small\item\em Aplica un nuevo estado especial al Pokémon. \end{DoxyCompactList}\item 
 \Hypertarget{class_program_1_1_pokemon_acd9e6121406b62e49b66b0bf2086a714}\label{class_program_1_1_pokemon_acd9e6121406b62e49b66b0bf2086a714} 
 void {\bfseries Aplicar\+Efectos\+Fin\+Turno} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Aplica los efectos de fin de turno en función del estado especial actual del Pokémon. \end{DoxyCompactList}\item 
 \Hypertarget{class_program_1_1_pokemon_a032a2e43f395333f969dcafaae8e83d3}\label{class_program_1_1_pokemon_a032a2e43f395333f969dcafaae8e83d3} 
 void {\bfseries Curar\+Estados} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Cura al Pokémon de todos los estados especiales. \end{DoxyCompactList}\item 
 \Hypertarget{class_program_1_1_pokemon_a5541fb9df3ecf86cd7f71e7d99e316da}\label{class_program_1_1_pokemon_a5541fb9df3ecf86cd7f71e7d99e316da} 
 override bool {\bfseries Equals} (object obj)
 \item 
@@ -36,33 +35,56 @@ override bool {\bfseries Equals} (object obj)
 override int {\bfseries Get\+Hash\+Code} ()
 \item 
 void \mbox{\hyperlink{class_program_1_1_pokemon_abd489405b1e43394247cd4a73f19ceed}{Accept}} (\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}} visitor\+Poke)
-\item 
-\Hypertarget{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e}\label{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e} 
-void {\bfseries Aprender\+Ataque} (\mbox{\hyperlink{class_program_1_1_ataque}{Ataque}} ataque)
-\item 
-\Hypertarget{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db}\label{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db} 
-void {\bfseries Realizar\+Ataque} (int indice\+Ataque, \mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} objetivo)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}}
+\begin{DoxyCompactList}\small\item\em Acepta un visitante que implementa la interfaz \doxylink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke} para aplicar una operación al Pokémon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e}{Aprender\+Ataque}} (\mbox{\hyperlink{class_program_1_1_ataque}{Ataque}} ataque)
+\begin{DoxyCompactList}\small\item\em Agrega un nuevo ataque al conjunto de ataques disponibles del Pokémon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db}{Realizar\+Ataque}} (int indice\+Ataque, \mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} objetivo)
+\begin{DoxyCompactList}\small\item\em Realiza un ataque al Pokémon objetivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_program_1_1_i_pokemon}{Program.\+IPokemon}}}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_program_1_1_pokemon_ad7a4b713bb74344d9554d7f2ba1030d7}{Nombre}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
-Tipo\+Pokemon \mbox{\hyperlink{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b}{Tipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene el nombre del Pokémon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} \mbox{\hyperlink{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b}{Tipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo del Pokémon. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_program_1_1_pokemon_ab3e9253a2ccae2850ed72691a9c0742a}{Vida}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene o establece la cantidad actual de vida del Pokémon. \end{DoxyCompactList}\item 
 \Hypertarget{class_program_1_1_pokemon_a06ff32dbfad6b43e9ff14ae0133b5f32}\label{class_program_1_1_pokemon_a06ff32dbfad6b43e9ff14ae0133b5f32} 
 int {\bfseries Vida\+Inicial}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene o establece la cantidad inicial de vida del Pokémon. \end{DoxyCompactList}\item 
 \Hypertarget{class_program_1_1_pokemon_a17cb1b460975e21fc9b7070704d5c0d6}\label{class_program_1_1_pokemon_a17cb1b460975e21fc9b7070704d5c0d6} 
 List$<$ \mbox{\hyperlink{class_program_1_1_ataque}{Ataque}} $>$ {\bfseries Ataques\+Disponibles}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Lista de ataques que el Pokémon tiene disponibles. \end{DoxyCompactList}\item 
 \Hypertarget{class_program_1_1_pokemon_a5ecff14ea3079bab0068bbdb35b1576f}\label{class_program_1_1_pokemon_a5ecff14ea3079bab0068bbdb35b1576f} 
 Estado\+Especial {\bfseries Estado\+Actual}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el estado especial actual del Pokémon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_pokemon}{Program.\+IPokemon}}}
+
+
+\doxysubsection{Detailed Description}
+Representa un Pokémon en el juego, con atributos, estados y habilidades. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2}\index{Program.Pokemon@{Program.Pokemon}!Pokemon@{Pokemon}}
+\index{Pokemon@{Pokemon}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{Pokemon()}{Pokemon()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a6cb638b998e510fce1931deb07816da2} 
+Program.\+Pokemon.\+Pokemon (\begin{DoxyParamCaption}\item[{string}]{nombre}{, }\item[{int}]{vida}{, }\item[{\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}}}]{tipo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa una nueva instancia de la clase \doxylink{class_program_1_1_pokemon}{Pokemon} con los atributos básicos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & Nombre del Pokémon.\\
+\hline
+{\em vida} & Cantidad inicial de vida.\\
+\hline
+{\em tipo} & Tipo del Pokémon.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -70,12 +92,96 @@ Estado\+Especial {\bfseries Estado\+Actual}\hspace{0.3cm}{\ttfamily  \mbox{[}get
 \index{Accept@{Accept}!Program.Pokemon@{Program.Pokemon}}
 \doxysubsubsection{\texorpdfstring{Accept()}{Accept()}}
 {\footnotesize\ttfamily \label{class_program_1_1_pokemon_abd489405b1e43394247cd4a73f19ceed} 
-void Program.\+Pokemon.\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}}}]{visitor\+Poke}{}\end{DoxyParamCaption})}
+void Program.\+Pokemon.\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}}}]{visitor\+Poke}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+Acepta un visitante que implementa la interfaz \doxylink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke} para aplicar una operación al Pokémon. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em visitor\+Poke} & El visitante que realizará una operación sobre el Pokémon.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemon_a75ecef174fe49cafb2061a75313be1fe}{Program.\+IPokemon}}.
+
+\Hypertarget{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c}\index{Program.Pokemon@{Program.Pokemon}!AplicarEfectoEstado@{AplicarEfectoEstado}}
+\index{AplicarEfectoEstado@{AplicarEfectoEstado}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{AplicarEfectoEstado()}{AplicarEfectoEstado()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a99e54842fc4067d138aadb011f71179c} 
+void Program.\+Pokemon.\+Aplicar\+Efecto\+Estado (\begin{DoxyParamCaption}\item[{Estado\+Especial}]{nuevo\+Estado}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Aplica un nuevo estado especial al Pokémon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nuevo\+Estado} & El nuevo estado especial a aplicar.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e}\index{Program.Pokemon@{Program.Pokemon}!AprenderAtaque@{AprenderAtaque}}
+\index{AprenderAtaque@{AprenderAtaque}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{AprenderAtaque()}{AprenderAtaque()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a657340efa2fcc53fe981016bee5c108e} 
+void Program.\+Pokemon.\+Aprender\+Ataque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_program_1_1_ataque}{Ataque}}}]{ataque}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Agrega un nuevo ataque al conjunto de ataques disponibles del Pokémon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ataque} & El ataque que el Pokémon aprenderá.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d}\index{Program.Pokemon@{Program.Pokemon}!PuedeAtacar@{PuedeAtacar}}
+\index{PuedeAtacar@{PuedeAtacar}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{PuedeAtacar()}{PuedeAtacar()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a722a57a323cd89caf253e76cda56a72d} 
+bool Program.\+Pokemon.\+Puede\+Atacar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina si el Pokémon puede atacar dependiendo de su estado actual. 
+
+\begin{DoxyReturn}{Returns}
+Verdadero si el Pokémon puede atacar; de lo contrario, falso.
+\end{DoxyReturn}
+\Hypertarget{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db}\index{Program.Pokemon@{Program.Pokemon}!RealizarAtaque@{RealizarAtaque}}
+\index{RealizarAtaque@{RealizarAtaque}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{RealizarAtaque()}{RealizarAtaque()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a684a5cbf0cfc8b41b86656ac597420db} 
+void Program.\+Pokemon.\+Realizar\+Ataque (\begin{DoxyParamCaption}\item[{int}]{indice\+Ataque}{, }\item[{\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}}]{objetivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Realiza un ataque al Pokémon objetivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice\+Ataque} & El índice del ataque en la lista de ataques disponibles.\\
+\hline
+{\em objetivo} & El Pokémon objetivo del ataque.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540}\index{Program.Pokemon@{Program.Pokemon}!RecibirDaño@{RecibirDaño}}
+\index{RecibirDaño@{RecibirDaño}!Program.Pokemon@{Program.Pokemon}}
+\doxysubsubsection{\texorpdfstring{RecibirDaño()}{RecibirDaño()}}
+{\footnotesize\ttfamily \label{class_program_1_1_pokemon_a2fc553334a881908319d723e1246d540} 
+void Program.\+Pokemon.\+Recibir\+Daño (\begin{DoxyParamCaption}\item[{int}]{daño}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reduce la vida del Pokémon en una cantidad específica de daño. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em daño} & Cantidad de daño recibido.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Property Documentation}
@@ -87,17 +193,25 @@ string Program.\+Pokemon.\+Nombre\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+Obtiene el nombre del Pokémon. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemon_a411f5dd18658ba06ff28a9ebdcc93421}{Program.\+IPokemon}}.
 
 \Hypertarget{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b}\index{Program.Pokemon@{Program.Pokemon}!Tipo@{Tipo}}
 \index{Tipo@{Tipo}!Program.Pokemon@{Program.Pokemon}}
 \doxysubsubsection{\texorpdfstring{Tipo}{Tipo}}
 {\footnotesize\ttfamily \label{class_program_1_1_pokemon_a48e088cab042442479fec53d82620c1b} 
-Tipo\+Pokemon Program.\+Pokemon.\+Tipo\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} Program.\+Pokemon.\+Tipo\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+Obtiene el tipo del Pokémon. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemon_a115048d2b4c464128ddfd1914ee1ad70}{Program.\+IPokemon}}.
 
 \Hypertarget{class_program_1_1_pokemon_ab3e9253a2ccae2850ed72691a9c0742a}\index{Program.Pokemon@{Program.Pokemon}!Vida@{Vida}}
 \index{Vida@{Vida}!Program.Pokemon@{Program.Pokemon}}
@@ -107,10 +221,14 @@ double Program.\+Pokemon.\+Vida\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_pokemones}{Program.\+IPokemones}}.
+Obtiene o establece la cantidad actual de vida del Pokémon. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_pokemon_a0769d065a7abd72e91de84a1ef673b0d}{Program.\+IPokemon}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Pokemon.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+IPokemon/Pokemon.\+cs\end{DoxyCompactItemize}

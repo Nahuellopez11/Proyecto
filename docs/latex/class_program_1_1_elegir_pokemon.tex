@@ -1,19 +1,72 @@
 \doxysection{Program.\+Elegir\+Pokemon Class Reference}
 \hypertarget{class_program_1_1_elegir_pokemon}{}\label{class_program_1_1_elegir_pokemon}\index{Program.ElegirPokemon@{Program.ElegirPokemon}}
-\doxysubsubsection*{Static Public Member Functions}
+
+
+Clase que gestiona la selección de equipos Pokémon para los jugadores. Permite a los jugadores seleccionar sus equipos de 6 Pokémon del catálogo disponible.  
+
+
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_program_1_1_elegir_pokemon_af73543bac2413d1e8f44c0c06b8c8dbb}\label{class_program_1_1_elegir_pokemon_af73543bac2413d1e8f44c0c06b8c8dbb} 
-static void {\bfseries Seleccionar\+Equipo} ()
+\Hypertarget{class_program_1_1_elegir_pokemon_a56846d18c9a4b76dace79d4a11142e3a}\label{class_program_1_1_elegir_pokemon_a56846d18c9a4b76dace79d4a11142e3a} 
+void {\bfseries Seleccionar\+Equipo} ()
+\begin{DoxyCompactList}\small\item\em Permite al primer jugador seleccionar interactivamente su equipo de 6 Pokémon. Muestra el catálogo y permite la selección uno por uno hasta completar el equipo. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_elegir_pokemon_a8534e8d3e8d735540f4e91b17c7c207e}\label{class_program_1_1_elegir_pokemon_a8534e8d3e8d735540f4e91b17c7c207e} 
+void {\bfseries Seleccionar\+Equipo2} ()
+\begin{DoxyCompactList}\small\item\em Permite al segundo jugador seleccionar interactivamente su equipo de 6 Pokémon. Muestra el catálogo y permite la selección uno por uno hasta completar el equipo. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_elegir_pokemon_a6f7f7c74b7966f7a4f4a98cd95a9aff6}\label{class_program_1_1_elegir_pokemon_a6f7f7c74b7966f7a4f4a98cd95a9aff6} 
+void {\bfseries Mostrar\+Equipo\+Final} ()
+\begin{DoxyCompactList}\small\item\em Muestra en consola el equipo final del primer jugador. Lista cada Pokémon con su nombre, tipo y puntos de vida. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_elegir_pokemon_a2196523ebd85f14a103648d662c2a9fe}\label{class_program_1_1_elegir_pokemon_a2196523ebd85f14a103648d662c2a9fe} 
+void {\bfseries Mostrar\+Equipo\+Final2} ()
+\begin{DoxyCompactList}\small\item\em Muestra en consola el equipo final del segundo jugador. Lista cada Pokémon con su nombre, tipo y puntos de vida. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{class_program_1_1_elegir_pokemon_a32074e0d90654573d7081bf7acb5b936}{Devolver\+Listajugador1}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de Pokémon seleccionados por el primer jugador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{class_program_1_1_elegir_pokemon_a60568ddc1c581cd564207804d4841c33}{Devolver\+Listajugador2}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de Pokémon seleccionados por el segundo jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_program_1_1_elegir_pokemon_ac42ee6f0d35c959f0b1f91d3ea64000c}\label{class_program_1_1_elegir_pokemon_ac42ee6f0d35c959f0b1f91d3ea64000c} 
-static void {\bfseries Mostrar\+Equipo\+Final} ()
-\item 
-\Hypertarget{class_program_1_1_elegir_pokemon_a70dad4e15c35eee84e51244e92e4bae1}\label{class_program_1_1_elegir_pokemon_a70dad4e15c35eee84e51244e92e4bae1} 
-static List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} $>$ {\bfseries Devolver\+Lista} ()
-\end{DoxyCompactItemize}
+\Hypertarget{class_program_1_1_elegir_pokemon_ae2b7b95b05ef9f61f9c6304db0916673}\label{class_program_1_1_elegir_pokemon_ae2b7b95b05ef9f61f9c6304db0916673} 
+\mbox{\hyperlink{class_program_1_1_catalogo_pokemones}{Catalogo\+Pokemones}} {\bfseries catalogo} = new \mbox{\hyperlink{class_program_1_1_catalogo_pokemones}{Catalogo\+Pokemones}}()
+\begin{DoxyCompactList}\small\item\em Instancia del catálogo de Pokémon que contiene todos los Pokémon disponibles para selección. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_elegir_pokemon_aacb956624707c4ec1fd3db2212a91dfb}\label{class_program_1_1_elegir_pokemon_aacb956624707c4ec1fd3db2212a91dfb} 
+Random {\bfseries random} = new Random()
+\begin{DoxyCompactList}\small\item\em Generador de números aleatorios utilizado para selecciones aleatorias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que gestiona la selección de equipos Pokémon para los jugadores. Permite a los jugadores seleccionar sus equipos de 6 Pokémon del catálogo disponible. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_elegir_pokemon_a32074e0d90654573d7081bf7acb5b936}\index{Program.ElegirPokemon@{Program.ElegirPokemon}!DevolverListajugador1@{DevolverListajugador1}}
+\index{DevolverListajugador1@{DevolverListajugador1}!Program.ElegirPokemon@{Program.ElegirPokemon}}
+\doxysubsubsection{\texorpdfstring{DevolverListajugador1()}{DevolverListajugador1()}}
+{\footnotesize\ttfamily \label{class_program_1_1_elegir_pokemon_a32074e0d90654573d7081bf7acb5b936} 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ Program.\+Elegir\+Pokemon.\+Devolver\+Listajugador1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de Pokémon seleccionados por el primer jugador. 
+
+\begin{DoxyReturn}{Returns}
+Lista de \doxylink{interface_program_1_1_i_pokemon}{IPokemon} que representa el equipo completo del primer jugador.
+\end{DoxyReturn}
+\Hypertarget{class_program_1_1_elegir_pokemon_a60568ddc1c581cd564207804d4841c33}\index{Program.ElegirPokemon@{Program.ElegirPokemon}!DevolverListajugador2@{DevolverListajugador2}}
+\index{DevolverListajugador2@{DevolverListajugador2}!Program.ElegirPokemon@{Program.ElegirPokemon}}
+\doxysubsubsection{\texorpdfstring{DevolverListajugador2()}{DevolverListajugador2()}}
+{\footnotesize\ttfamily \label{class_program_1_1_elegir_pokemon_a60568ddc1c581cd564207804d4841c33} 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ Program.\+Elegir\+Pokemon.\+Devolver\+Listajugador2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la lista de Pokémon seleccionados por el segundo jugador. 
+
+\begin{DoxyReturn}{Returns}
+Lista de \doxylink{interface_program_1_1_i_pokemon}{IPokemon} que representa el equipo completo del segundo jugador.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Elegir\+Pokes/Elegir\+Pokemon.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+Elegir\+Pokemon/Elegir\+Pokemon.\+cs\end{DoxyCompactItemize}

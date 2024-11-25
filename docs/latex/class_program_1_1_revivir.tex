@@ -2,38 +2,60 @@
 \hypertarget{class_program_1_1_revivir}{}\label{class_program_1_1_revivir}\index{Program.Revivir@{Program.Revivir}}
 
 
-Inheritance diagram for Program.\+Revivir\+:
-% FIG 0
+Representa el ítem "{}\+Revivir"{}, que permite revivir a un Pokémon debilitado.  
 
 
-Collaboration diagram for Program.\+Revivir\+:
-% FIG 1
+Inheritance diagram for Program.\+Revivir\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_program_1_1_revivir}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_program_1_1_revivir_a85577d1386ba21893765f56be89e5a48}{Usar}} (\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_program_1_1_revivir_a4548d3db1643b55970d250184481e20d}{Usar}} (\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon)
+\begin{DoxyCompactList}\small\item\em Aplica el efecto del ítem al Pokémon especificado. Revive al Pokémon si está debilitado (vida = 0) y hay usos disponibles. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_program_1_1_revivir_ab6c54b0139005e4e2349be3ca63762ab}{Nombre}} = "{}Revivir"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el nombre del ítem. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_program_1_1_revivir_a764dae6ce5acb8392bb4121991e7a74f}{Usos\+Restantes}} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el número de usos restantes del ítem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}}
 
 
+\doxysubsection{Detailed Description}
+Representa el ítem "{}\+Revivir"{}, que permite revivir a un Pokémon debilitado. 
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_program_1_1_revivir_a85577d1386ba21893765f56be89e5a48}\index{Program.Revivir@{Program.Revivir}!Usar@{Usar}}
+\Hypertarget{class_program_1_1_revivir_a4548d3db1643b55970d250184481e20d}\index{Program.Revivir@{Program.Revivir}!Usar@{Usar}}
 \index{Usar@{Usar}!Program.Revivir@{Program.Revivir}}
 \doxysubsubsection{\texorpdfstring{Usar()}{Usar()}}
-{\footnotesize\ttfamily \label{class_program_1_1_revivir_a85577d1386ba21893765f56be89e5a48} 
-void Program.\+Revivir.\+Usar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}}]{pokemon}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_program_1_1_revivir_a4548d3db1643b55970d250184481e20d} 
+void Program.\+Revivir.\+Usar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}}]{pokemon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}.
+Aplica el efecto del ítem al Pokémon especificado. Revive al Pokémon si está debilitado (vida = 0) y hay usos disponibles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pokemon} & El Pokémon al que se aplicará el ítem.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyItemize}
+\item Si el Pokémon está debilitado y hay usos restantes, este ítem restaura su vida al 50\% de su máximo.
+\item Si el Pokémon no está debilitado, no se puede usar este ítem.
+\item Si no quedan usos, se muestra un mensaje indicando que el ítem está agotado. 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_item_a02ea311e64b9ad746ebc9591a04e99d5}{Program.\+IItem}}.
 
 
 
@@ -46,7 +68,11 @@ string Program.\+Revivir.\+Nombre = "{}Revivir"{}\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}.
+Obtiene o establece el nombre del ítem. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_item_ad5f4e7c4c8664e57dc4f21044ad1c049}{Program.\+IItem}}.
 
 \Hypertarget{class_program_1_1_revivir_a764dae6ce5acb8392bb4121991e7a74f}\index{Program.Revivir@{Program.Revivir}!UsosRestantes@{UsosRestantes}}
 \index{UsosRestantes@{UsosRestantes}!Program.Revivir@{Program.Revivir}}
@@ -56,10 +82,14 @@ int Program.\+Revivir.\+Usos\+Restantes = 1\hspace{0.3cm}{\ttfamily [get]}, {\tt
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}.
+Obtiene o establece el número de usos restantes del ítem. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_item_af2c040adb7d4cf1733c014b9094ad4b8}{Program.\+IItem}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Items/Revivir.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+IItem/Revivir.\+cs\end{DoxyCompactItemize}

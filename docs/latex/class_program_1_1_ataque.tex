@@ -2,4 +2,126 @@
 \hypertarget{class_program_1_1_ataque}{}\label{class_program_1_1_ataque}\index{Program.Ataque@{Program.Ataque}}
 
 
-Inheritance diagram for Program.\+Ataque\+:
+Representa un ataque que un Pokémon puede realizar, incluyendo sus propiedades y lógica de cálculo de daño.  
+
+
+Inheritance diagram for Program.\+Ataque\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_program_1_1_ataque}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_program_1_1_ataque_a2f4aa5889b394b9e52e79fc41f931352}{Ataque}} (string nombre, \mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} tipo, int daño\+Base, double precision)
+\begin{DoxyCompactList}\small\item\em Inicializa una nueva instancia de la clase \doxylink{class_program_1_1_ataque}{Ataque}. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_program_1_1_ataque_a1373e49eac92b77dfcf510d1ed9b1eea}{Calcular\+Daño}} (\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} atacante, \mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} objetivo)
+\begin{DoxyCompactList}\small\item\em Calcula el daño infligido por este ataque a un objetivo, considerando precisión, efectividad de tipos y golpes críticos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_program_1_1_ataque_a497076808f0b5d712c0049b695b6e459}{Nombre\+Habilidad}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el nombre del ataque. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_program_1_1_ataque_a397fb511fd88167b6f6ae241b0ef0f83}{Valor\+Ataque}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el valor base de ataque. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_ataque_a15e8b6a6dd35aedfa116a72179e40647}\label{class_program_1_1_ataque_a15e8b6a6dd35aedfa116a72179e40647} 
+\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}} {\bfseries Tipo}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene el tipo del ataque. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_ataque_a3db8916b6c6c614c65f576598bb34299}\label{class_program_1_1_ataque_a3db8916b6c6c614c65f576598bb34299} 
+int {\bfseries Daño\+Base}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene el daño base del ataque. \end{DoxyCompactList}\item 
+\Hypertarget{class_program_1_1_ataque_a6ba8c16633d316801c10529e7990a321}\label{class_program_1_1_ataque_a6ba8c16633d316801c10529e7990a321} 
+double {\bfseries Precision}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene la precisión del ataque, representada como un valor entre 0 y 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon}{Program.\+IHabilidades\+Pokemon}}}
+
+
+\doxysubsection{Detailed Description}
+Representa un ataque que un Pokémon puede realizar, incluyendo sus propiedades y lógica de cálculo de daño. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_program_1_1_ataque_a2f4aa5889b394b9e52e79fc41f931352}\index{Program.Ataque@{Program.Ataque}!Ataque@{Ataque}}
+\index{Ataque@{Ataque}!Program.Ataque@{Program.Ataque}}
+\doxysubsubsection{\texorpdfstring{Ataque()}{Ataque()}}
+{\footnotesize\ttfamily \label{class_program_1_1_ataque_a2f4aa5889b394b9e52e79fc41f931352} 
+Program.\+Ataque.\+Ataque (\begin{DoxyParamCaption}\item[{string}]{nombre}{, }\item[{\mbox{\hyperlink{namespace_program_a38f830971c7575cd1ac4f48a7546e5b0}{Tipo\+Pokemon}}}]{tipo}{, }\item[{int}]{daño\+Base}{, }\item[{double}]{precision}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa una nueva instancia de la clase \doxylink{class_program_1_1_ataque}{Ataque}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nombre} & El nombre del ataque.\\
+\hline
+{\em tipo} & El tipo del ataque.\\
+\hline
+{\em daño\+Base} & El daño base del ataque.\\
+\hline
+{\em precision} & La precisión del ataque (valor entre 0 y 1).\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_ataque_a1373e49eac92b77dfcf510d1ed9b1eea}\index{Program.Ataque@{Program.Ataque}!CalcularDaño@{CalcularDaño}}
+\index{CalcularDaño@{CalcularDaño}!Program.Ataque@{Program.Ataque}}
+\doxysubsubsection{\texorpdfstring{CalcularDaño()}{CalcularDaño()}}
+{\footnotesize\ttfamily \label{class_program_1_1_ataque_a1373e49eac92b77dfcf510d1ed9b1eea} 
+virtual int Program.\+Ataque.\+Calcular\+Daño (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}}]{atacante}{, }\item[{\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}}]{objetivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Calcula el daño infligido por este ataque a un objetivo, considerando precisión, efectividad de tipos y golpes críticos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em atacante} & El Pokémon que realiza el ataque.\\
+\hline
+{\em objetivo} & El Pokémon objetivo del ataque.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La cantidad de daño infligido.
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_program_1_1_ataque_especial_a38ffbba90c000bd3b0664eb0178dcb9c}{Program.\+Ataque\+Especial}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_program_1_1_ataque_a497076808f0b5d712c0049b695b6e459}\index{Program.Ataque@{Program.Ataque}!NombreHabilidad@{NombreHabilidad}}
+\index{NombreHabilidad@{NombreHabilidad}!Program.Ataque@{Program.Ataque}}
+\doxysubsubsection{\texorpdfstring{NombreHabilidad}{NombreHabilidad}}
+{\footnotesize\ttfamily \label{class_program_1_1_ataque_a497076808f0b5d712c0049b695b6e459} 
+string Program.\+Ataque.\+Nombre\+Habilidad\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece el nombre del ataque. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon_a29749f9a9620c212a0e989f6afae8a59}{Program.\+IHabilidades\+Pokemon}}.
+
+\Hypertarget{class_program_1_1_ataque_a397fb511fd88167b6f6ae241b0ef0f83}\index{Program.Ataque@{Program.Ataque}!ValorAtaque@{ValorAtaque}}
+\index{ValorAtaque@{ValorAtaque}!Program.Ataque@{Program.Ataque}}
+\doxysubsubsection{\texorpdfstring{ValorAtaque}{ValorAtaque}}
+{\footnotesize\ttfamily \label{class_program_1_1_ataque_a397fb511fd88167b6f6ae241b0ef0f83} 
+int Program.\+Ataque.\+Valor\+Ataque\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece el valor base de ataque. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon_a05eca072ac7209f523083336f1725094}{Program.\+IHabilidades\+Pokemon}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Library/\+Logica\+De\+Juego/Ataque.\+cs\end{DoxyCompactItemize}

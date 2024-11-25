@@ -2,29 +2,88 @@
 \hypertarget{class_program_1_1_jugador}{}\label{class_program_1_1_jugador}\index{Program.Jugador@{Program.Jugador}}
 
 
-Inheritance diagram for Program.\+Jugador\+:
-% FIG 0
+Representa a un jugador en el juego, que tiene una lista de Pokémon y una colección de ítems.  
 
 
-Collaboration diagram for Program.\+Jugador\+:
-% FIG 1
+Inheritance diagram for Program.\+Jugador\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_program_1_1_jugador}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_program_1_1_jugador_ac17cd22950023696305c7bca30149a3b}\label{class_program_1_1_jugador_ac17cd22950023696305c7bca30149a3b} 
-{\bfseries Jugador} (List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} $>$ lista\+De\+Pokemones)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_program_1_1_jugador_a92951088758041ec1d61e71d7f09fba5}{Jugador}} (List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ lista\+De\+Pokemones)
+\begin{DoxyCompactList}\small\item\em Inicializa una nueva instancia de la clase \doxylink{class_program_1_1_jugador}{Jugador} con una lista específica de Pokémon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} \mbox{\hyperlink{class_program_1_1_jugador_a81e89c15923cb9b8989a64735b6a091c}{Elegir\+Primer\+Pokemon}} ()
+\begin{DoxyCompactList}\small\item\em Selecciona el primer Pokémon de la lista de Pokémon del jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} $>$ \mbox{\hyperlink{class_program_1_1_jugador_ab0a80853798d12373167e9df7fab099c}{Lista\+De\+Pokemones}} = new List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+int \mbox{\hyperlink{class_program_1_1_jugador_a4442f177a21e0423142d442325c3e15c}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el identificador único del jugador. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{class_program_1_1_jugador_a5325e0a095ea3377704627fcf2c4d48e}{Lista\+De\+Pokemones}} = new List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece la lista de Pokémon que posee el jugador. \end{DoxyCompactList}\item 
 List$<$ \mbox{\hyperlink{interface_program_1_1_i_item}{IItem}} $>$ \mbox{\hyperlink{class_program_1_1_jugador_a4899af31cf107059b9ff62e8127ce201}{Items}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_jugadores}{Program.\+IJugadores}}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece la lista de ítems disponibles para el jugador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_jugador}{Program.\+IJugador}}}
 
+
+\doxysubsection{Detailed Description}
+Representa a un jugador en el juego, que tiene una lista de Pokémon y una colección de ítems. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_program_1_1_jugador_a92951088758041ec1d61e71d7f09fba5}\index{Program.Jugador@{Program.Jugador}!Jugador@{Jugador}}
+\index{Jugador@{Jugador}!Program.Jugador@{Program.Jugador}}
+\doxysubsubsection{\texorpdfstring{Jugador()}{Jugador()}}
+{\footnotesize\ttfamily \label{class_program_1_1_jugador_a92951088758041ec1d61e71d7f09fba5} 
+Program.\+Jugador.\+Jugador (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$}]{lista\+De\+Pokemones}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa una nueva instancia de la clase \doxylink{class_program_1_1_jugador}{Jugador} con una lista específica de Pokémon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista\+De\+Pokemones} & La lista de Pokémon inicial del jugador.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_jugador_a81e89c15923cb9b8989a64735b6a091c}\index{Program.Jugador@{Program.Jugador}!ElegirPrimerPokemon@{ElegirPrimerPokemon}}
+\index{ElegirPrimerPokemon@{ElegirPrimerPokemon}!Program.Jugador@{Program.Jugador}}
+\doxysubsubsection{\texorpdfstring{ElegirPrimerPokemon()}{ElegirPrimerPokemon()}}
+{\footnotesize\ttfamily \label{class_program_1_1_jugador_a81e89c15923cb9b8989a64735b6a091c} 
+\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} Program.\+Jugador.\+Elegir\+Primer\+Pokemon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Selecciona el primer Pokémon de la lista de Pokémon del jugador. 
+
+\begin{DoxyReturn}{Returns}
+El primer Pokémon de la lista.
+\end{DoxyReturn}
+
+
+Asume que la lista de Pokémon no está vacía. Si no hay Pokémon en la lista, podría generar una excepción de índice fuera de rango. 
 
 \doxysubsection{Property Documentation}
+\Hypertarget{class_program_1_1_jugador_a4442f177a21e0423142d442325c3e15c}\index{Program.Jugador@{Program.Jugador}!Id@{Id}}
+\index{Id@{Id}!Program.Jugador@{Program.Jugador}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{class_program_1_1_jugador_a4442f177a21e0423142d442325c3e15c} 
+int Program.\+Jugador.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece el identificador único del jugador. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_jugador_a5e442a4991e0a6bf56eb3be9312d40fa}{Program.\+IJugador}}.
+
 \Hypertarget{class_program_1_1_jugador_a4899af31cf107059b9ff62e8127ce201}\index{Program.Jugador@{Program.Jugador}!Items@{Items}}
 \index{Items@{Items}!Program.Jugador@{Program.Jugador}}
 \doxysubsubsection{\texorpdfstring{Items}{Items}}
@@ -42,18 +101,26 @@ List$<$\mbox{\hyperlink{interface_program_1_1_i_item}{IItem}}$>$ Program.\+Jugad
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
-\Hypertarget{class_program_1_1_jugador_ab0a80853798d12373167e9df7fab099c}\index{Program.Jugador@{Program.Jugador}!ListaDePokemones@{ListaDePokemones}}
+
+
+Obtiene o establece la lista de ítems disponibles para el jugador. 
+
+Por defecto, incluye instancias de los ítems \doxylink{class_program_1_1_super_pocion}{Super\+Pocion} y \doxylink{class_program_1_1_revivir}{Revivir}. Nuevos ítems pueden ser añadidos a esta lista. \Hypertarget{class_program_1_1_jugador_a5325e0a095ea3377704627fcf2c4d48e}\index{Program.Jugador@{Program.Jugador}!ListaDePokemones@{ListaDePokemones}}
 \index{ListaDePokemones@{ListaDePokemones}!Program.Jugador@{Program.Jugador}}
 \doxysubsubsection{\texorpdfstring{ListaDePokemones}{ListaDePokemones}}
-{\footnotesize\ttfamily \label{class_program_1_1_jugador_ab0a80853798d12373167e9df7fab099c} 
-List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}$>$ Program.\+Jugador.\+Lista\+De\+Pokemones = new List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}$>$()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+{\footnotesize\ttfamily \label{class_program_1_1_jugador_a5325e0a095ea3377704627fcf2c4d48e} 
+List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}$>$ Program.\+Jugador.\+Lista\+De\+Pokemones = new List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}$>$()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_jugadores}{Program.\+IJugadores}}.
+Obtiene o establece la lista de Pokémon que posee el jugador. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_jugador_aa70e68cd0c189b4e1e6db93ee4f585a4}{Program.\+IJugador}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Jugador.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+IJugador/Jugador.\+cs\end{DoxyCompactItemize}

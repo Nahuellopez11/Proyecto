@@ -1,16 +1,43 @@
 \doxysection{Program.\+Sistema\+Combate Class Reference}
 \hypertarget{class_program_1_1_sistema_combate}{}\label{class_program_1_1_sistema_combate}\index{Program.SistemaCombate@{Program.SistemaCombate}}
+
+
+Clase que contiene la lógica para realizar ataques en el sistema de combate. Permite gestionar tanto los ataques del jugador como los de la máquina.  
+
+
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_program_1_1_sistema_combate_a7fcea58cece988eae451a1d1275476df}\label{class_program_1_1_sistema_combate_a7fcea58cece988eae451a1d1275476df} 
-static void {\bfseries Realizar\+Ataque\+Maquina} (\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon\+Activo\+Maquina, \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon\+Activo\+Jugador)
+\Hypertarget{class_program_1_1_sistema_combate_a8f2af163f1c8808b47fedbf541723482}\label{class_program_1_1_sistema_combate_a8f2af163f1c8808b47fedbf541723482} 
+static void {\bfseries Realizar\+Ataque\+Maquina} (\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon\+Activo\+Maquina, \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon\+Activo\+Jugador)
 \item 
-\Hypertarget{class_program_1_1_sistema_combate_a7f71e5f2882fe58f7a22d5224add98de}\label{class_program_1_1_sistema_combate_a7f71e5f2882fe58f7a22d5224add98de} 
-static void {\bfseries Realizar\+Ataque\+Jugador} (\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon\+Activo\+Jugador, \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon\+Activo\+Maquina)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_program_1_1_sistema_combate_a7385feb1b6780c00ff4855e6b1abc34c}{Realizar\+Ataque\+Jugador}} (\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon\+Activo\+Jugador, \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon\+Activo\+Maquina)
+\begin{DoxyCompactList}\small\item\em Realiza un ataque desde el Pokémon activo del jugador hacia el Pokémon activo de la máquina. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que contiene la lógica para realizar ataques en el sistema de combate. Permite gestionar tanto los ataques del jugador como los de la máquina. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_1_1_sistema_combate_a7385feb1b6780c00ff4855e6b1abc34c}\index{Program.SistemaCombate@{Program.SistemaCombate}!RealizarAtaqueJugador@{RealizarAtaqueJugador}}
+\index{RealizarAtaqueJugador@{RealizarAtaqueJugador}!Program.SistemaCombate@{Program.SistemaCombate}}
+\doxysubsubsection{\texorpdfstring{RealizarAtaqueJugador()}{RealizarAtaqueJugador()}}
+{\footnotesize\ttfamily \label{class_program_1_1_sistema_combate_a7385feb1b6780c00ff4855e6b1abc34c} 
+static void Program.\+Sistema\+Combate.\+Realizar\+Ataque\+Jugador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}}]{pokemon\+Activo\+Jugador}{, }\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}}]{pokemon\+Activo\+Maquina}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Realiza un ataque desde el Pokémon activo del jugador hacia el Pokémon activo de la máquina. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pokemon\+Activo\+Jugador} & El Pokémon activo del jugador.\\
+\hline
+{\em pokemon\+Activo\+Maquina} & El Pokémon activo de la máquina.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Logica\+De\+Juego/Sistema\+Combate.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+Logica\+De\+Juego/Sistema\+Combate.\+cs\end{DoxyCompactItemize}

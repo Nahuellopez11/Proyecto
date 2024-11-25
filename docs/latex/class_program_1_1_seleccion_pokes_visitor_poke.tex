@@ -2,38 +2,58 @@
 \hypertarget{class_program_1_1_seleccion_pokes_visitor_poke}{}\label{class_program_1_1_seleccion_pokes_visitor_poke}\index{Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}}
 
 
-Inheritance diagram for Program.\+Seleccion\+Pokes\+Visitor\+Poke\+:
-% FIG 0
+Implementa el patrón Visitor para gestionar la selección de Pokémon en un equipo. Controla la lógica de añadir Pokémon al equipo, verificando duplicados y límites.  
 
 
-Collaboration diagram for Program.\+Seleccion\+Pokes\+Visitor\+Poke\+:
-% FIG 1
+Inheritance diagram for Program.\+Seleccion\+Pokes\+Visitor\+Poke\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_program_1_1_seleccion_pokes_visitor_poke}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{class_program_1_1_seleccion_pokes_visitor_poke_a45a01f2ab3c657ff2ee02ae226a7485f}\label{class_program_1_1_seleccion_pokes_visitor_poke_a45a01f2ab3c657ff2ee02ae226a7485f} 
+{\bfseries Seleccion\+Pokes\+Visitor\+Poke} ()
+\begin{DoxyCompactList}\small\item\em Constructor de la clase. Inicializa una nueva instancia del visitor de selección. Crea una lista vacía para el equipo y establece Fue\+Elegido en false. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a95c601ad38d73505948b66f75aefe916}{Visit\+Pokemon}} (\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}} pokemon)
-\item 
-void \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a6a8fb1152d0644a7bf134c7597aaed27}{Visit}} (\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Implementa la lógica de visita para un Pokémon específico. Verifica si el Pokémon puede ser añadido al equipo y lo añade si es posible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a88e46606a72246475a05b299446194c1}{Visit}} (\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon)
+\begin{DoxyCompactList}\small\item\em Implementación base del método Visit de la interfaz \doxylink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVisitor\+Poke}}}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a4bef44467e5b9a57d55180c1ebbe7c4e}{Fue\+Elegido}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
-List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} $>$ \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a6c9c4ebeec9498e46afe88ddfe50f365}{Equipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtiene un valor que indica si el último intento de selección fue exitoso. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} $>$ \mbox{\hyperlink{class_program_1_1_seleccion_pokes_visitor_poke_a1601b2fb1069635ed2b13d729602d6df}{Equipo}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Lista que contiene los Pokémon seleccionados para el equipo. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVisitor\+Poke}}}
 
 
+\doxysubsection{Detailed Description}
+Implementa el patrón Visitor para gestionar la selección de Pokémon en un equipo. Controla la lógica de añadir Pokémon al equipo, verificando duplicados y límites. 
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_program_1_1_seleccion_pokes_visitor_poke_a6a8fb1152d0644a7bf134c7597aaed27}\index{Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}!Visit@{Visit}}
+\Hypertarget{class_program_1_1_seleccion_pokes_visitor_poke_a88e46606a72246475a05b299446194c1}\index{Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}!Visit@{Visit}}
 \index{Visit@{Visit}!Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}}
 \doxysubsubsection{\texorpdfstring{Visit()}{Visit()}}
-{\footnotesize\ttfamily \label{class_program_1_1_seleccion_pokes_visitor_poke_a6a8fb1152d0644a7bf134c7597aaed27} 
-void Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}}]{pokemon}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_program_1_1_seleccion_pokes_visitor_poke_a88e46606a72246475a05b299446194c1} 
+void Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}}]{pokemon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
+
+Implementación base del método Visit de la interfaz \doxylink{interface_program_1_1_i_visitor_poke}{IVisitor\+Poke}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pokemon} & El Pokémon a visitar.\\
+\hline
+\end{DoxyParams}
+
+
+Este método está vacío ya que la lógica principal se implementa en Visit\+Pokemon. 
 
 Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVisitor\+Poke}}.
 
@@ -41,24 +61,44 @@ Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVis
 \index{VisitPokemon@{VisitPokemon}!Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}}
 \doxysubsubsection{\texorpdfstring{VisitPokemon()}{VisitPokemon()}}
 {\footnotesize\ttfamily \label{class_program_1_1_seleccion_pokes_visitor_poke_a95c601ad38d73505948b66f75aefe916} 
-void Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Visit\+Pokemon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}}]{pokemon}{}\end{DoxyParamCaption})}
+void Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Visit\+Pokemon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_program_1_1_pokemon}{Pokemon}}}]{pokemon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVisitor\+Poke}}.
+Implementa la lógica de visita para un Pokémon específico. Verifica si el Pokémon puede ser añadido al equipo y lo añade si es posible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pokemon} & El Pokémon que se intenta añadir al equipo.\\
+\hline
+\end{DoxyParams}
+
+
+El método verifica\+:
+\begin{DoxyItemize}
+\item Si el equipo ya tiene 6 Pokémon
+\item Si el Pokémon ya existe en el equipo
+\item Actualiza Fue\+Elegido según el resultado de la operación 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_aad29be0daab18bdf25b0b1842b9892e7}{Program.\+IVisitor\+Poke}}.
 
 
 
 \doxysubsection{Property Documentation}
-\Hypertarget{class_program_1_1_seleccion_pokes_visitor_poke_a6c9c4ebeec9498e46afe88ddfe50f365}\index{Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}!Equipo@{Equipo}}
+\Hypertarget{class_program_1_1_seleccion_pokes_visitor_poke_a1601b2fb1069635ed2b13d729602d6df}\index{Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}!Equipo@{Equipo}}
 \index{Equipo@{Equipo}!Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}}
 \doxysubsubsection{\texorpdfstring{Equipo}{Equipo}}
-{\footnotesize\ttfamily \label{class_program_1_1_seleccion_pokes_visitor_poke_a6c9c4ebeec9498e46afe88ddfe50f365} 
-List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}$>$ Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Equipo\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \label{class_program_1_1_seleccion_pokes_visitor_poke_a1601b2fb1069635ed2b13d729602d6df} 
+List$<$\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}$>$ Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Equipo\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVisitor\+Poke}}.
+Lista que contiene los Pokémon seleccionados para el equipo. 
+
+Colección de Pokémon que forman parte del equipo actual. Máximo 6 Pokémon permitidos. 
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_af6cc6db95449e6dc5a4a608839a54143}{Program.\+IVisitor\+Poke}}.
 
 \Hypertarget{class_program_1_1_seleccion_pokes_visitor_poke_a4bef44467e5b9a57d55180c1ebbe7c4e}\index{Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}!FueElegido@{FueElegido}}
 \index{FueElegido@{FueElegido}!Program.SeleccionPokesVisitorPoke@{Program.SeleccionPokesVisitorPoke}}
@@ -68,10 +108,14 @@ bool Program.\+Seleccion\+Pokes\+Visitor\+Poke.\+Fue\+Elegido\hspace{0.3cm}{\ttf
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke}{Program.\+IVisitor\+Poke}}.
+Obtiene un valor que indica si el último intento de selección fue exitoso. 
+
+true si el Pokémon fue añadido exitosamente al equipo; false si el equipo está lleno o el Pokémon ya estaba en el equipo. 
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_visitor_poke_ab5d62067359547fe19212e07976ea77b}{Program.\+IVisitor\+Poke}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Elegir\+Pokes/Seleccion\+Pokes\+Visitor\+Poke.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+Elegir\+Pokemon/Seleccion\+Pokes\+Visitor\+Poke.\+cs\end{DoxyCompactItemize}

@@ -2,19 +2,60 @@
 \hypertarget{interface_program_1_1_i_habilidades_pokemon}{}\label{interface_program_1_1_i_habilidades_pokemon}\index{Program.IHabilidadesPokemon@{Program.IHabilidadesPokemon}}
 
 
-Inheritance diagram for Program.\+IHabilidades\+Pokemon\+:
-% FIG 0
+Define las propiedades básicas relacionadas con las habilidades de un Pokémon.  
+
+
+Inheritance diagram for Program.\+IHabilidades\+Pokemon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_program_1_1_i_habilidades_pokemon}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{interface_program_1_1_i_habilidades_pokemon_a05eca072ac7209f523083336f1725094}\label{interface_program_1_1_i_habilidades_pokemon_a05eca072ac7209f523083336f1725094} 
-int {\bfseries Valor\+Ataque}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+int \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon_a05eca072ac7209f523083336f1725094}{Valor\+Ataque}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \item 
-\Hypertarget{interface_program_1_1_i_habilidades_pokemon_a29749f9a9620c212a0e989f6afae8a59}\label{interface_program_1_1_i_habilidades_pokemon_a29749f9a9620c212a0e989f6afae8a59} 
-string {\bfseries Nombre\+Habilidad}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+string \mbox{\hyperlink{interface_program_1_1_i_habilidades_pokemon_a29749f9a9620c212a0e989f6afae8a59}{Nombre\+Habilidad}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el nombre de la habilidad del Pokémon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define las propiedades básicas relacionadas con las habilidades de un Pokémon. 
+
+$<$interface$>$ \doxylink{interface_program_1_1_i_habilidades_pokemon}{IHabilidades\+Pokemon} proporciona un contrato para implementar las características básicas de las habilidades de un Pokémon. $<$/interface$>$ 
+
+Esta interfaz implementa el principio de responsabilidad única (SRP) del SOLID, enfocándose exclusivamente en las propiedades que definen las habilidades de un Pokémon. 
+
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_program_1_1_i_habilidades_pokemon_a29749f9a9620c212a0e989f6afae8a59}\index{Program.IHabilidadesPokemon@{Program.IHabilidadesPokemon}!NombreHabilidad@{NombreHabilidad}}
+\index{NombreHabilidad@{NombreHabilidad}!Program.IHabilidadesPokemon@{Program.IHabilidadesPokemon}}
+\doxysubsubsection{\texorpdfstring{NombreHabilidad}{NombreHabilidad}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_habilidades_pokemon_a29749f9a9620c212a0e989f6afae8a59} 
+string Program.\+IHabilidades\+Pokemon.\+Nombre\+Habilidad\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Obtiene o establece el nombre de la habilidad del Pokémon. 
+
+Una cadena de texto que representa el identificador de la habilidad. 
+
+Implemented in \mbox{\hyperlink{class_program_1_1_ataque_a497076808f0b5d712c0049b695b6e459}{Program.\+Ataque}}.
+
+\Hypertarget{interface_program_1_1_i_habilidades_pokemon_a05eca072ac7209f523083336f1725094}\index{Program.IHabilidadesPokemon@{Program.IHabilidadesPokemon}!ValorAtaque@{ValorAtaque}}
+\index{ValorAtaque@{ValorAtaque}!Program.IHabilidadesPokemon@{Program.IHabilidadesPokemon}}
+\doxysubsubsection{\texorpdfstring{ValorAtaque}{ValorAtaque}}
+{\footnotesize\ttfamily \label{interface_program_1_1_i_habilidades_pokemon_a05eca072ac7209f523083336f1725094} 
+int Program.\+IHabilidades\+Pokemon.\+Valor\+Ataque\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+Obtiene o establece el valor numérico del ataque de la habilidad.
+
+Un valor entero que representa la cantidad de daño que puede infligir la habilidad. 
+
+Implemented in \mbox{\hyperlink{class_program_1_1_ataque_a397fb511fd88167b6f6ae241b0ef0f83}{Program.\+Ataque}}.
+
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Habilidades Pokemon/Habilidades\+Pokemon.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+IHabilidades\+Pokemon/IHabilidades\+Pokemon.\+cs\end{DoxyCompactItemize}

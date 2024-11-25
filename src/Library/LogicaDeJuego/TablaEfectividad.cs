@@ -1,8 +1,15 @@
 namespace Program;
-
+/// <summary>
+/// Clase que gestiona la tabla de efectividad entre los diferentes tipos de Pokémon.
+/// Permite calcular el multiplicador de daño basado en los tipos del atacante y el defensor.
+/// </summary>
 public class TablaEfectividad
 {
-    // Diccionario que guarda la efectividad de los ataques entre tipos de Pokémon
+    /// <summary>
+    /// Diccionario estático que define las relaciones de efectividad entre los tipos de Pokémon.
+    /// Las claves son pares (tipo de ataque, tipo de defensa) y los valores representan
+    /// el multiplicador de daño.
+    /// </summary>
     private static readonly Dictionary<(TipoPokemon, TipoPokemon), double> efectividades = new()
     {
         // Normal
@@ -119,7 +126,18 @@ public class TablaEfectividad
 
 
     };
-// Método para obtener la efectividad entre dos tipos de Pokémon
+    /// <summary>
+    /// Obtiene el multiplicador de efectividad entre un tipo de ataque y un tipo de defensa.
+    /// </summary>
+    /// <param name="tipoAtaque">El tipo de Pokémon que realiza el ataque.</param>
+    /// <param name="tipoDefensa">El tipo de Pokémon que recibe el ataque.</param>
+    /// <returns>
+    /// El multiplicador de daño:
+    /// - 2.0 para daño súper efectivo.
+    /// - 0.1 para daño no muy efectivo.
+    /// - 0 para daño sin efecto.
+    /// - 1.0 para daño normal si la relación no está definida.
+    /// </returns>
     public static double ObtenerEfectividad(TipoPokemon tipoAtaque, TipoPokemon tipoDefensa)
     {
         if (efectividades.TryGetValue((tipoAtaque, tipoDefensa), out double efectividad))

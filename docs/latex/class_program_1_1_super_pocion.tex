@@ -2,38 +2,59 @@
 \hypertarget{class_program_1_1_super_pocion}{}\label{class_program_1_1_super_pocion}\index{Program.SuperPocion@{Program.SuperPocion}}
 
 
-Inheritance diagram for Program.\+Super\+Pocion\+:
-% FIG 0
+Representa el ítem "{}\+Súper poción"{}, que cura la vida de un Pokémon.  
 
 
-Collaboration diagram for Program.\+Super\+Pocion\+:
-% FIG 1
+Inheritance diagram for Program.\+Super\+Pocion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_program_1_1_super_pocion}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_program_1_1_super_pocion_a6b43cc2bee65f3368db14ee8205f2439}{Usar}} (\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}} pokemon)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_program_1_1_super_pocion_a9f2e5d531a2f57323a5b34e870bfd0a9}{Usar}} (\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}} pokemon)
+\begin{DoxyCompactList}\small\item\em Aplica el efecto del ítem al Pokémon especificado. Cura 70 puntos de vida del Pokémon sin exceder el máximo de 100. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 string \mbox{\hyperlink{class_program_1_1_super_pocion_a7db429fe2bf73085645eb9b034181390}{Nombre}} = "{}Súper poción"{}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el nombre del ítem. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_program_1_1_super_pocion_a1c3eefe8db514de6b7963c28d20cea4f}{Usos\+Restantes}} = 4\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtiene o establece el número de usos restantes del ítem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}}
 
 
+\doxysubsection{Detailed Description}
+Representa el ítem "{}\+Súper poción"{}, que cura la vida de un Pokémon. 
+
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_program_1_1_super_pocion_a6b43cc2bee65f3368db14ee8205f2439}\index{Program.SuperPocion@{Program.SuperPocion}!Usar@{Usar}}
+\Hypertarget{class_program_1_1_super_pocion_a9f2e5d531a2f57323a5b34e870bfd0a9}\index{Program.SuperPocion@{Program.SuperPocion}!Usar@{Usar}}
 \index{Usar@{Usar}!Program.SuperPocion@{Program.SuperPocion}}
 \doxysubsubsection{\texorpdfstring{Usar()}{Usar()}}
-{\footnotesize\ttfamily \label{class_program_1_1_super_pocion_a6b43cc2bee65f3368db14ee8205f2439} 
-void Program.\+Super\+Pocion.\+Usar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemones}{IPokemones}}}]{pokemon}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_program_1_1_super_pocion_a9f2e5d531a2f57323a5b34e870bfd0a9} 
+void Program.\+Super\+Pocion.\+Usar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_program_1_1_i_pokemon}{IPokemon}}}]{pokemon}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}.
+Aplica el efecto del ítem al Pokémon especificado. Cura 70 puntos de vida del Pokémon sin exceder el máximo de 100. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pokemon} & El Pokémon al que se aplicará la Súper poción.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyItemize}
+\item Si hay usos disponibles, la vida del Pokémon se incrementa en 70 puntos o hasta alcanzar el máximo de 100.
+\item Si no quedan usos restantes, se muestra un mensaje indicando que el ítem está agotado. 
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_item_a02ea311e64b9ad746ebc9591a04e99d5}{Program.\+IItem}}.
 
 
 
@@ -46,7 +67,11 @@ string Program.\+Super\+Pocion.\+Nombre = "{}Súper poción"{}\hspace{0.3cm}{\tt
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}.
+Obtiene o establece el nombre del ítem. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_item_ad5f4e7c4c8664e57dc4f21044ad1c049}{Program.\+IItem}}.
 
 \Hypertarget{class_program_1_1_super_pocion_a1c3eefe8db514de6b7963c28d20cea4f}\index{Program.SuperPocion@{Program.SuperPocion}!UsosRestantes@{UsosRestantes}}
 \index{UsosRestantes@{UsosRestantes}!Program.SuperPocion@{Program.SuperPocion}}
@@ -56,10 +81,14 @@ int Program.\+Super\+Pocion.\+Usos\+Restantes = 4\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-Implements \mbox{\hyperlink{interface_program_1_1_i_item}{Program.\+IItem}}.
+Obtiene o establece el número de usos restantes del ítem. 
+
+
+
+Implements \mbox{\hyperlink{interface_program_1_1_i_item_af2c040adb7d4cf1733c014b9094ad4b8}{Program.\+IItem}}.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Items/Super\+Pocion.\+cs\end{DoxyCompactItemize}
+src/\+Library/\+IItem/Super\+Pocion.\+cs\end{DoxyCompactItemize}

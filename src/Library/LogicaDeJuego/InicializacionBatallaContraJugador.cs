@@ -1,11 +1,20 @@
 using Program;
 namespace Program
 {
+    /// <summary>
+    /// Clase encargada de inicializar y gestionar la lógica de la batalla entre dos jugadores.
+    /// </summary>
     public class InicializacionBatallaContraJugador
     {
         private Jugador jugador1;
         private Jugador jugador2;
     
+        /// <summary>
+        /// Constructor para inicializar la batalla entre dos jugadores.
+        /// </summary>
+        /// <param name="elegirPokemon">Instancia de <see cref="ElegirPokemon"/> que proporciona los equipos de ambos jugadores.</param>
+        /// <exception cref="ArgumentNullException">Se lanza si <paramref name="elegirPokemon"/> es null.</exception>
+        /// <exception cref="InvalidOperationException">Se lanza si alguno de los equipos está vacío.</exception>
         public InicializacionBatallaContraJugador(ElegirPokemon elegirPokemon)
         {
             if (elegirPokemon == null)
@@ -37,7 +46,9 @@ namespace Program
 
         }
         
-
+        /// <summary>
+        /// Ejecuta la lógica principal de la batalla entre los jugadores, alternando turnos hasta que uno gane o el juego termine.
+        /// </summary>
         public  void LogicaJuego()
         {
             IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
