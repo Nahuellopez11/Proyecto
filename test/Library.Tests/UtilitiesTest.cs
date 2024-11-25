@@ -130,17 +130,5 @@ namespace Program.Tests
             Assert.IsTrue(resultado);
         }
     }
-
-    // Implementación de SuperPocion para los tests
-    public class SuperPocion : IItem
-    {
-        public string Nombre => "Super Poción";
-        public int UsosRestantes { get; set; } = 1;
-
-        public void Usar(IPokemon pokemon)
-        {
-            pokemon.Vida += 50;
-            UsosRestantes--;
-        }
-    }
 }
+
