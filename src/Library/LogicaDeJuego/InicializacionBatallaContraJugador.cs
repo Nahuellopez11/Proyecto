@@ -8,7 +8,7 @@ namespace Program
     {
         private Jugador jugador1;
         private Jugador jugador2;
-    
+
         /// <summary>
         /// Constructor para inicializar la batalla entre dos jugadores.
         /// </summary>
@@ -45,177 +45,157 @@ namespace Program
 
 
         }
-        
+
         /// <summary>
         /// Ejecuta la lógica principal de la batalla entre los jugadores, alternando turnos hasta que uno gane o el juego termine.
         /// </summary>
-        public  void LogicaJuego()
+        public void LogicaJuego()
         {
             IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
             IPokemon pokemonActivoJugador2 = jugador2.ListaDePokemones[0];
             Random random = new Random();
-            int turno = random.Next(0, 2); // random int entre 0 y 1; 0 = jugador, 1 = jugador
+            int turno = random.Next(0, 2); // 0 = jugador1, 1 = jugador2
+            bool batallaActiva = true; // Controla si la batalla sigue activa
 
-            while (true)
+            while (batallaActiva)
             {
                 if (turno == 0)
                 {
                     if (pokemonActivoJugador1.Vida <= 0)
                     {
                         Console.WriteLine($"{pokemonActivoJugador1.Nombre} ha muerto.");
-                        {
-                            var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador1, pokemonActivoJugador1);
-
-                            if (nuevoPokemon != pokemonActivoJugador1) // cambia de turno solo si el pokemon cambio
-                            {
-                                pokemonActivoJugador1 = nuevoPokemon;
-                                turno = 1;
-                            }
-                        }
-                    }
-
-                    Console.WriteLine("¡Turno de jugador1!");
-
-                    // muetsra la informacion del pokemon
-                    Console.WriteLine($"Tu Pokémon elegido es: {pokemonActivoJugador1.Nombre}");
-                    Console.WriteLine($"Vida actual: {pokemonActivoJugador1.Vida}");
-
-                    // menú "principal" de opciones
-                    Console.WriteLine("Selecciona una opción:");
-                    Console.WriteLine("1. Ataque");
-                    Console.WriteLine("2. Cambiar Pokémon");
-                    Console.WriteLine("3. Items");
-                    Console.WriteLine("4. terminar juego");
-
-                    int opcion =
-                        Convert.ToInt32(Console.ReadLine()); // eleccion del jugador sobre que quiere hacer (1, 2 o 3)
-
-                    if (opcion == 1)
-                    {
-                        Console.WriteLine("El jugador1 ataca.");
-                        SistemaCombate.RealizarAtaqueJugador(pokemonActivoJugador1, pokemonActivoJugador2);
-
-                    }
-
-                    if (opcion == 2)
-                    {
                         var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador1, pokemonActivoJugador1);
 
-                        if (nuevoPokemon != pokemonActivoJugador1) // cambia de turno solo si el pokemon cambio
+                        if (nuevoPokemon != pokemonActivoJugador1)
                         {
                             pokemonActivoJugador1 = nuevoPokemon;
                             turno = 1;
                         }
+
+                        continue;
                     }
 
-                    if (opcion == 3)
+                    Console.WriteLine("¡Turno de jugador1!");
+                    MostrarInformacionPokemon(pokemonActivoJugador1);
+                    int opcion = MostrarMenuOpciones();
+
+                    switch (opcion)
                     {
-                        turno = Utilities.UsarItem(jugador1, turno); // al principio hice la logica aca
-                        // pero no siguiria SRP estaria muy lleno de cosas
+                        case 1: // Ataque
+                            SistemaCombate.RealizarAtaqueJugador(pokemonActivoJugador1, pokemonActivoJugador2);
+                            break;
+                        case 2: // Cambiar Pokémon
+                            var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador1, pokemonActivoJugador1);
+                            if (nuevoPokemon != pokemonActivoJugador1)
+                            {
+                                pokemonActivoJugador1 = nuevoPokemon;
+                                turno = 1;
+                            }
+
+                            continue;
+                        case 3: // Usar ítem
+                            turno = Utilities.UsarItem(jugador1, turno);
+                            continue;
+                        case 4: // Terminar juego
+                            Console.WriteLine("Terminando el juego...");
+                            batallaActiva = false;
+                            continue;
+                        default:
+                            Console.WriteLine("Opción inválida.");
+                            continue;
                     }
 
-                    if (opcion == 4)
-                    {
-                        Console.WriteLine("Terminando el juego...");
-                        Environment.Exit(0);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Opción Inválida.");
-                        continue; // sigue si metes cualquier cosa
-                    }
-
-                    // Verificar si la batalla terminó después de la acción del jugador
                     if (Utilities.VerificarFinBatalla(jugador1.ListaDePokemones))
                     {
                         Console.WriteLine("¡La batalla ha terminado! El jugador2 ha ganado.");
-                        break; // Termina el juego
+                        batallaActiva = false;
                     }
-
-                    turno = 1; // Cambiar turno a la máquina
-
-
+                    else
+                    {
+                        turno = 1;
+                    }
                 }
                 else
                 {
                     if (pokemonActivoJugador2.Vida <= 0)
                     {
                         Console.WriteLine($"{pokemonActivoJugador2.Nombre} ha muerto.");
-                        {
-                            var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador2, pokemonActivoJugador2);
-
-                            if (nuevoPokemon != pokemonActivoJugador2) // cambia de turno solo si el pokemon cambio
-                            {
-                                pokemonActivoJugador2 = nuevoPokemon;
-                                turno = 0;
-                            }
-                        }
-                    }
-
-                    Console.WriteLine("¡Turno de jugador2!");
-
-                    // muetsra la informacion del pokemon
-                    Console.WriteLine($"Tu Pokémon elegido es: {pokemonActivoJugador2.Nombre}");
-                    Console.WriteLine($"Vida actual: {pokemonActivoJugador2.Vida}");
-
-                    // menú "principal" de opciones
-                    Console.WriteLine("Selecciona una opción:");
-                    Console.WriteLine("1. Ataque");
-                    Console.WriteLine("2. Cambiar Pokémon");
-                    Console.WriteLine("3. Items");
-                    Console.WriteLine("4. terminar juego");
-
-                    int opcion =
-                        Convert.ToInt32(Console.ReadLine()); // eleccion del jugador sobre que quiere hacer (1, 2 o 3)
-
-                    if (opcion == 1)
-                    {
-                        Console.WriteLine("El jugador2 ataca.");
-                        SistemaCombate.RealizarAtaqueJugador(pokemonActivoJugador2, pokemonActivoJugador1);
-
-                    }
-
-                    if (opcion == 2)
-                    {
                         var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador2, pokemonActivoJugador2);
 
-                        if (nuevoPokemon != pokemonActivoJugador2) // cambia de turno solo si el pokemon cambio
+                        if (nuevoPokemon != pokemonActivoJugador2)
                         {
                             pokemonActivoJugador2 = nuevoPokemon;
                             turno = 0;
                         }
+
+                        continue;
                     }
 
-                    if (opcion == 3)
+                    Console.WriteLine("¡Turno de jugador2!");
+                    MostrarInformacionPokemon(pokemonActivoJugador2);
+                    int opcion = MostrarMenuOpciones();
+
+                    switch (opcion)
                     {
-                        turno = Utilities.UsarItem(jugador2, turno); // al principio hice la logica aca
-                        // pero no siguiria SRP estaria muy lleno de cosas
+                        case 1: // Ataque
+                            SistemaCombate.RealizarAtaqueJugador(pokemonActivoJugador2, pokemonActivoJugador1);
+                            break;
+                        case 2: // Cambiar Pokémon
+                            var nuevoPokemon = Utilities.CambiarPokemonJugador(jugador2, pokemonActivoJugador2);
+                            if (nuevoPokemon != pokemonActivoJugador2)
+                            {
+                                pokemonActivoJugador2 = nuevoPokemon;
+                                turno = 0;
+                            }
+
+                            continue;
+                        case 3: // Usar ítem
+                            turno = Utilities.UsarItem(jugador2, turno);
+                            continue;
+                        case 4: // Terminar juego
+                            Console.WriteLine("Terminando el juego...");
+                            batallaActiva = false;
+                            continue;
+                        default:
+                            Console.WriteLine("Opción inválida.");
+                            continue;
                     }
 
-                    if (opcion == 4)
+                    if (Utilities.VerificarFinBatalla(jugador2.ListaDePokemones))
                     {
-                        Console.WriteLine("Terminando el juego...");
-                        Environment.Exit(0);
+                        Console.WriteLine("¡La batalla ha terminado! El jugador1 ha ganado.");
+                        batallaActiva = false;
                     }
                     else
                     {
-                        Console.WriteLine("Opción Inválida.");
-                        continue; // sigue si metes cualquier cosa
+                        turno = 0;
                     }
-
-                    // Verificar si la batalla terminó después de la acción del jugador
-                    if (Utilities.VerificarFinBatalla(jugador2.ListaDePokemones))
-                    {
-                        Console.WriteLine("¡La batalla ha terminado! el jugador1 ha ganado.");
-                        break; // Termina el juego
-                    }
-
                 }
             }
-
         }
-        
+
+        private void MostrarInformacionPokemon(IPokemon pokemon)
+        {
+            Console.WriteLine($"Tu Pokémon elegido es: {pokemon.Nombre}");
+            Console.WriteLine($"Vida actual: {pokemon.Vida}");
+        }
+
+        private int MostrarMenuOpciones()
+        {
+            Console.WriteLine("Selecciona una opción:");
+            Console.WriteLine("1. Ataque");
+            Console.WriteLine("2. Cambiar Pokémon");
+            Console.WriteLine("3. Items");
+            Console.WriteLine("4. Terminar juego");
+
+            int opcion;
+            while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 4)
+            {
+                Console.WriteLine("Por favor, ingresa una opción válida (1-4).");
+            }
+
+            return opcion;
+        }
     }
-    
 }
 

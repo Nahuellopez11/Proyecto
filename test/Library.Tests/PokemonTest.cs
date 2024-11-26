@@ -174,7 +174,7 @@ namespace Program.Tests
         {
             pikachu.AtaquesDisponibles.Add(ataqueFuego);
             pikachu.RealizarAtaque(0, charmander);
-            Assert.AreEqual(95, charmander.Vida); // 100 - 50
+            Assert.AreEqual(95, charmander.Vida); 
         }
         [Test]
         public void AplicarEfectoEstado_NoSobrescribeEstadoExistente()
