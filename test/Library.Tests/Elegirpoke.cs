@@ -14,7 +14,7 @@ namespace Program.Tests
         public void Configurar()
         {
             // Inicializar la clase ElegirPokemon antes de cada test
-            elegirPokemon = new ElegirPokemon();
+            //elegirPokemon = new ElegirPokemon();
         }
 
         [Test]

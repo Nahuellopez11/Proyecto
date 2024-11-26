@@ -2,52 +2,47 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Ucu.Poo.DiscordBot.Domain;
-
-namespace Program.Discord.Commands;
-
-/// <summary>
-/// Esta clase implementa el comando 'battle' del bot. Este comando une al
-/// jugador que envía el mensaje con el oponente que se recibe como parámetro,
-/// si lo hubiera, en una batalla; si no se recibe un oponente, lo une con
-/// cualquiera que esté esperando para jugar.
-/// </summary>
-// ReSharper disable once UnusedType.Global
-public class BattleCommand : ModuleBase<SocketCommandContext>
+using Library.Discord.Domain;
+namespace Program.Discord.Commands
 {
-    /// <summary>
-    /// Implementa el comando 'battle'. Este comando une al jugador que envía el
-    /// mensaje a la lista de jugadores esperando para jugar.
-    /// </summary>
-    [Command("battle")]
-    [Summary(
-        """
-        Une al jugador que envía el mensaje con el oponente que se recibe
-        como parámetro, si lo hubiera, en una batalla; si no se recibe un
-        oponente, lo une con cualquiera que esté esperando para jugar.
-        """)]
-    // ReSharper disable once UnusedMember.Global
-    public async Task ExecuteAsync(
-        [Remainder]
-        [Summary("Display name del oponente, opcional")]
-        string? opponentDisplayName = null)
+    public class BattleCommand : ModuleBase<SocketCommandContext>
     {
-        string displayName = CommandHelper.GetDisplayName(Context);
-        
-        SocketGuildUser? opponentUser = CommandHelper.GetUser(
-            Context, opponentDisplayName);
-
-        string result;
-        if (opponentUser != null)
+        [Command("battle")]
+        [Summary(
+            """
+            Une al jugador que envía el mensaje con el oponente que se recibe
+            como parámetro, si lo hubiera, en una batalla; si no se recibe un
+            oponente, lo une con cualquiera que esté esperando para jugar.
+            """
+        )]
+        public async Task ExecuteAsync(
+            [Remainder]
+            [Summary("Display name del oponente, opcional")]
+            string? opponentDisplayName = null)
         {
-            result = ConectorDeClases.Instance.StartBattle(displayName, opponentUser.DisplayName);
-            await Context.Message.Author.SendMessageAsync(result);
-            await opponentUser.SendMessageAsync(result);
-        }
-        else
-        {
-            result = $"No hay un usuario {opponentDisplayName}";
-        }
+            string displayName = CommandHelper.GetDisplayName(Context);
+            SocketGuildUser? opponentUser = CommandHelper.GetUser(Context, opponentDisplayName);
 
-        await ReplyAsync(result);
+            if (opponentUser != null)
+            {
+                // Paso 1: Crear la instancia de ElegirPokemonBot y esperar selección de equipos
+                var elegirPokemon = new ElegirPokemonBot(Context.User, opponentUser, (SocketTextChannel)Context.Channel);
+                await elegirPokemon.SeleccionarEquipoAsync();
+                
+                var equipoJugador1 = elegirPokemon.EquipoJugador1;
+                var equipoJugador2 = elegirPokemon.EquipoJugador2;
+
+                // Paso 2: Crear la instancia de InicializacionBatallaBot y comenzar la batalla
+                var inicializacionBatalla = new InicializacionBatallaBot(Context.User, opponentUser, equipoJugador1, equipoJugador2, (SocketTextChannel)Context.Channel);
+                await inicializacionBatalla.IniciarBatallaAsync();
+
+                // Mensaje final (opcional)
+                await Context.Channel.SendMessageAsync($"La batalla entre {displayName} y {opponentUser.DisplayName} ha terminado.");
+            }
+            else
+            {
+                await ReplyAsync($"No se ha encontrado un oponente con el nombre {opponentDisplayName}.");
+            }
+        }
     }
 }
