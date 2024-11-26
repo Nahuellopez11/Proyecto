@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.9.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.8.6">
   <diagram name="Page-1" id="Z7EWYf9uJWAN5CiDdRsq">
-    <mxGraphModel dx="5160" dy="919" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2580" dy="-125" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -452,43 +451,77 @@
         <mxCell id="RMd_fidbhna89zhfizsk-174" value="" style="triangle;whiteSpace=wrap;html=1;rotation=90;" parent="1" vertex="1">
           <mxGeometry x="1092.5" y="2045" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="RMd_fidbhna89zhfizsk-175" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="RMd_fidbhna89zhfizsk-174" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="1222.5" y="1768.67" as="sourcePoint" />
-            <mxPoint x="1222.5" y="1758.67" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="RMd_fidbhna89zhfizsk-177" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+        <mxCell id="RMd_fidbhna89zhfizsk-177" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" edge="1" source="RMd_fidbhna89zhfizsk-174">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1220" y="1770" as="sourcePoint" />
             <mxPoint x="1402.5" y="1771" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-4" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-4" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="510" y="2029" as="sourcePoint" />
             <mxPoint x="845.32" y="2029" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.017;entryY=0.89;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.017;entryY=0.89;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="780" y="1959.77" as="sourcePoint" />
             <mxPoint x="836.77" y="1959.77" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="RMd_fidbhna89zhfizsk-51">
+        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="RMd_fidbhna89zhfizsk-51" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1235.73" y="1906.3000000000002" as="sourcePoint" />
             <mxPoint x="1230" y="2474.995694633152" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.458;exitY=0.05;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="RMd_fidbhna89zhfizsk-51" target="RMd_fidbhna89zhfizsk-5">
+        <mxCell id="2ZNt5UNUNrS7BiO1VxvR-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.458;exitY=0.05;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="RMd_fidbhna89zhfizsk-51" target="RMd_fidbhna89zhfizsk-5" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="915.73" y="2072" as="sourcePoint" />
             <mxPoint x="910" y="2640.695694633152" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-1" value="&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;div&gt;IVisitorPoke&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="987.5" y="1410" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-2" value="&lt;div&gt;+ VisitPokemon(pokemon: Pokemon): void&lt;/div&gt;&lt;div&gt;+ Visit(pokemon: IPokemon): void&lt;/div&gt;&lt;div&gt;+ Equipo: List&amp;lt;IPokemon&amp;gt;&lt;/div&gt;&lt;div&gt;+ FueElegido: bool  &amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="987.5" y="1510" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="987.5" y="1450" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-7" value="&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;div&gt;SeleccionPokesVisitorPoke&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="1670" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-8" value="- Equipo: List&amp;lt;IPokemon&amp;gt;&lt;div&gt;- FueElegido: bool&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ VisitPokemon(Pokemon)&lt;/div&gt;&lt;div&gt;+ Visit(IPokemon)  &amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="1770" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="1710" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-10" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="1132.5" y="1590" width="17.5" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-12" value="" style="endArrow=none;html=1;rounded=0;exitX=0.289;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="3sZLeLH2oRyvyd_0-rdR-7" target="3sZLeLH2oRyvyd_0-rdR-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1125" y="1780" as="sourcePoint" />
+            <mxPoint x="1127.5" y="1680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1280" y="1758.75" as="sourcePoint" />
+            <mxPoint x="1390" y="1760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3sZLeLH2oRyvyd_0-rdR-14" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1292.5" y="1959.38" as="sourcePoint" />
+            <mxPoint x="1210" y="1870" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
 </mxfile>
+
