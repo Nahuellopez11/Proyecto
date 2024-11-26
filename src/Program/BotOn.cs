@@ -2,25 +2,30 @@
 using System.Collections.Generic;
 using Ucu.Poo.DiscordBot.Domain;
 using Ucu.Poo.DiscordBot.Services;
-
-namespace Program;
-
 using System;
+using System.Threading.Tasks;
 
-class Program
+namespace Program
 {
-    static void Main()
+    class Program
     {
-        Console.WriteLine("¡Hola, mundo!");
+        static async Task Main(string[] args)
+        {
+            // Iniciar el bot
+            await BotLoader.LoadAsync();
+        }
     }
 }
 
-/*
-public ElegirPokemon elegirPokemon = new ElegirPokemon();
+
+
+    
+ /*   
+    public ElegirPokemon elegirPokemon = new ElegirPokemon("Jugador1","Ju");
 
     public static void Main(string[] args)
     {
-        DemoBot();
+        //DemoBot();
         ElegirPokemon elegirPokemon = new ElegirPokemon();
         Console.WriteLine("Jugador 1, selecciona tu equipo:");
         elegirPokemon.SeleccionarEquipo();
@@ -30,30 +35,22 @@ public ElegirPokemon elegirPokemon = new ElegirPokemon();
         InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador(elegirPokemon);
         inicializarJugador.LogicaJuego();
     }
-
-        }
-        
-        
- ;
-        // FALTA LOGICA ATAQUE (CON ATAQUES ESPECIALES Y TIPOS), ITEMS, CAMBIAR_POKEMON
-        
-        
-        
-        
-    }
+}
+    
+/*
     private static void DemoFacade()
     {
-        Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("player"));
-        Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("opponent"));
-        Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
-        Console.WriteLine(ConectorDeClases.Instance.StartBattle("player", "opponent"));
-        Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
+        Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("player"));
+        Console.WriteLine(Facade.Instance.AddTrainerToWaitingList("opponent"));
+        Console.WriteLine(Facade.Instance.GetAllTrainersWaiting());
+        Console.WriteLine(Facade.Instance.StartBattle("player", "opponent"));
+        Console.WriteLine(Facade.Instance.GetAllTrainersWaiting());
     }
 
     private static void DemoBot()
     {
         BotLoader.LoadAsync().GetAwaiter().GetResult();
     }
-
-
 */
+
+

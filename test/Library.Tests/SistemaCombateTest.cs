@@ -26,7 +26,7 @@ namespace Program.Tests
         public void TestRealizarAtaqueMaquina_AplicaDañoCorrectamente()
         {
             // Realizar ataque de la máquina al jugador
-            SistemaCombate.RealizarAtaqueMaquina(_pokemonMaquina, _pokemonJugador);
+            SistemaCombate.RealizarAtaqueJugador(_pokemonMaquina, _pokemonJugador);
 
             // Verificar que se aplicó daño
             Assert.Less(_pokemonJugador.Vida, 98, "La vida del jugador debería haber disminuido.");
@@ -36,7 +36,7 @@ namespace Program.Tests
         public void TestRealizarAtaqueMaquina_PokemonIncorrecto_NoAplicaDaño()
         {
             // Usar Pokémon no válidos (null)
-            SistemaCombate.RealizarAtaqueMaquina(null, _pokemonJugador);
+            SistemaCombate.RealizarAtaqueJugador(null, _pokemonJugador);
 
             // La vida no debe cambiar
             Assert.AreEqual(98, _pokemonJugador.Vida, "La vida del jugador no debería cambiar.");
@@ -73,7 +73,7 @@ namespace Program.Tests
             _pokemonMaquina.AtaquesDisponibles.Add(new Ataque("Ataque Devastador", TipoPokemon.Fuego,1000 , 30));
 
             // Realizar ataque de la máquina
-            SistemaCombate.RealizarAtaqueMaquina(_pokemonMaquina, _pokemonJugador);
+            SistemaCombate.RealizarAtaqueJugador(_pokemonMaquina, _pokemonJugador);
 
             // Verificar que la vida no baje de cero
             Assert.AreEqual(0, _pokemonJugador.Vida, "La vida del jugador no debería ser menor a 0.");
