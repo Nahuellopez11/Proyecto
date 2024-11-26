@@ -9,38 +9,26 @@ using System;
 
 class Program
 {
-    static void Main()
-    {
-        Console.WriteLine("¡Hola, mundo!");
-    }
-}
-
-/*
-public ElegirPokemon elegirPokemon = new ElegirPokemon();
-
     public static void Main(string[] args)
     {
-        DemoBot();
-        ElegirPokemon elegirPokemon = new ElegirPokemon();
+        //DemoBot();
+
+        // Crear selector de equipo
+        SelectorEquipoPokemon selectorEquipo = new SelectorEquipoPokemon();
+
         Console.WriteLine("Jugador 1, selecciona tu equipo:");
-        elegirPokemon.SeleccionarEquipo();
+        List<IPokemon> equipoJugador1 = selectorEquipo.SeleccionarEquipo();
+
         Console.WriteLine("Jugador 2, selecciona tu equipo:");
-        elegirPokemon.SeleccionarEquipo2();
-        // Lógica de la batalla entre jugadores
-        InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador(elegirPokemon);
+        List<IPokemon> equipoJugador2 = selectorEquipo.SeleccionarEquipo();
+
+        // Inicializar batalla con los equipos seleccionados
+        InicializacionBatallaContraJugador inicializarJugador = 
+            new InicializacionBatallaContraJugador(equipoJugador1, equipoJugador2);
+        
         inicializarJugador.LogicaJuego();
     }
 
-        }
-        
-        
- ;
-        // FALTA LOGICA ATAQUE (CON ATAQUES ESPECIALES Y TIPOS), ITEMS, CAMBIAR_POKEMON
-        
-        
-        
-        
-    }
     private static void DemoFacade()
     {
         Console.WriteLine(ConectorDeClases.Instance.AddTrainerToWaitingList("player"));
@@ -50,10 +38,24 @@ public ElegirPokemon elegirPokemon = new ElegirPokemon();
         Console.WriteLine(ConectorDeClases.Instance.GetAllTrainersWaiting());
     }
 
-    private static void DemoBot()
+   /* private static void DemoBot()
     {
         BotLoader.LoadAsync().GetAwaiter().GetResult();
     }
+*/
+}
+        
+
+            
+            
+            
+            
+    
+        
+
+
+
+/*
 
 
 */

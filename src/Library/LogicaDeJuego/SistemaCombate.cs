@@ -43,10 +43,9 @@ namespace Program
         }
         
         /// <summary>
-        /// Realiza un ataque desde el Pokémon activo del jugador hacia el Pokémon activo de la máquina.
+        /// Realiza un ataque desde el Pokémon activo del jugador hacia el Pokémon activo del otro jugador.
         /// </summary>
         /// <param name="pokemonActivoJugador">El Pokémon activo del jugador.</param>
-        /// <param name="pokemonActivoMaquina">El Pokémon activo de la máquina.</param>
         public static void RealizarAtaqueJugador(IPokemon pokemonActivoJugador, IPokemon pokemonActivoMaquina)
         {
             Pokemon pokemonJugador = pokemonActivoJugador as Pokemon;

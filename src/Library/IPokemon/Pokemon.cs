@@ -171,32 +171,7 @@ namespace Program
             return false;
         }
         
-        //---------Visitor-----------//
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Nombre, Tipo);
-        }
-
-        public void Accept(IVisitorPoke visitorPoke)
-        {
-            visitorPoke.VisitPokemon(this);  // Llamamos a VisitPokemon directamente
-        }
-        //----------Ataques----------------//
-        /// <summary>
-        /// Agrega un nuevo ataque al conjunto de ataques disponibles del Pokémon.
-        /// </summary>
-        /// <param name="ataque">El ataque que el Pokémon aprenderá.</param>
-        public void AprenderAtaque(Ataque ataque)
-        {
-            if (AtaquesDisponibles.Count < 4)
-            {
-                AtaquesDisponibles.Add(ataque);
-            }
-            else
-            {
-                Console.WriteLine($"{Nombre} ya tiene 4 ataques. Debe olvidar uno para aprender {ataque.NombreHabilidad}");
-            }
-        }
+       
         /// <summary>
         /// Realiza un ataque al Pokémon objetivo.
         /// </summary>

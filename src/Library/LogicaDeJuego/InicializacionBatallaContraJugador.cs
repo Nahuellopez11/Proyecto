@@ -4,7 +4,7 @@ namespace Program
     /// <summary>
     /// Clase encargada de inicializar y gestionar la lógica de la batalla entre dos jugadores.
     /// </summary>
-    public class InicializacionBatallaContraJugador
+ public class InicializacionBatallaContraJugador
     {
         private Jugador jugador1;
         private Jugador jugador2;
@@ -12,49 +12,48 @@ namespace Program
         /// <summary>
         /// Constructor para inicializar la batalla entre dos jugadores.
         /// </summary>
-        /// <param name="elegirPokemon">Instancia de <see cref="ElegirPokemon"/> que proporciona los equipos de ambos jugadores.</param>
-        /// <exception cref="ArgumentNullException">Se lanza si <paramref name="elegirPokemon"/> es null.</exception>
+        /// <param name="equipoJugador1">Lista de Pokémon del Jugador 1</param>
+        /// <param name="equipoJugador2">Lista de Pokémon del Jugador 2</param>
+        /// <exception cref="ArgumentNullException">Se lanza si alguna lista de Pokémon es null.</exception>
         /// <exception cref="InvalidOperationException">Se lanza si alguno de los equipos está vacío.</exception>
-        public InicializacionBatallaContraJugador(ElegirPokemon elegirPokemon)
+        public InicializacionBatallaContraJugador(List<IPokemon> equipoJugador1, List<IPokemon> equipoJugador2)
         {
-            if (elegirPokemon == null)
+            // Validar que las listas no sean null
+            if (equipoJugador1 == null)
             {
-                throw new ArgumentNullException(nameof(elegirPokemon), "El objeto ElegirPokemon no puede ser null.");
+                throw new ArgumentNullException(nameof(equipoJugador1), "El equipo del Jugador 1 no puede ser null.");
             }
 
-            // Crear los jugadores
-            jugador1 = new Jugador(elegirPokemon.DevolverListajugador1());
-            jugador2 = new Jugador(elegirPokemon.DevolverListajugador2());
-
-            // Asignar los equipos
-            jugador1.ListaDePokemones = elegirPokemon.DevolverListajugador1();
-            jugador2.ListaDePokemones = elegirPokemon.DevolverListajugador2();
+            if (equipoJugador2 == null)
+            {
+                throw new ArgumentNullException(nameof(equipoJugador2), "El equipo del Jugador 2 no puede ser null.");
+            }
 
             // Verificar que los equipos estén completos
-            if (jugador1.ListaDePokemones == null || jugador1.ListaDePokemones.Count == 0)
+            if (equipoJugador1.Count == 0)
             {
                 throw new InvalidOperationException("El equipo del Jugador 1 está vacío.");
             }
 
-            if (jugador2.ListaDePokemones == null || jugador2.ListaDePokemones.Count == 0)
+            if (equipoJugador2.Count == 0)
             {
                 throw new InvalidOperationException("El equipo del Jugador 2 está vacío.");
             }
 
-            // Elegir los primeros Pokémon activos de ambos jugadores
-
-
+            // Crear los jugadores con sus respectivos equipos
+            jugador1 = new Jugador(equipoJugador1);
+            jugador2 = new Jugador(equipoJugador2);
         }
         
         /// <summary>
         /// Ejecuta la lógica principal de la batalla entre los jugadores, alternando turnos hasta que uno gane o el juego termine.
         /// </summary>
-        public  void LogicaJuego()
+        public void LogicaJuego()
         {
             IPokemon pokemonActivoJugador1 = jugador1.ListaDePokemones[0];
             IPokemon pokemonActivoJugador2 = jugador2.ListaDePokemones[0];
             Random random = new Random();
-            int turno = random.Next(0, 2); // random int entre 0 y 1; 0 = jugador, 1 = jugador
+            int turno = random.Next(0, 2); // random int entre 0 y 1; 0 = jugador1, 1 = jugador2
 
             while (true)
             {
