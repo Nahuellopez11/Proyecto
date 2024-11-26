@@ -33,4 +33,6 @@ public class IVisitorTest
 
         visitor.Visit(pokemon);
     }
+    
+    
 }

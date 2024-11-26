@@ -22,13 +22,7 @@ public interface IPokemon
     /// La vida del Pokémon puede variar de 0 (debilitado) al máximo permitido en el juego (por defecto, 100).
     /// </remarks>
     double Vida { get; set; }
-    /// <summary>
-    /// Acepta un visitante que implementa la interfaz <see cref="IVisitorPoke"/> para aplicar una operación al Pokémon.
-    /// </summary>
-    /// <param name="visitorPoke">El visitante que realizará una operación sobre el Pokémon.</param>
-    void Accept(IVisitorPoke visitorPoke){}
-    List<Ataque> AtaquesDisponibles { get; set; }
-    
+   
 }
 
 
