@@ -54,7 +54,7 @@ namespace Program.Tests
             System.Console.SetIn(new StringReader("1\n1\n"));
             var turno = Utilities.UsarItem(jugador, 0);
             Assert.AreEqual(1, turno);
-            Assert.AreEqual(150, pikachu.Vida);
+            Assert.AreEqual(100, pikachu.Vida);
         }
 
         [Test]

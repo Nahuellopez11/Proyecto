@@ -3,16 +3,9 @@ namespace Program
     public class ElegirPokemon
     {
         public CatalogoPokemones catalogo = new CatalogoPokemones();
-        public string Jugador1 { get; set; }
-        public string Jugador2 { get; set; }
         public Random random = new Random();
 
         // Constructor que acepta nombres de los jugadores
-        public ElegirPokemon(string jugador1, string jugador2)
-        {
-            Jugador1 = jugador1;
-            Jugador2 = jugador2;
-        }
 
         // Este método se podría modificar o adaptarse al bot de Discord si es necesario
         public void SeleccionarEquipo()

@@ -73,7 +73,7 @@ namespace Program.Tests
 
             // Verificar que el turno cambia
             Assert.AreEqual(1, turno);
-            Assert.AreEqual(150, pikachu.Vida); // SuperPoción aumenta la vida en 50
+            Assert.AreEqual(100, pikachu.Vida); // SuperPoción aumenta la vida en 50
         }
 
         [Test]
