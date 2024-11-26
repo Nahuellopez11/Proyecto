@@ -2,9 +2,9 @@ using Discord;
 using Discord.WebSocket;
 using Program;
 
-namespace Library.Discord.Domain
-{
-    public class SistemaCombateBot
+namespace Ucu.Poo.DiscordBot.Domain;
+
+public class SistemaCombateBot
     {
         private static Random random = new Random();
 
@@ -107,4 +107,4 @@ namespace Library.Discord.Domain
             return await tcs.Task;
         }
     }
-}
+

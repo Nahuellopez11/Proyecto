@@ -2,9 +2,8 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Ucu.Poo.DiscordBot.Domain;
-using Library.Discord.Domain;
-namespace Program.Discord.Commands
-{
+namespace Program.Discord.Commands;
+
     public class BattleCommand : ModuleBase<SocketCommandContext>
     {
         [Command("battle")]
@@ -45,4 +44,3 @@ namespace Program.Discord.Commands
             }
         }
     }
-}

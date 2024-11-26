@@ -6,7 +6,8 @@ using Discord.WebSocket;
 using Program;
 
 
-namespace Library.Discord.Domain;
+
+namespace Ucu.Poo.DiscordBot.Domain;
 
 public class InicializacionBatallaBot
 {

@@ -3,10 +3,11 @@ using Discord.WebSocket;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Program;
 
-namespace Program
-{
-    public class ElegirPokemonBot
+namespace Ucu.Poo.DiscordBot.Domain;
+
+public class ElegirPokemonBot
     {
         private readonly CatalogoPokemones catalogo = new CatalogoPokemones();
         private readonly SocketTextChannel _channel;
@@ -130,4 +131,3 @@ namespace Program
         }
     }
 
-}

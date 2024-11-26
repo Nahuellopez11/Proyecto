@@ -41,10 +41,6 @@ namespace Program.Tests
         }
 
 
-    
-
-
-
         [Test]
         public void TestRealizarAtaqueMaquina_PokemonIncorrecto_NoAplicaDaño()
         {
