@@ -7,7 +7,7 @@ Integrantes del equipo: Nahuel López, Manuela Martony, Mathías Porley y Mathí
 IMPORTANTE LEER;
 
 Aclaraciones hacia los profesores antes de corregir:
-- Al principio del proyecto teniamos la ambición de crear 2 modos de batalla, batalla contra la máquina y batalla contra otro jugador. Pero por la complejidad de este en el Bot y en la consola nos quedamos con el modo planteado para la entrega, batalla de jugador contra jugador.
+- Al principio del proyecto teniamos la ambición de crear 2 modos de batalla, batalla contra la máquina y batalla contra otro jugador. Pero por la complejidad de este, en el Bot y en la consola, nos quedamos con el modo planteado para la entrega, batalla de jugador contra jugador.
 - Nos hubiese gustado cambiar nuestra forma de crear, seleccionar y agregar pokemones (Catalogo -> SeleccionPokeVisitor -> ElegirPokemon) a una forma más simple y efectiva, pero dado por varios motivos (tiempo, problemas, etc.) no pudimos lograrlo.
 - No tenemos una clase test llamada "Historias de Usuario", los tests tienen comentarios en los cuales se indicia cuales de los tests hacen referencia o aluden a las historias de usuario.
 - Puede ser que algun ataque falle (por precisión) y que los tests salgan "Failed", para solucionar esto corran los unit tests devuelta (al tiempo de escribir esto todos dan Success)
