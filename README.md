@@ -16,7 +16,7 @@ Aclaraciones hacia los profesores antes de corregir:
 
 ![image](https://github.com/user-attachments/assets/9bc5ce58-75ab-4fea-b42e-b6ca7d2a5ca4)
 
-Clases como ElegirPokemon, SistemaCombate, CatalogoPokemon e InicializacionBatallaContraJugador contienen solamente métodos, los cuales se utilizan íntegramente en los tests (se crea, selecciona y agrega pokemones, se checkea a través de SistemaCombate que las peleas tengan y sigan la lógica planteada y las utilidades que se integran en InicializaciónBatallaContraJugador se testean aparte cada una de ellas) por lo tanto no los integramos en el coverage total.
+Clases como ElegirPokemon, SistemaCombate, CatalogoPokemon e InicializacionBatallaContraJugador contienen solamente métodos, los cuales se utilizan íntegramente en los tests (se crea, selecciona y agrega pokemones, se checkea a través de SistemaCombate que las peleas tengan y sigan la lógica planteada y las utilidades que se integran en InicializaciónBatallaContraJugador se testean aparte cada una de ellas) por lo tanto, no los integramos en el coverage total.
 
 El bot, interfaces y visitor no forman parte del coverage de los tests según lo hablado en clase.
 
