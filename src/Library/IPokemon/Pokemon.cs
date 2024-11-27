@@ -8,7 +8,7 @@ namespace Program
         public TipoPokemon Tipo { get; private set; }
         public double Vida { get; set; }
         public int VidaInicial { get; set; }
-        private string Estado { get; set; }
+        public EstadoEspecial Estado { get; set; } = EstadoEspecial.Normal;
         private static Random random = new Random();
         public List<Ataque> AtaquesDisponibles { get;  set; }
         public EstadoEspecial EstadoActual { get; set; }
@@ -21,7 +21,7 @@ namespace Program
             Vida = vida;
             Tipo = tipo;
             VidaInicial = vida;
-            Estado = "Normal";
+            Estado = EstadoEspecial.Normal;
 
             
             AtaquesDisponibles = HabilidadesPorTipo.ObtenerAtaquesPorTipo(tipo)

@@ -17,7 +17,7 @@ namespace Program.Tests
             charmander = new Pokemon("Charmander", 0, TipoPokemon.Fuego);
 
             var listaDePokemones = new List<IPokemon> { pikachu, charmander };
-            jugador = new Jugador(listaDePokemones);
+            jugador = new Jugador(listaDePokemones, 0);
         }
 
         // CambiarPokemonJugador Tests

@@ -4,6 +4,7 @@ public class Jugador : IJugador
 {
 
     public List<IPokemon> ListaDePokemones { get; set; } = new List<IPokemon>();
+    public int Puntos { get; set; }
 
     public List<IItem> Items { get; set; } = new List<IItem>
     {
@@ -13,9 +14,10 @@ public class Jugador : IJugador
 
     };
 
-    public Jugador(List<IPokemon> listaDePokemones)
+    public Jugador(List<IPokemon> listaDePokemones, int puntos)
     {
         this.ListaDePokemones = listaDePokemones;
+        this.Puntos = puntos;
     }
 
     public IPokemon ElegirPrimerPokemon()

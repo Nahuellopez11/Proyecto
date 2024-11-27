@@ -150,5 +150,44 @@ public static class Utilities
         return vidaTotal <= 0;
     }
 
+    public static int CalcularProbabilidadGanar(IJugador jugador)
+    {
+        int usosrestantes = 0;
+        int puntos = jugador.Puntos;
+        foreach (IPokemon pokemon in jugador.ListaDePokemones)
+        {
+            if (pokemon.Vida > 0) // si algun pokemon no esta muerto se suma 10 puntos
+            {
+                puntos += 10;
+            }
+            
+        }
+
+        foreach (Pokemon pokemon in jugador.ListaDePokemones)
+        {
+
+            if (pokemon.EstadoActual != EstadoEspecial.Normal) // si algun pokemon tiene algun efecto se resta 10
+            {
+                puntos += 0;
+                break;
+            }
+            else
+            {
+                puntos += 10; // sino se suma 10
+                break;
+            }
+        }
+        
+
+        foreach (IItem item in jugador.Items)
+        {
+            usosrestantes += item.UsosRestantes;
+        }
+
+
+        puntos += usosrestantes * 6;  // son 5 usos que tienen entre los 2 items, cada uso equivale a 6 puntos
+        return puntos;
+    }
+
 
 }

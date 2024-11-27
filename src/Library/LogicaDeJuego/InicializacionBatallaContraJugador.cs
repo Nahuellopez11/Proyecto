@@ -23,8 +23,8 @@ namespace Program
             }
 
             // Crear los jugadores
-            jugador1 = new Jugador(elegirPokemon.DevolverListajugador1());
-            jugador2 = new Jugador(elegirPokemon.DevolverListajugador2());
+            jugador1 = new Jugador(elegirPokemon.DevolverListajugador1(), 0);
+            jugador2 = new Jugador(elegirPokemon.DevolverListajugador2(), 0);
 
             // Asignar los equipos
             jugador1.ListaDePokemones = elegirPokemon.DevolverListajugador1();
@@ -77,6 +77,8 @@ namespace Program
 
                     Console.WriteLine("¡Turno de jugador1!");
                     MostrarInformacionPokemon(pokemonActivoJugador1);
+                    int PuntosGanarJugador1 = Utilities.CalcularProbabilidadGanar(jugador1);
+                    Console.WriteLine($"Tú probabilidad de ganar es {PuntosGanarJugador1}!");
                     int opcion = MostrarMenuOpciones();
 
                     switch (opcion)
@@ -133,6 +135,8 @@ namespace Program
 
                     Console.WriteLine("¡Turno de jugador2!");
                     MostrarInformacionPokemon(pokemonActivoJugador2);
+                    int PuntosGanarJugador2 = Utilities.CalcularProbabilidadGanar(jugador2);
+                    Console.WriteLine($"Tú probabilidad de ganar es {PuntosGanarJugador2}!");
                     int opcion = MostrarMenuOpciones();
 
                     switch (opcion)
