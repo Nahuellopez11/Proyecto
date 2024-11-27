@@ -3,7 +3,7 @@ namespace Program
     public class ElegirPokemon
     {
         public CatalogoPokemones catalogo = new CatalogoPokemones();
-        public Random random = new Random();
+      
 
         // Constructor que acepta nombres de los jugadores
 

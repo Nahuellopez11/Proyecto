@@ -77,6 +77,7 @@ namespace Program
 
                     Console.WriteLine("¡Turno de jugador1!");
                     MostrarInformacionPokemon(pokemonActivoJugador1);
+                    CompararProbabilidades();
                     int opcion = MostrarMenuOpciones();
 
                     switch (opcion)
@@ -133,7 +134,9 @@ namespace Program
 
                     Console.WriteLine("¡Turno de jugador2!");
                     MostrarInformacionPokemon(pokemonActivoJugador2);
+                    CompararProbabilidades();
                     int opcion = MostrarMenuOpciones();
+                    
 
                     switch (opcion)
                     {
@@ -196,6 +199,110 @@ namespace Program
 
             return opcion;
         }
+        public int CalcularProbabilidadGanarJ1(Jugador jugador1)
+        {
+            int puntosInicialesJ1 = 0;
+            bool contadorPokemonesConEfecto = false;
+            foreach (var pokemon in jugador1.ListaDePokemones)
+            {
+                if (pokemon.Vida > 0)
+                {
+                    puntosInicialesJ1 = puntosInicialesJ1 + 10;
+                }
+                else
+                {
+                    puntosInicialesJ1 = puntosInicialesJ1;
+                }
+
+                if (pokemon.FueAfectado = true)  
+                {
+                    
+                    if (contadorPokemonesConEfecto == false )
+                    {
+                        puntosInicialesJ1 = puntosInicialesJ1 - 10;
+                        contadorPokemonesConEfecto = true;
+                    }
+                    
+                }
+            }
+
+            foreach (var item in jugador1.Items)
+            {
+                if (item.UsosRestantes > 0 && item.UsosRestantes == item.UsosIniciales )
+                {
+                    puntosInicialesJ1 = puntosInicialesJ1 + 10;
+                }
+                else if (item.UsosRestantes > 0)
+                {
+                    puntosInicialesJ1 = puntosInicialesJ1 + 3;
+                }
+            }
+
+            return puntosInicialesJ1;
+        }
+        
+        public int CalcularProbabilidadGanarJ2(Jugador jugador2)
+        {
+            int puntosInicialesJ2 = 0;
+            bool contadorPokemonesConEfectoJ2 = false;
+            foreach (var pokemon in jugador2.ListaDePokemones)
+            {
+                if (pokemon.Vida > 0)
+                {
+                    puntosInicialesJ2 = puntosInicialesJ2 + 10;
+                }
+
+                if (pokemon.FueAfectado == true)  
+                {
+                    
+                    if (contadorPokemonesConEfectoJ2 == false )
+                    {
+                        puntosInicialesJ2 = puntosInicialesJ2 - 10;
+                        contadorPokemonesConEfectoJ2 = true;
+                    }
+                    
+                }
+            }
+
+            foreach (var item in jugador2.Items)
+            {
+                if (item.UsosRestantes == item.UsosIniciales )
+                {
+                    puntosInicialesJ2 = puntosInicialesJ2 + 10;
+                }
+                else if (item.UsosRestantes > 0)
+                {
+                    puntosInicialesJ2 = puntosInicialesJ2 + 3;
+                }
+            }
+
+            return puntosInicialesJ2;
+        }
+
+
+        public void CompararProbabilidades()
+        {
+            if (CalcularProbabilidadGanarJ1(jugador1) > CalcularProbabilidadGanarJ2(jugador2))
+            {
+                Console.WriteLine("El jugador 1 tiene mayor probabilidad de ganar!"); 
+            }
+            else if (CalcularProbabilidadGanarJ2(jugador2) > CalcularProbabilidadGanarJ1(jugador1))
+            {
+                Console.WriteLine("El jugador 2 tiene mayor probabilidad de ganar!"); 
+            }
+            else
+            {
+                Console.WriteLine("Ambos tienen la misma probabilidad de ganar!");
+            }
+            
+        }
+        
+        
+        
+        
     }
+    
+    
 }
+
 

@@ -15,6 +15,8 @@ public class Revivir : IItem
     /// </summary>
     public int UsosRestantes { get; set; } = 1;
 
+    public int UsosIniciales { get; set; } = 1;
+
     /// <summary>
     /// Aplica el efecto del ítem al Pokémon especificado.
     /// Revive al Pokémon si está debilitado (vida = 0) y hay usos disponibles.

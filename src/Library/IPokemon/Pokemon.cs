@@ -8,12 +8,12 @@ namespace Program
         public TipoPokemon Tipo { get; private set; }
         public double Vida { get; set; }
         public int VidaInicial { get; set; }
-        private string Estado { get; set; }
+        public string Estado { get; set; }
         private static Random random = new Random();
         public List<Ataque> AtaquesDisponibles { get;  set; }
         public EstadoEspecial EstadoActual { get; set; }
         private int TurnosDormido { get; set; }
-        
+        public bool FueAfectado { get; set; }
 
         public Pokemon(string nombre, int vida, TipoPokemon tipo)
         {
@@ -22,7 +22,7 @@ namespace Program
             Tipo = tipo;
             VidaInicial = vida;
             Estado = "Normal";
-
+            FueAfectado = false;
             
             AtaquesDisponibles = HabilidadesPorTipo.ObtenerAtaquesPorTipo(tipo)
                 .Cast<Ataque>()  // Convertir a Ataque
@@ -46,7 +46,7 @@ namespace Program
                    EstadoActual = EstadoEspecial.Normal;
                    Console.WriteLine($"{Nombre} se ha despertado!");
                }
-
+               FueAfectado = true;
                return false;
            }
 
@@ -57,6 +57,8 @@ namespace Program
                {
                    Console.WriteLine($"{Nombre} está paralizado y no puede atacar!");
                }
+
+               FueAfectado = true;
                return puedeAtacar;
            }
 
@@ -77,18 +79,22 @@ namespace Program
            {
                TurnosDormido = random.Next(1, 5); // 1-4 turnos
                Console.WriteLine($"{Nombre} se ha dormido por {TurnosDormido} turnos!");
+               FueAfectado = true;
            }
            else if (nuevoEstado == EstadoEspecial.Paralizado)
            {
                Console.WriteLine($"{Nombre} ha sido paralizado!");
+               FueAfectado = true;
            }
            else if (nuevoEstado == EstadoEspecial.Envenenado)
            {
                Console.WriteLine($"{Nombre} ha sido envenenado!");
+               FueAfectado = true;
            }
            else if (nuevoEstado == EstadoEspecial.Quemado)
            {
-               Console.WriteLine($"{Nombre} ha sido quemado!"); 
+               Console.WriteLine($"{Nombre} ha sido quemado!");
+               FueAfectado = true;
            }
 
 

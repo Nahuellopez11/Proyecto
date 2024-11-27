@@ -17,4 +17,6 @@ public interface IItem
     /// </summary>
     /// <param name="pokemon">El Pokémon al que se le aplicará el ítem.</param>
     void Usar(IPokemon pokemon); // Aplica el efecto del ítem al Pokémon
+
+    public int UsosIniciales { get; set; }
 }

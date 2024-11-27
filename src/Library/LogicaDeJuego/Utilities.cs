@@ -58,12 +58,6 @@ public static class Utilities
         return nuevoPokemon;
     }
     
-    
-
-
-
-
-
 
     /// <summary>
     /// Permite al jugador utilizar un ítem de su inventario en uno de sus Pokémon.

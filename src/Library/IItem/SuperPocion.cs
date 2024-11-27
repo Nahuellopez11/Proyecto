@@ -14,6 +14,8 @@ public class SuperPocion : IItem
     /// </summary>
     public int UsosRestantes { get; set; } = 4;
 
+    public int UsosIniciales { get; set; } = 4;
+
     /// <summary>
     /// Aplica el efecto del ítem al Pokémon especificado.
     /// Cura 70 puntos de vida del Pokémon sin exceder el máximo de 100.

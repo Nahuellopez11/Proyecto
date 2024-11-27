@@ -38,7 +38,7 @@ namespace Program
                 elegirPokemon.SeleccionarEquipo2();
                 
                 // Lógica de la batalla entre jugadores
-                InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador(elegirPokemon);
+                InicializacionBatallaContraJugador inicializarJugador = new InicializacionBatallaContraJugador();
                 inicializarJugador.LogicaJuego();
             }
             else
