@@ -20,7 +20,7 @@ Clases como ElegirPokemon, SistemaCombate, CatalogoPokemon e InicializacionBatal
 
 El bot, interfaces y visitor no forman parte del coverage de los tests según lo hablado en clase.
 
-La clase "Play.cs" del proyecto princial "Program" tampoco forma parte de los tests, contiene código dentro de un método estático "Main" para iniciar el juego en bot o consola.
+La clase "Play.cs" del proyecto principal "Program" tampoco forma parte de los tests, contiene código dentro de un método estático "Main" para iniciar el juego en bot o consola.
 
 
 
