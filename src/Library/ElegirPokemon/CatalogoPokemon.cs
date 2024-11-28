@@ -146,3 +146,144 @@ public  class CatalogoPokemones
     }
     
 }
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace Program
+{
+    public class VidaPorVida : IItem
+    {
+        public string Nombre { get; set; } = "Vida por Vida";
+        public int UsosRestantes { get; set; } = 3;
+
+        private IPokemon enemigoActual; // Guardar al enemigo objetivo
+
+        public VidaPorVida(IPokemon enemigo)
+        {
+            enemigoActual = enemigo; // Se pasa el enemigo en el constructor
+        }
+
+        public void Usar(IPokemon pokemon)
+        {
+            if (UsosRestantes <= 0)
+            {
+                Console.WriteLine($"No quedan usos disponibles para {Nombre}. UsosRestantes: {UsosRestantes}");
+                return;
+            }
+
+            if (pokemon.Vida <= 50)
+            {
+                Console.WriteLine($"No se puede usar {Nombre} porque {pokemon.Nombre} no tiene suficiente vida.");
+                return;
+            }
+
+            UsosRestantes--; // Decrementar el contador de usos
+            Console.WriteLine($"Usando {Nombre}. Usos restantes: {UsosRestantes}");
+
+            pokemon.Vida -= 50;
+            enemigoActual.Vida = Math.Max(enemigoActual.Vida - 85, 0);
+
+            Console.WriteLine($"{pokemon.Nombre} perdió 50 de vida. Vida actual: {pokemon.Vida}");
+            Console.WriteLine($"{enemigoActual.Nombre} perdió 85 de vida. Vida actual: {enemigoActual.Vida}");
+        }
+
+        
+    }
+}
+new VidaPorVida(new Pokemon("EnemigoPlaceholder", 0, TipoPokemon.Normal)),
+//aqui se agrega el otro item
+
+
+
+
+
+using NUnit.Framework;
+
+namespace Program.Tests
+{
+    public class VidaPorVidaTests
+    {
+        private IPokemon usuario;
+        private IPokemon enemigo;
+        private VidaPorVida vidaPorVida;
+
+        [SetUp]
+        public void Setup()
+        {
+            // Inicializar Pokémon
+            usuario = new Pokemon("Pikachu", 100, TipoPokemon.Electrico);
+            enemigo = new Pokemon("Charmander", 90, TipoPokemon.Fuego);
+
+            // Inicializar ítem con 3 usos
+            vidaPorVida = new VidaPorVida(enemigo);
+        }
+
+            [Test]
+            public void Usar_VidaPorVida_ReduceVidaCorrectamente()
+            {
+                // Act: Usar el ítem
+                vidaPorVida.Usar(usuario);
+
+                // Assert: Verificar que las vidas se redujeron correctamente
+                Assert.AreEqual(50, usuario.Vida, "La vida del usuario no se redujo correctamente.");
+                Assert.AreEqual(5, enemigo.Vida, "La vida del enemigo no se redujo correctamente.");
+                Assert.AreEqual(2, vidaPorVida.UsosRestantes, "Los usos restantes del ítem no se actualizaron correctamente.");
+            }
+
+            [Test]
+            public void Usar_VidaPorVida_NoPermiteUsarConVidaInsuficiente()
+            {
+                // Arrange: Reducir la vida del usuario para que no sea suficiente
+                usuario.Vida = 40;
+
+                // Act: Intentar usar el ítem
+                vidaPorVida.Usar(usuario);
+
+                // Assert: Verificar que no se aplicaron cambios
+                Assert.AreEqual(40, usuario.Vida, "La vida del usuario no debe cambiar con vida insuficiente.");
+                Assert.AreEqual(90, enemigo.Vida, "La vida del enemigo no debe cambiar con vida insuficiente del usuario.");
+                Assert.AreEqual(3, vidaPorVida.UsosRestantes, "Los usos restantes no deben disminuir si no se usó el ítem.");
+            }
+
+
+            [Test]
+            public void Usar_VidaPorVida_AgoteDeUsos()
+            {
+                // Arrange
+                Assert.AreEqual(3, vidaPorVida.UsosRestantes, "El ítem debería empezar con 3 usos restantes.");
+
+                // Act
+                vidaPorVida.Usar(usuario);
+                Assert.AreEqual(2, vidaPorVida.UsosRestantes, "Debería quedar 2 usos restantes después del primer uso.");
+
+            }
+
+        }
+    }
+    */

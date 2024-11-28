@@ -100,6 +100,11 @@ namespace Program
                             Console.WriteLine("Terminando el juego...");
                             batallaActiva = false;
                             continue;
+                        case 5://Quien Va Gananado?
+                            QuienVaGananado.Quiengana(jugador1.ListaDePokemones,jugador2.ListaDePokemones,jugador1.Items,jugador2.Items);
+                            turno = 0;
+                            continue;
+                            
                         default:
                             Console.WriteLine("Opción inválida.");
                             continue;
@@ -156,6 +161,11 @@ namespace Program
                             Console.WriteLine("Terminando el juego...");
                             batallaActiva = false;
                             continue;
+                        case 5://Quien Va Gananado?
+                            QuienVaGananado.Quiengana(jugador1.ListaDePokemones,jugador2.ListaDePokemones,jugador1.Items,jugador2.Items);
+                            turno = 0;
+                            continue;
+                        
                         default:
                             Console.WriteLine("Opción inválida.");
                             continue;
@@ -187,11 +197,12 @@ namespace Program
             Console.WriteLine("2. Cambiar Pokémon");
             Console.WriteLine("3. Items");
             Console.WriteLine("4. Terminar juego");
+            Console.WriteLine("5. Quien va ganando?");
 
             int opcion;
-            while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 4)
+            while (!int.TryParse(Console.ReadLine(), out opcion) || opcion < 1 || opcion > 5)
             {
-                Console.WriteLine("Por favor, ingresa una opción válida (1-4).");
+                Console.WriteLine("Por favor, ingresa una opción válida (1-5).");
             }
 
             return opcion;
