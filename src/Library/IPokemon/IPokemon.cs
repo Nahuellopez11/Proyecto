@@ -28,6 +28,7 @@ public interface IPokemon
     /// <param name="visitorPoke">El visitante que realizará una operación sobre el Pokémon.</param>
     void Accept(IVisitorPoke visitorPoke){}
     List<Ataque> AtaquesDisponibles { get; set; }
+    string Estado { get; set; }
     
 }
 

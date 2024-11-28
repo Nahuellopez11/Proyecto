@@ -8,7 +8,7 @@ namespace Program
         public TipoPokemon Tipo { get; private set; }
         public double Vida { get; set; }
         public int VidaInicial { get; set; }
-        private string Estado { get; set; }
+        public string Estado { get; set; }
         private static Random random = new Random();
         public List<Ataque> AtaquesDisponibles { get;  set; }
         public EstadoEspecial EstadoActual { get; set; }
